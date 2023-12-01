@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DMP Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>AI-Prism Data Management Plan</h1>
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Data Summary')">Data Summary</button>
+        <button class="tablinks" onclick="openTab(event, 'FAIR')">FAIR</button>
+        <button class="tablinks" onclick="openTab(event, 'Other Research Outputs')">Other Research Outputs</button>
+        <button class="tablinks" onclick="openTab(event, 'Allocation of Resources')">Allocation of Resources</button>
+        <button class="tablinks" onclick="openTab(event, 'Data Security')">Data Security</button>
+        <button class="tablinks" onclick="openTab(event, 'Ethics')">Ethics</button>
+        <button class="tablinks" onclick="openTab(event, 'Other Issues')">Other Issues</button>
+    </div>
+    <div id="Data Summary" class="tabcontent">
+        <button class="collapsible"> Expand to complete the Data Summary</button>
+        <div class="content">
+            <p> Will you re-use any existing data and what will you re-use it for? State the reasons if re-use of any existing data has been
+                considered but discarded.</p>
+            <textarea id="Reuse" rows="4" cols="100"></textarea>
+            <p> What types and formats of data will the project generate or re-use?</p>
+            <textarea id="TypesAndFormats" rows="4" cols="100"></textarea>
+            <p> What is the purpose of the data generation or re-use and its relation to the objectives of the project? </p>
+            <textarea id="Purpose" rows="4" cols="100"></textarea>
+            <p> What is the expected size of the data that you intend to generate or re-use?</p>
+            <textarea id="ExpectedSize" rows="4" cols="100"></textarea>
+            <p> What is the origin/provenance of the data, either generated or re-used?</p>
+            <textarea id="Origin" rows="4" cols="100"></textarea>
+            <p>To whom might your data be useful ('data utility'), outside your project?</p>
+            <textarea id="Data Utility" rows="4" cols="100"></textarea>
+        </div>
+    </div>    
+    <div id="FAIR" class="tabcontent">
+        <button class="collapsible"> Making data findable, including provisions for metadata</button>
+        <div class="content">
+            <p> Section 1 Content</p>
+            <input type="text" id="text1">
+        </div>
+        <button class="collapsible">Making data accessible</button>
+        <div class="content">
+            <p> Section 1.1 Content</p>
+            <select id="dropdown1">
+                <option value="Option 1">Option 1</option>
+                <option value="Option 2">Option 2</option>
+                <option value="Option 3">Option 3</option>
+            </select>
+        </div>
+        <button class="collapsible">Making datainteroperable</button>
+        <div class="content">
+            <p> Section 1.1 Content</p>
+            <select id="dropdown1">
+                <option value="Option 1">Option 1</option>
+                <option value="Option 2">Option 2</option>
+                <option value="Option 3">Option 3</option>
+            </select>
+        </div>
+        <button class="collapsible"> Increase data re-use</button>
+        <div class="content">
+            <p> Section 1.1 Content</p>
+            <select id="dropdown1">
+                <option value="Option 1">Option 1</option>
+                <option value="Option 2">Option 2</option>
+                <option value="Option 3">Option 3</option>
+            </select>
+        </div>
+    </div>
+    <div id="Other Research Outputs" class="tabcontent">
+        <button class="collapsible">Open Section 3.1</button>
+        <div class="content">
+            <p>Section 3.1 content </p>
+            <input type="text" id="text3">           
+        </div>
+        <button class="collapsible">Open Section 3.2</button>
+        <div class="content">
+            <p> Section 3.2 content </p>
+            <select id="dropdown3">
+                <option value="Option 31">Option 31</option>
+                <option value="Option 32">Option 32</option>
+                <option value="Option 33">Option 33</option>
+            </select>
+        </div>
+    </div>
+    <div id="Allocation of Resources" class="tabcontent">
+        <button class="collapsible"> Open Section 4.1</button>
+        <div class="content">
+            <p> Section 4.1 content </p>
+            <input type="text" id="text4">            
+        </div>
+        <button class="collapsible">Open Section 4.2 </button>
+        <div class="content">
+            <p>Section 4.2 content</p>
+            <select id="dropdown4">
+                <option value="Option 41">Option 41</option>
+                <option value="Option 42">Option 42</option>
+                <option value="Option 43">Option 43</option>
+                <option value="Option 44">Option 44</option>
+            </select>
+        </div>
+    </div>
+    <div id="Data Security" class="tabcontent">
+        <button class="collapsible"> Open Section 4.1</button>
+        <div class="content">
+            <p> Section 4.1 content </p>
+            <input type="text" id="text4">            
+        </div>
+        <button class="collapsible">Open Section 4.2 </button>
+        <div class="content">
+            <p>Section 4.2 content</p>
+            <select id="dropdown4">
+                <option value="Option 41">Option 41</option>
+                <option value="Option 42">Option 42</option>
+                <option value="Option 43">Option 43</option>
+                <option value="Option 44">Option 44</option>
+            </select>
+        </div>
+    </div>
+    <div id="Ethics" class="tabcontent">
+        <button class="collapsible"> Open Section 4.1</button>
+        <div class="content">
+            <p> Section 4.1 content </p>
+            <input type="text" id="text4">            
+        </div>
+        <button class="collapsible">Open Section 4.2 </button>
+        <div class="content">
+            <p>Section 4.2 content</p>
+            <select id="dropdown4">
+                <option value="Option 41">Option 41</option>
+                <option value="Option 42">Option 42</option>
+                <option value="Option 43">Option 43</option>
+                <option value="Option 44">Option 44</option>
+            </select>
+        </div>
+    </div>
+    <div id="Other Issues" class="tabcontent">
+        <button class="collapsible"> Open Section 4.1</button>
+        <div class="content">
+            <p> Section 4.1 content </p>
+            <input type="text" id="text4">            
+        </div>
+        <button class="collapsible">Open Section 4.2 </button>
+        <div class="content">
+            <p>Section 4.2 content</p>
+            <select id="dropdown4">
+                <option value="Option 41">Option 41</option>
+                <option value="Option 42">Option 42</option>
+                <option value="Option 43">Option 43</option>
+                <option value="Option 44">Option 44</option>
+            </select>
+        </div>
+    </div>
+    <!-- p id="message"></p> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+    <button id="download-pdf" onclick="downloadPDF()">Download as PDF</button>
+</body>
+</html>
