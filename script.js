@@ -63,7 +63,7 @@ function downloadPDF() {
     });
 
     // Save the PDF.
-    doc.save('Data-Management-Plan.pdf');
+    doc.save('Data-Management-Plan-20240119.pdf');
 }
 
 
