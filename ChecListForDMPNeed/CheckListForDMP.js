@@ -5,7 +5,7 @@
         // Define the title
         doc.setFontSize(16);
         doc.setFont(undefined, "bold"); 
-        doc.text('Data protection – personal data: CheckList', 20, 30);
+        doc.text('Data protection – personal data: CheckList Results', 20, 30);
         
         //1. Processing of personal data 
         doc.setFontSize(12);
@@ -137,15 +137,17 @@
         //doc.text(dpiCompletionStatus, 20, 155);
         doc.text(dpiCompletionStatus, 20 + nonBoldWidth_assessedDPIAwithDPO, 150);
         }
-
+        
+        //***********************
         //3. Informing your research participants 
+        
         doc.setFontSize(12);
         doc.setFont(undefined, "bold"); 
         // Regular text
-        doc.text('3. Informing your research participants', 20, 152);
+        doc.text('3. Informing your research participants', 20, 160);
         doc.setFont(undefined, "normal"); 
         doc.setFontSize(10);
-        doc.text('Have you prepared a research privacy notice? Link to templates', 20, 159);
+        doc.text('Have you prepared a research privacy notice? Link to templates', 20, 165);
 
         // Measure the width of the preceding text to get the X position for the link text.
         const linkText = 'Privacy notice templates';
@@ -154,26 +156,133 @@
 
         // Set the color for the link text and position it near the previous text.
         doc.setTextColor(0, 0, 255); // Set text color to blue for link appearance
-        doc.text(linkText, linkXPosition, 159);
+        doc.text(linkText, linkXPosition, 165);
 
         // Add the link. The Y position is slightly above the line of text to include the height of text.
-        doc.link(linkXPosition, 159 - 10, doc.getStringUnitWidth(linkText) * doc.internal.getFontSize() / doc.internal.scaleFactor, 10, { url: 'https://www.tuni.fi/en/research/responsible-research/data-protection#expander-trigger--15950926-4420-44b7-9696-0dcf562d02c0' });
+        doc.link(linkXPosition, 165 - 10, doc.getStringUnitWidth(linkText) * doc.internal.getFontSize() / doc.internal.scaleFactor, 10, { url: 'https://www.tuni.fi/en/research/responsible-research/data-protection#expander-trigger--15950926-4420-44b7-9696-0dcf562d02c0' });
 
         // Continue with the next segment of text.
         doc.setTextColor(0); // Revert text color to black for regular text
         doc.text(['and other necessary documents (such as a participant information sheet and consent form) that are written',
                   'in a clear and understandable language and decided how to deliver the necessary information to your',
-                  'research participants?'], 20, 164);
+                  'research participants?'], 20, 170);        
 
- 
-        //4. Informing your research participants 
+        let informingResearchParticipants = '';
+        const informingResearchParticipantsRadios = document.getElementsByName('privacynotice');
+        for (const radio of informingResearchParticipantsRadios) {
+          if (radio.checked) {
+            informingResearchParticipants = radio.value;
+            break;
+          }
+        }        
+        // Add the selected value to the PDF
+        // Set font to bold for the selected value
+        doc.setFont(undefined, "bold");
+        doc.setFontSize(10);
+        if (informingResearchParticipants) {
+            // First, add the non-bold part of the text
+            doc.setFont(undefined, "normal"); // Set the font style to normal
+            doc.setFontSize(10);
+            doc.text('Research Privacy Notice Prepared: ', 20, 184);
+           //doc.text(informingResearchParticipants, 20, 176);
+
+            // Then, measure the width of the non-bold text to place the bold text correctly
+            var nonBoldWidth_informingResearchParticipants = doc.getStringUnitWidth('Do Personal data will be processed?: ') * doc.internal.getFontSize() / doc.internal.scaleFactor;
+
+            // Now, add the bold part of the text
+            doc.setFont(undefined, "bold"); // Set the font style to bold
+            doc.text(informingResearchParticipants, 20 + nonBoldWidth_informingResearchParticipants, 184);
+        }
+
+        //********************** */
+
+
+        //***********************
+        //4. Roles of data processors 
         doc.setFontSize(12);
         doc.setFont(undefined, "bold"); 
         // Regular text
-        doc.text('3. Informing your research participants', 20, 152);
+        doc.text('4. Roles of data processors', 20, 195);
+        doc.setFont(undefined, "normal");
+        doc.setFontSize(10);
+        doc.text(['The research activities may involve one or more research institutions, principal investigators, customers,',
+                 'researchers, and other staff members who carry out the actual processing activities in the course of the study.',
+                 'The roles of different stakeholders and the responsibilities of the data controller must be clearly defined ',
+                 'before research begins.',
+                 'Have you defined the roles and responsibilities of other parties involved in the processing activities (such as ',
+                 'possible other research organisations or third-party data processors)? If you need help with defining the roles, ',
+                 'please email dpo@tuni.fi.'], 20, 202);
+        
+        let roleOfDataProcessors = '';
+        const roleOfDataProcessorsRadios = document.getElementsByName('dataprocessorrole');
+        for (const radio of roleOfDataProcessorsRadios) {
+          if (radio.checked) {
+            roleOfDataProcessors = radio.value;
+            break;
+          }
+        }        
+        // Add the selected value to the PDF
+        // Set font to bold for the selected value
+        doc.setFont(undefined, "bold");
+        doc.setFontSize(10);
+        if (roleOfDataProcessors) {
+            // First, add the non-bold part of the text
+            doc.setFontSize(10);
+            doc.text(roleOfDataProcessors, 20, 231);
 
+            // Then, measure the width of the non-bold text to place the bold text correctly
+            //var nonBoldWidth_roleOfDataProcessors = doc.getStringUnitWidth('Do Personal data will be processed?: ') * doc.internal.getFontSize() / doc.internal.scaleFactor;
 
+            // Now, add the bold part of the text
+            //doc.setFont(undefined, "bold"); // Set the font style to bold
+            //doc.text(roleOfDataProcessors, 20 + nonBoldWidth_roleOfDataProcessors, 228);
+        }
 
-        // Save the PDF
+        //********************** */
+ 
+        //***********************
+        //5. Agreeing on the processing of personal data 
+        doc.setFontSize(12);
+        doc.setFont(undefined, "bold"); 
+        // Regular text
+        doc.text('5. Agreeing on the processing of personal data', 20, 239);
+        doc.setFont(undefined, "normal");
+        doc.setFontSize(10);
+        doc.text(['If subcontractors are employed in the performance of research tasks (for example, as providers of transcription',
+                  'services or web-based data storage services) they must sign a data processing agreement (DPA). If the purpose  ',
+                  'and means of processing personal data are determined by multiple parties (meaning they process personal data ',
+                  'together for shared purposes), they must sign a joint data controller agreement. If research data is acquired' ,
+                  'of and access to data. Have you drawn up the necessary data processing from a third party (such as a hospital ',
+                  'district), the parties must enter an agreement that governs the transfer agreements? '], 20, 246)
+        
+        let AgreeProcessingPerData = '';
+        const AgreeProcessingPerDataRadios = document.getElementsByName('agreeprocessingpersonaldata');
+        for (const radio of AgreeProcessingPerDataRadios) {
+          if (radio.checked) {
+            AgreeProcessingPerData = radio.value;
+            break;
+          }
+        }        
+        // Add the selected value to the PDF
+        // Set font to bold for the selected value
+        doc.setFont(undefined, "bold");
+        doc.setFontSize(10);
+        if (AgreeProcessingPerData) {
+            // First, add the non-bold part of the text
+            doc.setFont(undefined, "normal"); // Set the font style to normal
+            doc.setFontSize(10);
+            doc.text('Have you drawn up the necessary data processing agreements?: ', 20, 271);
+
+            // Then, measure the width of the non-bold text to place the bold text correctly
+            var nonBoldWidth_AgreeProcessingPerData = doc.getStringUnitWidth('Have you drawn up the necessary data processing agreements?: ') * doc.internal.getFontSize() / doc.internal.scaleFactor;
+
+            // Now, add the bold part of the text
+            doc.setFont(undefined, "bold"); // Set the font style to bold
+            doc.text(AgreeProcessingPerData, 20 + nonBoldWidth_AgreeProcessingPerData, 271);
+        }
+
+        //********************** */
+        
+                 // Save the PDF
         doc.save('CheclListForDMPNeed.pdf');
-    }
+    }   
