@@ -49,8 +49,6 @@
           <p>Assess whether the processing of personal data poses risks to your data subjects. Please conduct a pre-assessment to find out whether a more extensive data protection impact assessment is needed Pre-assessment.</p>
           <label><input type="radio" name="assessmentdata" value="Yes"> Yes</label>
           <label><input type="radio" name="assessmentdata" value="No"> No</label>
-      </div>
-
       <script>
         // Function to toggle the visibility of the DPIA completion section
         function toggleDPIASection() {
@@ -74,7 +72,6 @@
           // Add actual form submission logic here
         
       </script>
-      <div class="form-section">
         <p>
           If your processing activities are likely to result in a high risk to the rights and freedoms of data subjects,
           you will need to complete a more extensive Data Protection Impact Assessment (DPIA)
@@ -97,8 +94,75 @@
       </div>
       <input type="radio" id="notAssessed" name="dpiAssessment" onclick="toggleDPIASection(false)"><label for="dpiIsRequired">The need for a DPIA has not been assessed</label><br>
      </div>
-        <!-- Add additional form sections here if needed -->
-        <script src="CheckListForDMP.js"></script> 
+
+     <!--3. Informing your research participants-->
+
+      <div class="form-section">
+      <p><strong>3. Informing your research participants</strong></p>
+      <p>Have you prepared a research privacy notice?
+        Link to templates  
+        <a href=https://www.tuni.fi/en/research/responsible-research/data-protection#expander-trigger--15950926-4420-44b7-9696-0dcf562d02c0  target="_blank" id="privacynoticelink"> 
+        Privacy notice templates</a>.
+        and other necessary documents (such as a participant information sheet and consent form) that are written in a clear and understandable language and decided how to deliver the necessary information to your research participants? 
+        </p>
+      <label><input type="radio" name="privacynotice" value="Yes"> Yes</label>
+      <label><input type="radio" name="privacynotice" value="No"> No</label>
+    </div>
+
+     <!-- 4. Roles of data processors-->
+
+     <div class="form-section">
+      <p><strong>4. Roles of data processors</strong></p>
+      <p>
+        The research activities may involve one or more research institutions, principal investigators, customers, researchers, and other staff members who carry out the actual processing activities in the course of the study. The roles of different stakeholders and the responsibilities of the data controller must be clearly defined before research begins.
+        Have you defined the roles and responsibilities of other parties involved in the processing activities (such as possible other research organisations or third-party data processors)? If you need help with defining the roles, please email
+          <a href=mailto:dpo@tuni.fi  target="_blank" id="privacynoticelink"> dpo@tuni.fi</a>.        
+        </p>
+      <label><input type="radio" name="dataprocessorrole" value="Yes"> Yes</label>
+      <label><input type="radio" name="dataprocessorrole" value="No"> No</label>
+    </div>
+
+     <!-- 5. 5.	Agreeing on the processing of personal data-->
+
+     <div class="form-section">
+      <p><strong>5.	Agreeing on the processing of personal data</strong></p>
+      <p>
+        If subcontractors are employed in the performance of research tasks (for example, as providers of transcription services or web-based data storage services) they must sign a data processing agreement (DPA).
+
+        If the purpose and means of processing personal data are determined by multiple parties (meaning they process personal data together for shared purposes), they must sign a joint data controller agreement. 
+
+        If research data is acquired from a third party (such as a hospital district), the parties must enter an
+        agreement that governs the transfer of and access to data. 
+
+        Have you drawn up the necessary data processing agreements?  
+
+        <!--  <a href=mailto:dpo@tuni.fi  target="_blank" id="privacynoticelink"> dpo@tuni.fi</a>. -->       
+        </p>
+      <label><input type="radio" name="agreeprocessingpersonaldata" value="Yes"> Yes</label>
+      <label><input type="radio" name="agreeprocessingpersonaldata" value="No"> No</label>
+    </div>
+
+     <!-- 6. Summary-->
+
+     <div class="form-section">
+      <p><strong> 6. Summary</strong></p>
+      <p>
+        If your research involves the processing of personal data and you need guidance, please contact Tampere University’s Research Data Services at 
+        <a href=mailto:researchdata@tuni.fi  target="_blank" id="privacynoticelink"> researchdata@tuni.fi </a>.        
+        </p>
+    </div>
+
+     <!-- 7. Planning the lifecycle of personal data processing -->
+
+     <div class="form-section">
+      <p><strong> 7. Planning the lifecycle of personal data processing</strong></p>
+      <p>
+        Please find out more information about planning and documenting the lifecycle of processing of personal data  
+        <a href=https://www.fsd.tuni.fi/en/services/data-management-guidelines/  target="_blank" id="privacynoticelink"> Data Management Guidelines  </a>. 
+        This may be included in your research plan, data management plan or, for example, the grant proposal.                
+      </p>
+    </div>
+        <script src="scriptgenerateCheckListForm1.js"></script> 
         <input type="button" class="button" value="Generate PDF" onclick="generatePDF()">
     </form>   
 </body>
