@@ -38,12 +38,14 @@
 <body>
     <div class="form-title">Data protection – personal data: CheckList whether a Data Management Plan is needed</div>
     <form id="dataProtectionForm">
+      <!-- 1. Processing of personal data -->
         <div class="form-section">
             <p><strong>1. Processing of personal data</strong></p>
             <p>Will personal data be processed during your study? The term "personal data" is broadly defined and refers to all information relating to an identified or identifiable natural person.</p>
             <label><input type="radio" name="processingData" value="Yes"> Yes</label>
             <label><input type="radio" name="processingData" value="No"> No</label>
         </div>
+      <!-- 2. Assessment of data protection risks -->
         <div class="form-section">
           <p><strong>2. Assessment of data protection risks</strong></p>
           <p>Assess whether the processing of personal data poses risks to your data subjects. Please conduct a pre-assessment to find out whether a more extensive data protection impact assessment is needed Pre-assessment.</p>
@@ -55,22 +57,7 @@
           var dpiIsRequiredChecked = document.getElementById('dpiIsRequired').checked;
           var dpiASection = document.getElementById('dpiASection');
           dpiASection.style.display = dpiIsRequiredChecked ? 'block' : 'none';
-        }
-        
-       // function submitForm() {
-         // var dpiNotRequired = document.getElementById('dpiNotRequired').checked;
-          //var dpiIsRequired = document.getElementById('dpiIsRequired').checked;
-          //var dpiCompletedYes = document.getElementById('dpiCompletedYes').checked;
-          //var notAssessed = document.getElementById('notAssessed').checked;
-        
-          //if (dpiIsRequired && !dpiCompletedYes) {
-          //  alert('Please complete the DPIA with the data protection officer before submitting.');
-          //  return false;
-          //}
-        
-          //alert('Form submitted successfully!');
-          // Add actual form submission logic here
-        
+        }      
       </script>
         <p>
           If your processing activities are likely to result in a high risk to the rights and freedoms of data subjects,
@@ -89,10 +76,10 @@
 
       <div id="dpiASection" style="display:none; margin-left: 20px;">
         DPIA has been completed in collaboration with the data protection officer (dpo@tuni.fi)<br>
-        <input type="radio" id="dpiCompletedYes" name="dpiCompleted" value="Yes"> <label for="dpiIsRequired">Yes</label><br>
-        <input type="radio" id="dpiCompletedNo" name="dpiCompleted" value="No"><label for="dpiIsRequired"> No </label><br>
+        <input type="radio" id="dpiCompletedYes" name="dpiCompleted" value="Yes"> <label for="dpiCompletedYes">Yes</label><br>
+        <input type="radio" id="dpiCompletedNo" name="dpiCompleted" value="No"><label for="dpiCompletedNo"> No </label><br>
       </div>
-      <input type="radio" id="notAssessed" name="dpiAssessment" onclick="toggleDPIASection(false)"><label for="dpiIsRequired">The need for a DPIA has not been assessed</label><br>
+      <input type="radio" id="notAssessed" name="dpiAssessment" onclick="toggleDPIASection(false)"><label for="notAssessed">The need for a DPIA has not been assessed</label><br>
      </div>
 
      <!--3. Informing your research participants-->
@@ -103,10 +90,10 @@
         Link to templates  
         <a href=https://www.tuni.fi/en/research/responsible-research/data-protection#expander-trigger--15950926-4420-44b7-9696-0dcf562d02c0  target="_blank" id="privacynoticelink"> 
         Privacy notice templates</a>.
-        and other necessary documents (such as a participant information sheet and consent form) that are written in a clear and understandable language and decided how to deliver the necessary information to your research participants? 
+        and other necessary documents (such as a participant information sheet and consent form) that are written in a clear and understandable language and decided how to deliver the necessary information to your research participants.
         </p>
-      <label><input type="radio" name="privacynotice" value="Yes"> Yes</label>
-      <label><input type="radio" name="privacynotice" value="No"> No</label>
+      <label><input type="radio" id="informingresearcherparticipantsYes" name="privacynotice" value="Yes"> <label for="informingresearcherparticipantsYes">Yes</label></label>
+      <label><input type="radio" id="informingresearcherparticipantsNo" name="privacynotice" value="No"> <label for="informingresearcherparticipantsNo">Yes</label></label>
     </div>
 
      <!-- 4. Roles of data processors-->
@@ -167,3 +154,18 @@
     </form>   
 </body>
 </html>
+
+        
+<!-- function submitForm() {
+  // var dpiNotRequired = document.getElementById('dpiNotRequired').checked;
+   //var dpiIsRequired = document.getElementById('dpiIsRequired').checked;
+   //var dpiCompletedYes = document.getElementById('dpiCompletedYes').checked;
+   //var notAssessed = document.getElementById('notAssessed').checked;
+ 
+   //if (dpiIsRequired && !dpiCompletedYes) {
+   //  alert('Please complete the DPIA with the data protection officer before submitting.');
+   //  return false;
+   //}
+ 
+   //alert('Form submitted successfully!'); -->
+ 
