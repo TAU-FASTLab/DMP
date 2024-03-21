@@ -20,7 +20,7 @@ function generatePDF() {
     
     
     // Retrieve the value of the selected item for Legal Basis
-    const legalBasesSelection = document.getElementById('legalBasesselection');
+    const legalBasesSelection = document.getElementById('legalBases');
     let selectedValueLegalBasis = legalBasesSelection.value;
     // Text before the variable, in normal font
     doc.setFont(undefined, "normal");
@@ -48,83 +48,108 @@ function formIsValid() {
     // Check each required question to ensure a selection has been made
     for (let i = 0; i < requiredQuestions.length; i++) {
             // Use `select` instead of `input` and check for value directly
-        const element = document.getElementById(requiredQuestions[i] + 'selection');
+        const element = document.getElementById(requiredQuestions[i]);
         if (!element || element.value === "") {
             return false; // If a required question has no selection made, return false
         }
     }
-
-    const legitimateInterestsTextArea = [
+    // list of the ID of the textarea fields
+    const textAreaElement = [
         'categoriesOfPersonalData',
         'purposeOfPersonalData',
         'storeOfPersonalData',
-        'appropriatedBasis',
-        'legalInterest',
-        'clearInterest',
-        'genuineInterest',
-        'basicRequirements',
-        'lessIntrusive',
-        'impactOfProcessing',
-        'additionalSafeguards',
-        'informingDataSubjects'
+        'informingDataSubjects',
+        'place',
+        'date',
+        'person',
+        'placeDpo',
+        'dateDpo',
+        'dpo'
       ];
-
-      const requiredFields = [
-        'categoriesOfPersonalData',
-        'purposeOfPersonalData',
-        'storeOfPersonalData',
-        'appropriatedBasis',
-        'legalInterest',
-        'clearInterest',
-        'genuineInterest',
-        'basicRequirements',
-        'lessIntrusive',
-        'impactOfProcessing',
-        'additionalSafeguards',
-        'informingDataSubjects'
-    ];
+        
+      if (document.getElementById('legalBases').value == 'Legitimate Interest') {
+        const allFieldsFilled = textAreaElement.every(id => {
+            const element = document.getElementById(id);
+            return element && element.value.trim() !== "";
+        });
+      
+      if(!(document.getElementById('legitimateInterestYes').checked || document.getElementById('legitimateInterestNo').checked)){
+        return false;
+      }  
     
-    let isValid = true; // Assume form is valid initially
-    const errorMessage = "This field is required"; // Generic error message
+    if (document.getElementById('legitimateInterestYes').checked) { 
 
-    // Validation logic
-    if(document.getElementById('legalBasesselection').value == 'Legitimate Interest') { 
-        for (let j = 0; j < legitimateInterestsTextArea.length; j++){
-            const elementId = legitimateInterestsTextArea[j];
-            const element = document.getElementById(elementId);
-            if (!element || element.value.trim() === ""){
-                isValid = false; // Form is not valid
-                element.style.borderColor = 'red'; // Highlight in red
+            const textAreaElementAppropriatedBases = [
+                'appropriatedBasis',
+                'legalInterest',
+                'clearInterest',
+                'genuineInterest'
+                ];        
+            if (document.getElementById('legitimateInterestYes').checked){
+                const allFieldsFilledForAppropiatedBases = textAreaElementAppropriatedBases.every(idAppropriatedBases =>{
+                    const elementAppropriatedBases = document.getElementById(idAppropriatedBases);
+                    return elementAppropriatedBases && elementAppropriatedBases.value.trim() !== "";
+                });
+            
+                if(!allFieldsFilledForAppropiatedBases){
+                    return false;
+                }    
+            
+            }    
 
-                // Add or update an error message
-                let errorDiv = document.getElementById(elementId + '-error');
-                if (!errorDiv) {
-                    errorDiv = document.createElement('div');
-                    errorDiv.id = elementId + '-error';
-                    element.parentNode.insertBefore(errorDiv, element.nextSibling);
-                }
-                errorDiv.textContent = errorMessage;
-                errorDiv.style.color = 'red'; // Make the error message stand out
-
-                // Optionally, break here if you want to only show the first error
-                // break;
+            if(!(document.getElementById('allRequirementsMetYes').checked || document.getElementById('allRequirementsMetNo').checked)){
+                return false;
             }
-        }
+
+            if(document.getElementById('allRequirementsMetYes').checked){
+
+                if(!(document.getElementById('lessIntrusive') && document.getElementById('lessIntrusive').value.trim() !== "")){
+                    return false;
+                }
+                if(!(document.getElementById('achieveLessIntrusiveNo').checked || document.getElementById('achieveLessIntrusiveYes').checked)){
+                    return false;
+                }
+            
+                if (document.getElementById('achieveLessIntrusiveNo').checked){
+                            lessIntrusiveTextArea = document.getElementById('lessIntrusive');
+                            impactOfProcessingTextArea = document.getElementById('impactOfProcessing');
+                            if(!(lessIntrusiveTextArea && lessIntrusiveTextArea.value.trim() !== "" && impactOfProcessingTextArea && impactOfProcessingTextArea.value.trim() !== "")){
+                                return false;
+                            }                    
+                        
+
+                        if(!(document.getElementById('rightsAndInterestYes').checked || document.getElementById('rightsAndInterestNo').checked)){
+                            return false;
+                        }
+
+                
+                        if(document.getElementById('rightsAndInterestYes').checked){
+                            if(!(document.getElementById('additionalSafeguards') && document.getElementById('additionalSafeguards').value.trim() !== "")){
+                                return false;
+                            }
+                        }
+                }
+
+             }
     }
-    
-    // If the code reaches this point, all required questions have a selection made
-    return isValid;
-  }
+
+    if(!(document.getElementById('legalBasescanOrcannot').value == "canBeUsed" || document.getElementById('legalBasescanOrcannot').value == "cannotBeUsed")){
+        return false;
+    }  
+
+        return allFieldsFilled;
+    }
 
 
-//   if(document.getElementById('legalBasesselection').value == 'Legitimate Interest') { 
-//     // Retrieve the value of the selected item for Legal Basis    
-//         for (let j =0; j < legitimateInterestsTextArea.length; j++){
-//             const balanceTestElement = document.getElementById(legitimateInterestsTextArea[j]);
-//             if (!balanceTestElement || balanceTestElement.value.trim() === ""){
-//                 return false;
-//             }
-//         }
+//    if(document.getElementById('legalBases').value == 'Legitimate Interest') { 
+//      // Retrieve the value of the selected item of the textarea for Legal Basis    
+//          for (let j =0; j < textAreaElement.length; j++){
+//              const balanceTestElement = document.getElementById(textAreaElement[j]);
+//              if (!balanceTestElement || balanceTestElement.value.trim() === ""){
+//                  return false;
+//              }
+//          }
+//     }
 
 //     var legitimateInterestYesChecked = document.getElementById('legitimateInterestYes').checked;
 //     var legitimateInterestNoChecked = document.getElementById('legitimateInterestNo').checked;
@@ -165,4 +190,8 @@ function formIsValid() {
 //     }
 
 // } 
-  
+      // If the code reaches this point, all required questions have a selection made
+
+
+ return true;
+}
