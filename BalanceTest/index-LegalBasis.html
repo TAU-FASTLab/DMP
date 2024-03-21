@@ -134,38 +134,23 @@
               <form id="legitimateInterestForm">
               <label for="categoriesOfPersonalData">List the categories and types of personal data that you will process:<span class="required">*</span></label>
               <br>
-              <label>
-                <textarea id="categoriesOfPersonalData" name="categoriesOfPersonalData" rows="7" cols="50" required placeholder=" Enter text here...">
-                </textarea>
-              </label>
+                <textarea id="categoriesOfPersonalData" name="categoriesOfPersonalData" rows="7" cols="50" required placeholder=" Enter text here..."></textarea>
                 <br>
                 <br>
                 <label for="purposeOfPersonalData">Purpose/purposes of processing personal data:<span class="required">*</span></label>
                 <br>
-                <label>
-                <textarea id="purposeOfPersonalData" name="purposeOfPersonalData" rows="7" cols="50" required placeholder=" Enter text here...">
-                </textarea>
-                </label>
-                <br>
+                <textarea id="purposeOfPersonalData" name="purposeOfPersonalData" rows="7" cols="50" required placeholder=" Enter text here..."></textarea>
                 <br>
                 <label for="storeOfPersonalData">Where will personal data be stored (system/records)? Who will process personal data?
                   Provide the name or other identifier of a possible research project.
                 <span class="required">*</span>
                 </label>
                 <br>
-                <label>
-                <textarea id="storeOfPersonalData" name="storeOfPersonalData" rows="7" cols="50" required placeholder=" Enter text here...">
-                </textarea>
-                </label>
-                <br>
+                <textarea id="storeOfPersonalData" name="storeOfPersonalData" rows="7" cols="50" required placeholder=" Enter text here..."></textarea>
                 <br>
                 <label for="otherInformation">Other information (for example, will you be processing personal data relating to children?).</label>
                 <br>
-                <label> 
-                <textarea id="otherInformation" name="otherInformation" rows="7" cols="50" required placeholder=" Enter text here...">
-                </textarea>
-                </label>
-                <br>
+                <textarea id="otherInformation" name="otherInformation" rows="7" cols="50" required placeholder=" Enter text here..."></textarea>
                 <br>
                 <p><h4>Balancing test</h4></p> 
                 <label for="legitimateInterestYes">                      
@@ -173,8 +158,8 @@
                 </label>
                 <br>
                 <label><input type="radio" name="balanceTestSection1" value="Yes" id="legitimateInterestYes" onclick="legitimateInterestToggle()"> Yes</label>
-                <label><input type="radio" name="balanceTestSection1" value="No" id="legitimateInterestNo"  onclick="legitimateInterestToggle()"> No.
-                      If Not, points 2 to 5 does not need to be filled, thus they are not displayed.</label>
+                <label><input type="radio" name="balanceTestSection1" value="No" id="legitimateInterestNo"  onclick="legitimateInterestToggle()"> No</label>
+                <div>If "No," points 2 to 5 do not need to be filled, and thus they are not displayed.</div>
                 <script>
                       // Function to toggle the visibility of Section 3 in case that Yes is selected
                       function legitimateInterestToggle() {
@@ -189,27 +174,35 @@
                     If yes, please specify 
                     (or describe why the appropriate legal basis is not, for example, contract or consent).<span class="required">*</span>
                     </p>
-                    </label>
-                    <textarea id="appropriatedBasis" name="appropriatedBasis" rows="7" cols="50" required placeholder=" Enter text here...">
-                    </textarea>
+                    <label>
+                    <textarea id="appropriatedBasis" name="appropriatedBasis" rows="7" cols="50" required placeholder=" Enter text here..."></textarea>
                     </label>
                     <label for="legalInterest">
-                    <p>2. Are all the basic requirements met for the data controller’s interests to be considered legitimate? Demonstrate compliance with the following basic requirements:<span class="required">*</span></p>
-                      <ul>
-                          <li>The interest must be legal (in compliance with EU or national law).</li>
-                        <label><textarea id="legalInterest" name="legalInterest" rows="7" cols="50" required placeholder="Enter text here..."></label>
-                            </textarea>
-                          
-                          <li>The interest must be clearly stated so that its balance with the data subjects’ rights and interests can be assessed.</li>
-                          <label><textarea id="clearInterest" name="clearInterest" rows="7" cols="50" required placeholder=" Enter text here...">                            
-                          </textarea></label>
 
-                          <li>The interest must represent a genuine and direct need; it cannot be speculative.</li>
-                          <label><textarea id="genuineInterest" name="genuineInterest" rows="7" cols="50" required placeholder=" Enter text here...">                            
-                          </textarea></label>                          
+                      <legend>2. Are all the basic requirements met for the data controller’s interests to be considered legitimate? Demonstrate compliance with the following basic requirements:<span class="required">*</span></legend>
+                      <ul>
+                          <li>The interest must be legal (in compliance with EU or national law).
+                            <label for="legalInterest">Please Explain it below: </label> 
+                            <br> 
+                             <textarea id="legalInterest" name="legalInterest" rows="7" cols="50" required placeholder="Enter text here..."></textarea>
+                            <br>
+                          </li>
+                          <li>The interest must be clearly stated so that its balance with the data subjects’ rights and interests can be assessed.
+                            <label for="clearInterest">Please Explain it below:</label>
+                            <br> 
+                              <textarea id="clearInterest" name="clearInterest" rows="7" cols="50" required placeholder="Enter text here..."></textarea>
+                            <br>                              
+                          </li>  
+                          <li>The interest must represent a genuine and direct need; it cannot be speculative.
+                            <label for="genuineInterest"> Please Explain it below: </label>
+                            <br> 
+                              <textarea id="genuineInterest" name="genuineInterest" rows="7" cols="50" required placeholder="Enter text here..."></textarea>
+                            <br>
+                          </li>                          
                       </ul>
-                  <br>              
-                </label>
+ 
+                     <br>              
+                     </label>
                   <label for="allRequirementsMetYes">                      
                     Are all the requirements met? <span class="required">*</span> 
                   </label>
@@ -224,7 +217,7 @@
                       lessIntrusiveSection.style.display = RequirementsMetChecked ? 'block' : 'none';
                     }      
                   </script>
-                   </label>
+                   
                   <div id="lessIntrusiveSection" style="display:none;">
                   <label for="achieveLessIntrusiveNo">
                     <p>3. Could the same result be achieved in a way that is less intrusive?.<span class="required">*</span></p>
@@ -241,15 +234,15 @@
                     }      
                   </script>               
                   <br>
-                  <p>Please explain your answer.<span class="required">*</span></p>             
-                  <label><textarea id="lessIntrusive" name="lessIntrusive" rows="7" cols="50" required placeholder=" Enter text here...">
-                  </textarea></label>
+          
+                  <label for="lessIntrusive"> Please explain your answer.<span class="required">*</span></label>
+                    <br>
+                    <textarea id="lessIntrusive" name="lessIntrusive" rows="7" cols="50" required placeholder=" Enter text here..."></textarea>                  
                   <br>
                   <div id="impactOfProcessingSection" style="display:none;">     
                   <label for="impactOfProcessing">
                     <p>
                       4. Assess the impact of processing <span class="required">*</span>
-
                       <p>A. Answer the following questions to determine whether the interests of a data controller or a third party override data subjects’ rights and interests:</p>
                       <ul>
                       <li> Describe the interests of the data controller or a third party. </li>
@@ -280,8 +273,7 @@
                     </p>
                     </p>
                     </label>                 
-                    <label><textarea id="impactOfProcessing" name="impactOfProcessing" rows="7" cols="50" required placeholder=" Enter text here...">
-                    </textarea></label>
+                    <textarea id="impactOfProcessing" name="impactOfProcessing" rows="7" cols="50" required placeholder=" Enter text here..."></textarea>
                     <br>
                     <br>
                     <label for="rightsAndInterestYes">
@@ -289,8 +281,8 @@
                     </label>
                     <br>
                     <label><input type="radio" name="rightsAndInterest" id="rightsAndInterestYes" onclick="toggleSection5()">Yes</label>
-                    <label><input type="radio" name="rightsAndInterest" id="rightsAndInterestNo" onclick="toggleSection5()">No. If Not, point 5 does not need to be
-                    filled, thus it is not displayed.</label>
+                    <label><input type="radio" name="rightsAndInterest" id="rightsAndInterestNo" onclick="toggleSection5()">No</label>
+                    <p>If Not, point 5 does not need to be filled, thus it is not displayed.</p> 
                     <script>
                       function toggleSection5(){
                         var rightsAndInterestYesRadio = document.getElementById('rightsAndInterestYes').checked;
@@ -300,7 +292,7 @@
                     </script>
                     <div id="additionalSafeguardsSection" style="display:none;"> 
                     <label for="additionalSafeguards">
-                    <p> 5. Additional safeguards <span class="required">*</span></p>
+                    <p> 5. Additional safeguards <span class="required">*</span></p></label>
                     <p>
                       The result of the balancing test depend on an overall assessment: the greater the impact of processing on data subjects, the more safeguards must be put in place to protect data. The safeguards must significantly and reliably reduce any risks or potentially negative impacts of processing.
                       What safeguards have been and/or will be put in place to mitigate risks? Possible additional safeguards include: 
@@ -310,9 +302,7 @@
                       <li>the encryption of personal data.</li>
                       </ul>
                     </p> </label>            
-                  <label><textarea id="additionalSafeguards" name="additionalSafeguards" rows="7" cols="50" required placeholder=" Enter text here...">
-                  </textarea>                  
-                  </label> 
+                  <textarea id="additionalSafeguards" name="additionalSafeguards" rows="7" cols="50" required placeholder=" Enter text here..."></textarea> 
                   <br> 
                 
                 </div>               
@@ -347,8 +337,7 @@
                     <li>the processing is necessary for the establishment, exercise or defence of legal claims.</li>
                     </ul>
                   </label>                 
-                <label><textarea id="informingDataSubjects" name="informingDataSubjects" rows="7" cols="50" required placeholder=" Enter text here...">
-                  </textarea></label>
+                <textarea id="informingDataSubjects" name="informingDataSubjects" rows="7" cols="50" required placeholder=" Enter text here..."></textarea>
                   <br>
                   <p><h4>Overall assessment <span class="required">*</span></h4></p>    
               
@@ -358,7 +347,8 @@
                   <option value="canBeUsed">can be used</option>
                   <option value="cannotBeUsed">cannot be used</option>
                 </select>
-                as the lawful basis for processing the types of personal data referred to above.<span class="required">*</span></strong></label>
+                as the lawful basis for processing the types of personal data referred to above.<span class="required">*</span></strong>
+              </label>
           <p> 
            <h4>Date, Place and Signature <span class="required">*</span></h4>       
           <label for="place">Place:<span class="required">*</span></label>
@@ -394,7 +384,7 @@
           </p>  -->
           <p>
           <p>Personal data may not be used for direct marketing purposes after an objection has been filed.</p>
-
+    
       </div>       
         <script src="BalanceTest-LegitimateInterest.js"></script> 
         <input type="button" class="button" value="Generate PDF" onclick="generatePDF()">
