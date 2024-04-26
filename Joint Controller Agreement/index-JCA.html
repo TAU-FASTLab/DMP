@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joint Controller Agreement</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+<style>
+  /* Add CSS styles to match the picture as closely as possible */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  .form-title {
+    background-color: #660099;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  .form-section {
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .required {
+    color: red;
+}
+  .button {
+    display: block;
+    margin-top: 20px;
+  }
+  #dpiTemplateLink {
+    color: #0000EE; /* Blue color like standard link */
+    text-decoration: none; /* No underline by default */
+  }
+  #dpiTemplateLink:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  .article {
+    background-color: #f3d4f9;
+    border: 1px solid #5c0567;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .article h2 {
+    background-color: #e7e7e7;
+    padding: 10px;
+    margin-top: 0;
+  }
+  .article ol {
+    padding-left: 20px;
+  }
+  .article ol li {
+    margin-bottom: 10px;
+  }
+  #additionalFormLegitimateInterest {
+    display: none; /* Hide the form by default */
+  }
+</style>
+</head>
+<body>
+    <div class="form-title"><h1>Joint Controller Agreement </h1></div>
+    <form id="dataProtectionForm">
+      <!-- 1. Processing of personal data -->
+        <div class="form-section">
+            <h2>Joint Controller Agreement for 
+              <p>
+                <label for="nameParty">Name of the Party:<span class="required">*</span></label>
+                <input type="text" id="nameParty" name="nameParty" required>
+              </p>
+              <p>
+                <label for="identificationParty">Identification:<span class="required">*</span></label>
+                <input type="text" id="identificationParty" name="identificationParty" required>
+              </p>
+            </h2>
+            <h3>1. PARTIES</h3>
+            <p>This joint controller agreement (the ”Agreement”) is entered into by and between the following parties:</p>
+            <p> a)	Tampere University Foundation sr, operating as Tampere University (”TAU”). Business ID 2844561-8 </p>
+            <p> b) Add the participating parties E.g.	[Party] (“xx”) Business ID or other identifier : <span class="required">*</span> </p>
+            <p><textarea id="jCAParties" name="jCAParties" rows="1" cols="50" required placeholder=" Enter text here..."></textarea></p>               
+
+            <h3>2. SCOPE AND PURPOSE</h3>
+            <p>Add a brief description of the nature and scope of the planned co-operation:<span class="required">*</span> </p>
+            <p><textarea id="scopeAndPurpose" name="scopeAndPurpose" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
+            <p>For the purposes of the aforementioned co-operation, the Parties determine jointly the purposes and means of processing personal data and therefore act as joint controllers (as set forth in Article 26 of the EU General Data Protection Regulation (EU 2016/679). With this Agreement, the Parties wish to define their roles and responsibilities as joint controllers</p>
+            <p>In the event of any inconsistencies between this Agreement and any other agreement (“Co-operation Agreement”) pertaining to the co-operation described above, the provisions of this Agreement shall prevail.</p>
+
+            <h3>3. DEFINITIONS</h3>
+            <p>The term Data Protection Laws shall mean all laws that apply to the processing of personal data, including but not limited to the Finnish Data Protection Act (1050/2018), the European Union’s General Data Protection Regulation (Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data, and repealing Directive 95/46/EC, “GDPR”), possible amendments thereof, and any and all decisions, instructions, and guidelines concerning the processing of personal data issued by data protection authorities or courts of law. </p>
+            <p>Unless otherwise provided in this Agreement, the terms personal data, personal data processing, data processor, data controller, data subject, third party, data register, data protection authority and personal data breach shall be defined as in the GDPR.</p>
+
+            <h3>4. SCOPE OF PROCESSING ACTIVITIES</h3>
+            <p>For the purposes referred to in Chapter 2 of this Agreement, the Parties shall:</p>
+            <p>Add a description of the scope of planned processing activities:
+              Note: If a privacy notice has already been prepared, you may refer to the privacy notice here. </p>
+            <p>What personal data is collected/processed?<span class="required">*</span> </p>
+            <p><textarea id="whatPersonalDataCollected" name="whatPersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
+            <p>Whose personal data is collected/processed?<span class="required">*</span> </p>
+            <p><textarea id="whosePersonalDataCollected" name="whosePersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
+            <p>Why personal data is collected/processed?<span class="required">*</span> </p>  
+            <p><textarea id="whyPersonalDataCollected" name="whyPersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
+            <p>How personal data is collected/processed?<span class="required">*</span> </p>  
+            <p><textarea id="howPersonalDataCollected" name="howPersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
+              
+            <h3>5. DATA PROCESSING</h3>
+            <h4>5.1	Lawfulness of processing</h4>
+            <p>Each Party acts as a data controller as defined in Data Protection Laws and shall ensure that its processing activities under the Co-Operation Agreement and this Agreement are lawful under this Agreement and the applicable Data Protection Laws.</p>              
+            <h4>5.2	Risk and impact assessments</h4>
+            <p>The Parties will assess in co-operation the risks related to the processing of personal data prior to collecting personal data.</p>
+            <p>If the risk assessment implies that the planned processing activities are likely to result in a high risk to the rights and freedoms of natural persons, the Parties shall, prior to the collecting personal data, carry out in co-operation a data protection impact assessment (“DPIA”) as stipulated in Article 35 of the GDPR. Both the risk assessment and, where required, the DPIA shall be documented and reviewed periodically.</p>
+            <p>Where the planned processing would require prior consultation of supervisory authority in accordance with Article 36 of the GDPR, the Parties agree that 
+            <input type="text" id="nameParty" name="nameParty" required placeholder="[PARTY]"><span class="required">*</span> shall coordinate the consultation process. Each other Party shall, at its own cost, provide assistance as reasonably requested by the coordinating Party in order to complete the consultation process. </p>
+            </p>
+            <h4>5.3 Obligation to inform the data subjects</h4>
+            <p>The Parties shall in co-operation draft and maintain privacy notices fulfilling the requirements of Articles 12—14 of the GDPR. Each Party shall ensure for its own part that the data subjects are provided with the privacy notice in accordance with Articles 13—14 of the GDPR.</p>
+            <h4>5.4	Records of processing activities</h4>
+            <p>Each Party shall maintain a record of its processing activities as set forth in Article 30 of the GDPR.</p>            
+            <h4>5.5	Rights of the data subject</h4>            
+            <p><input type="text" id="nameParty" name="nameParty" required placeholder="[PARTY]"><span class="required">*</span> 
+              shall act as a principal contact point for data subjects’ requests and shall be named as the principal contact point in the privacy notices referred to in Chapter 5.3. above. Data subject access requests and other requests relating to use of data subject rights shall be forwarded without undue delay to the Party acting as the principal contact point. The Party acting as the principal contact point shall address any requests without undue delay. Each Party shall assist, at its own cost, the principal contact point in responding to data subject requests as reasonably requested by the principal contact point.
+            </p>
+            <p>Notwithstanding the aforementioned, each Party may respond to data subject requests individually insofar as the request solely pertains to the processing operations of that Party.</p>  
+            <h4>5.6	Information security and collection, storage and transfer of personal data</h4>
+            <p>Each Party shall collect, store and otherwise process personal data in accordance with its internal information security practices and policies and implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk relating to the processing of personal data.</p>            
+            <p>The Parties have agreed on the following practices relating to the collection, storage, and exchange of personal data:</p>
+            <h5>5.6.1	Collection of personal data</h5>
+                <p>Add a brief description of the agreed collection practices (i.e. how data is collected and how security of the data is taken into account in the collection process <span class="required">*</span> </p>
+                <textarea id="collectionPersonalData" name="collectionPersonalData" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+            <h5>5.6.2	Storing personal data during the Project</h5>
+              <p>Add a brief description of data storage practices, i.a.:</p>
+              <p>How, where, and by whom personal data will be stored:<span class="required">*</span> </p>
+              <textarea id="howWhereWhomPersonalDataStored" name="howWhereWhomPersonalDataStored" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+              <p>How long personal data will be stored <span class="required">*</span> </p>
+              <textarea id="howLongPersonalDataStored" name="howLongPersonalDataStored" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+              <p>Applicable security measures, such as pseudonymization or technical measures <span class="required">*</span> </p>
+              <textarea id="securityMeasuresPersonalData" name="securityMeasuresPersonalData" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+            <h5>5.6.3	Exchange of personal data</h5>
+             <p>Add a brief description of how the data is transferred between the parties:</p>
+             <p>In what form/format will data be transferred? <span class="required">*</span> </p>
+             <textarea id="formFormatDataTransferred" name="formFormatDataTransferred" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+             <p>How will the data be transferred (e.g. secure e-mail, in-person delivery of storage device..) <span class="required">*</span> </p>
+             <textarea id="howDataTransferred" name="howDataTransferred" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+             <p>How will the data be secured in transfer (e.g. encrypted files) <span class="required">*</span> </p>
+             <textarea id="securedDataTransfer" name="securedDataTransfer" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+             <p>Potential contact persons for the exchange of personal data <span class="required">*</span> </p>           
+             <textarea id="contactPersonExchangePersonalData" name="contactPersonExchangePersonalData" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>  
+             <p>Each Party shall notify the other party/parties without undue delay of any personal data breaches (as defined in Data Protection Laws), as well as of any other factors that may affect the other Party’s performance under this Agreement.</p>
+             <p>Each Party shall document personal data breaches in accordance with their internal processes and, where required, provide notifications to the supervisory authority and/or the data subject (as required by Articles 33 and 34 of the GDPR, respectively) individually. </p>
+             <h4>5.7	Use of data after the co-operation</h4>
+             <p>The Parties have agreed on the following practices relating to the use of data after the end of the co-operation:</p>
+             <p>Add a description of how personal data will be used after the co-operation, e.g. will the data be returned/delivered to one Party, will the data be destroyed, will the data be archived (where, for what purposes and for how long) <span class="required">*</span> </p>
+             <textarea id="usePersonalDataAfterCooperation" name="usePersonalDataAfterCooperation" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>  
+             <h3>6. LIABILITY</h3>             
+             <p>Each Party shall be solely liable for any damage it has caused to third parties (including the data subjects). The liability of the Parties for damage caused to data subjects shall be determined in accordance with the stipulations of Article 82 of the GDPR. For the avoidance of doubt, the Parties agree that the term “compensation” as set forth in Article 82(5) of the GDPR shall include reasonable attorney’s fees and legal costs incurred by a Party due to a breach of this Agreement or Data Protection Laws by the other Party / Parties. </p>
+             <p>Each Party shall be liable for direct damages to the other Party resulting from a breach of this Joint Controller Agreement. Any limitations of liability agreed elsewhere shall not be applied to a Party’s liability hereunder.</p>
+             <h3>7. EFFECTIVE DATE AND TERMINATION</h3>             
+             <p>This Agreement shall enter into force from the last date of signature and shall in all cases apply retrospectively form the date the Parties have commenced the processing activities defined in this Agreement.</p>
+             <p>This Agreement shall remain in force for the duration of the co-operation defined above. During the co-operation period, this Agreement may be terminated in accordance with the provisions of the Co-operation Agreement. Provisions that are by their nature intended to survive the termination or expiry of this Agreement shall remain in full force and effect regardless of the termination or expiry of this Agreement.</p>
+             <h3>8. OTHER PROVISIONS</h3>
+             <p>A Party may not assign or transfer this Agreement or the righs or obligations pertaining to it to any third party, without the prior written consent of the other Party / Parties.</p>
+             <p>This Agreement may only be amended through a written document signed by an authorized representative of each Party.</p>
+             <h3>9. CHOICE OF LAW, FORUM AND DISPUTE RESOLUTION.</h3>
+             <p>Unless otherwise agreed in the Co-operation Agreement, This Agreement shall be governed and interpreted in accordance with the laws of Finland without regard to its choice of law provisions. The Parties shall seek to solve any disputes amicably. Insofar as an amicable solution can not be reached, Pirkanmaa District Court shall have jurisdiction as the first instance.</p>
+             <h3>SIGNATURE</h3>
+             <p>This Agreement has been signed by the duly authorized representative of each Party.</p>
+             <p>TAMPERE UNIVERSITY FOUNDATION SR</p>
+                <p>
+                  <label for="placeTAU">Place:<span class="required">*</span></label>
+                  <input type="text" id="placeTAU" name="placeTAU" required>
+                </p>
+                <p>  
+                  <label for="dateTAU">Date:<span class="required">*</span></label>
+                  <input type="date" id="dateTAU" name="dateTAU" required>
+                </p>
+                <p>
+                  <label for="nameTAU">Name:<span class="required">*</span></label>
+                  <input type="text" id="nameTAU" name="nameTAU" required>
+                </p>
+                <p>
+                  <label for="titleTAU">Title:<span class="required">*</span></label>
+                  <input type="text" id="titleTAU" name="titleTAU" required>
+                </p>
+            <p>PARTY</p>
+            <p>
+              <label for="placeParty">Place:<span class="required">*</span></label>
+              <input type="text" id="placeParty" name="placeParty" required>
+            </p>
+            <p>  
+              <label for="dateParty">Date:<span class="required">*</span></label>
+              <input type="date" id="dateParty" name="dateParty" required>
+            </p>
+            <p>
+              <label for="nameParty">Name:<span class="required">*</span></label>
+              <input type="text" id="nameParty" name="nameParty" required>
+            </p>
+            <p>
+              <label for="titleParty">Title:<span class="required">*</span></label>
+              <input type="text" id="titleParty" name="titleParty" required>
+            </p> 
+      </div>       
+        <script src="JCA.js"></script> 
+        <input type="button" class="button" value="Generate PDF" onclick="generatePDF()">
+    </form>   
+</body>
+</html>
+ 
