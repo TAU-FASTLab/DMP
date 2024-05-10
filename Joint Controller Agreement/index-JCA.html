@@ -64,16 +64,15 @@
     <form id="dataProtectionForm">
       <!-- 1. Processing of personal data -->
         <div class="form-section">
-            <h2>Joint Controller Agreement for 
-              <p>
-                <label for="nameParty">Name of the Party:<span class="required">*</span></label>
-                <input type="text" id="nameParty" name="nameParty" required>
-              </p>
-              <p>
-                <label for="identificationParty">Identification:<span class="required">*</span></label>
-                <input type="text" id="identificationParty" name="identificationParty" required>
-              </p>
-            </h2>
+            <h2>Joint Controller Agreement for </h2>
+            
+            <div>
+              <label for="nameParty">Name of the Party:<span class="required">*</span></label>
+              <input type="text" id="nameParty" name="nameParty" required>
+              <label for="identificationParty">Identification (Business ID):<span class="required">*</span></label>
+              <input type="text" id="identificationParty" name="identificationParty" required>
+            </div>
+
             <h3>1. PARTIES</h3>
             <p>This joint controller agreement (the ”Agreement”) is entered into by and between the following parties:</p>
             <p> a)	Tampere University Foundation sr, operating as Tampere University (”TAU”). Business ID 2844561-8 </p>
@@ -106,18 +105,20 @@
             <h3>5. DATA PROCESSING</h3>
             <h4>5.1	Lawfulness of processing</h4>
             <p>Each Party acts as a data controller as defined in Data Protection Laws and shall ensure that its processing activities under the Co-Operation Agreement and this Agreement are lawful under this Agreement and the applicable Data Protection Laws.</p>              
-            <h4>5.2	Risk and impact assessments</h4>
+            <h4>5.2	Risk and impact assessments</h4>            
             <p>The Parties will assess in co-operation the risks related to the processing of personal data prior to collecting personal data.</p>
             <p>If the risk assessment implies that the planned processing activities are likely to result in a high risk to the rights and freedoms of natural persons, the Parties shall, prior to the collecting personal data, carry out in co-operation a data protection impact assessment (“DPIA”) as stipulated in Article 35 of the GDPR. Both the risk assessment and, where required, the DPIA shall be documented and reviewed periodically.</p>
             <p>Where the planned processing would require prior consultation of supervisory authority in accordance with Article 36 of the GDPR, the Parties agree that 
-            <input type="text" id="nameParty" name="nameParty" required placeholder="[PARTY]"><span class="required">*</span> shall coordinate the consultation process. Each other Party shall, at its own cost, provide assistance as reasonably requested by the coordinating Party in order to complete the consultation process. </p>
+              <label for="nameParty2"></label> 
+            <input type="text" id="nameParty2" name="nameParty2" required placeholder="[PARTY]"><span class="required">*</span> shall coordinate the consultation process. Each other Party shall, at its own cost, provide assistance as reasonably requested by the coordinating Party in order to complete the consultation process.
             </p>
             <h4>5.3 Obligation to inform the data subjects</h4>
             <p>The Parties shall in co-operation draft and maintain privacy notices fulfilling the requirements of Articles 12—14 of the GDPR. Each Party shall ensure for its own part that the data subjects are provided with the privacy notice in accordance with Articles 13—14 of the GDPR.</p>
             <h4>5.4	Records of processing activities</h4>
             <p>Each Party shall maintain a record of its processing activities as set forth in Article 30 of the GDPR.</p>            
-            <h4>5.5	Rights of the data subject</h4>            
-            <p><input type="text" id="nameParty" name="nameParty" required placeholder="[PARTY]"><span class="required">*</span> 
+            <h4>5.5	Rights of the data subject</h4>
+            <label for="nameParty3" ></label>           
+            <p><input type="text" id="nameParty3" name="nameParty3" required placeholder="[PARTY]"><span class="required">*</span> 
               shall act as a principal contact point for data subjects’ requests and shall be named as the principal contact point in the privacy notices referred to in Chapter 5.3. above. Data subject access requests and other requests relating to use of data subject rights shall be forwarded without undue delay to the Party acting as the principal contact point. The Party acting as the principal contact point shall address any requests without undue delay. Each Party shall assist, at its own cost, the principal contact point in responding to data subject requests as reasonably requested by the principal contact point.
             </p>
             <p>Notwithstanding the aforementioned, each Party may respond to data subject requests individually insofar as the request solely pertains to the processing operations of that Party.</p>  
@@ -191,8 +192,8 @@
               <input type="date" id="dateParty" name="dateParty" required>
             </p>
             <p>
-              <label for="nameParty">Name:<span class="required">*</span></label>
-              <input type="text" id="nameParty" name="nameParty" required>
+              <label for="nameParty4">Name:<span class="required">*</span></label>
+              <input type="text" id="nameParty4" name="nameParty4" required>
             </p>
             <p>
               <label for="titleParty">Title:<span class="required">*</span></label>
