@@ -14,7 +14,7 @@ function generatePDF() {
      }
     //Selected Legal Bases
     doc.setFontSize(12);
-    // doc.text('Legal Basis Selected', 20, 45);
+    // doc.text('Data Processing Agreement', 20, 45);
     // Define the question
     doc.setFont(undefined, "normal"); 
     doc.setFontSize(10);
