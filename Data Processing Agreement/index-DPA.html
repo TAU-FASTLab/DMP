@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Processing Agreement</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+<style>
+  /* Add CSS styles to match the picture as closely as possible */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  .form-title {
+    background-color: #660099;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  .form-section {
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .required {
+    color: red;
+}
+  .button {
+    display: block;
+    margin-top: 20px;
+  }
+  #dpiTemplateLink {
+    color: #0000EE; /* Blue color like standard link */
+    text-decoration: none; /* No underline by default */
+  }
+  #dpiTemplateLink:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  .article {
+    background-color: #f3d4f9;
+    border: 1px solid #5c0567;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .article h2 {
+    background-color: #e7e7e7;
+    padding: 10px;
+    margin-top: 0;
+  }
+  .article ol {
+    padding-left: 20px;
+  }
+  .article ol li {
+    margin-bottom: 10px;
+  }
+  #additionalFormLegitimateInterest {
+    display: none; /* Hide the form by default */
+  }
+  .data-container {
+            margin-bottom: 10px; /* Adds spacing between checkbox groups */
+        }
+</style>
+</head>
+<body>
+    <div class="form-title"><h1>Data Processing Agreement</h1></div>
+    <form id="dataProtectionForm">
+      <!-- 1. Processing of personal data -->
+        <div class="form-section">
+    
+            <div>
+              <label for="nameProcurement">Name of procurement and other possible identifying information (hereinafter the ”Procurement”) :<span class="required">*</span></label>
+              <input type="text" id="nameProcurement" name="nameProcurement" required>
+              <p>This Data Processing Agreement (hereinafter the “Agreement”) shall constitute an integral part of the 
+                <label for="recordIdentifier">Procurement Contract<span class="required">*</span></label>
+                <input type="text" id="recordIdentifier" name="recordIdentifier" required placeholder="record identifier."> 
+                referred to above (hereinafter the “Procurement Contract”).</p>
+            </div>
+
+            Business ID or other identifier : 
+
+            <h3>1. Parties</h3>
+            <p>This Agreement is entered into by and between the following Parties:</p>
+            <p> 1)	Tampere University Foundation sr operating as Tampere University (business ID 2844561-8; hereinafter the “Data Controller”) </p>
+            <p> 2) Add the participating
+            <label for="partyName">party:<span class="required">*</span></label>
+              <input type="text" id="partyName" name="partyName" required placeholder="Party">
+            </p>
+            <p><label for="businessID">Business ID:<span class="required">*</span></label>
+              <input type="text" id="businessID" name="businessID" required placeholder="Business ID">
+            </p> 
+            <p><label for="address">Address:<span class="required">*</span></label>
+              <input type="text" id="address" name="address" required placeholder="Address">
+            </p>                
+
+            <h3>2. Scope of this Agreement</h3>
+            <p>This Agreement shall apply to the processing of all personal data that is carried out by the Data Processor on behalf of
+               the Data Controller in connection with the Procurement or as part thereof. The provisions of this Agreement shall take p
+               recedence in the event of any inconsistencies between the Procurement Contract and this Agreement.</p>
+
+            <h3>3. Definitions</h3>
+              <p>
+                The term Data Protection Laws shall mean all laws that apply to the processing of person-al data, including but not limited to the 
+                Finnish Personal Data Act (523/1999), the Europe-an Union’s General Data Protection Regulation (EU 2016/679, hereinafter the “GDPR”)
+                and possible amendments thereof, and any and all decisions, instructions, and information notices concerning the processing of personal
+                data that are issued by data protection au-thorities or courts of law. 
+              </p>
+              <p>Unless otherwise provided in this Agreement, the terms personal data, personal data pro-cessing, data processor, data controller, 
+                data subject, third party, data register, data pro-tection authority and data protection breach shall have the meaning set forth in 
+                the GDPR. 
+              </p>
+
+              <h3>4. Scope of processing personal data</h3>
+                <p>
+                  For the purpose of carrying out activities pursuant to the Procurement Contract, the Data Controller hereby authorises the Data Processor
+                  to process personal data on behalf of the Data Controller in accordance with the provisions set out in the section titled Description of 
+                  processing activities in this Agreement. 
+                </p>
+
+              <h3>5. Duration of processing</h3>
+                <p>
+                  The Data Processor shall be authorised to process personal data under this Agreement for as long as the Data Processor provides
+                  the Data Controller with the services specified in the Procurement Contract.
+                </p>
+
+              <h3>6. General obligations of the Data Controller</h3>
+                <p>
+                  The Data Controller shall act as the data controller referred to in the Data Protection Laws.
+                </p>
+                <p>
+                  The Data Controller determines the purposes for which and the manner in which personal data are processed. The Data Controller shall be
+                   accountable for complying with the obli-gations that are imposed on data controllers under the Data Protection Laws.
+                </p>
+                <p>
+                  The Data Processor acknowledges and understands that the Data Controller may only use the services of data processors who take appropriate
+                   technical and organisational security measures to ensure that all personal data are processed in compliance with the Data Pro-tection Laws 
+                   and that the rights of data subjects are protected.
+                </p>
+
+              <h3>7. General obligations of the Data Processor</h3>
+                <p>
+                  The Data Processor shall act as the data processor as referred to in the Data Protection Laws.
+                </p>
+                The Data Processor shall comply with the procedures and regulations set out in the Data Protection Laws regarding the processing and
+                protection of personal data. The Data Pro-cessor shall ensure that the services provided under this Agreement comply with the Data Protection
+                Laws, the provisions set out in the Procurement Contract and, in particular, the regulations concerning data protection by design and default.
+                <p>
+                  The Data Processor shall implement appropriate technical and organisational measures to ensure that personal data are processed on behalf of the
+                  Data Controller in accordance with the Procurement Contract and the practices agreed between the Parties. The pur-pose of the technical and 
+                  organisational measures is to guarantee that personal data are lawfully processed and to ensure the ongoing confidentiality, integrity, 
+                  availability and resil-ience of processing systems and services.
+                </p>
+
+                <p>
+                  The Data Processor shall not process or otherwise exploit personal data received under the Procurement Contract for purposes other than that
+                  which is strictly necessary for the performance of its obligations under the Procurement Contract.
+                </p>
+
+                <p>
+                  The Data Processor shall designate a data processing officer or a contact person who will serve as a point of contact that handles all requests
+                  and inquiries from the Data Controller. The Data Processor shall provide the contact details of the data processing officer of con-tact person
+                  to the Data Controller in writing.
+                </p>
+
+                <p>
+                  The Data Processor shall process personal data on behalf of the Data Controller. The Da-ta Processor warrants that it has the necessary expertise
+                  and resources to process per-sonal data in compliance with the Data Protection Laws and protect the rights of data sub-jects. The Data Processor 
+                  hereby guarantees that all the appropriate technical and organ-isational measures relating to the processing of personal data are taken in 
+                  compliance with the Data Protection Laws and the provisions set forth herein.  
+                </p>
+
+              <h3>8. Use of subprocessors</h3>
+                <p>
+                  The Data Processor may not subcontract the performance of any of the services hereun-der to another data processor (hereinafter “Subprocessor”) without
+                  the Data Controller’s explicit prior written consent. The Data Processor shall inform the Data Controller of any and all intended changes concerning 
+                  the addition or replacement of Subprocessors, thereby giving the Data Controller the opportunity to object to such changes. A Subpro-cessor may not 
+                  process personal data on behalf of the Data Controller until the Data Con-troller has approved said Subprocessor. 
+                </p>
+                <p>
+                  The Data Processor shall ensure that its Subprocessor complies with the data protection obligations referred to herein and signs a written data
+                  processing agreement. The Data Processor shall remain fully liable and responsible for any action, omission or negligence of its Subprocessor.
+                </p>
+                <p>
+                  The Data Processor shall, at the Data Controller’s request, promptly provide the Data Controller with a list of all its Subprocessors and the 
+                  locations where personal data are processed.   
+                </p>
+
+              <h3>9. Guidelines for processing personal data</h3>
+                <p>
+                  The Data Processor hereby agrees to only process personal data in accordance with doc-umented instructions provided by the Data Controller and
+                  only to the extent specified therein. The Data Processor shall ensure that all persons who are acting under the author-ity of the Data Processor
+                  and have access to the personal data referred to in this Agree-ment only process personal data in strict compliance with the instructions provided
+                  by the Data Controller.
+                </p>
+                <p>
+                  When the Procurement Contract comes into force, the Procurement Contract and its ap-pendices (including this Agreement) shall constitute the Data
+                  Controller’s instructions re-ferred to herein. During the term of the Procurement Contract, the Data Controller may provide the Data Processor with
+                  amended, updated or revised instructions concerning the processing of personal data.The Data Processor hereby agrees to comply with any amended, 
+                  updated or revised instructions provided by the Data Controller. If compliance with amended, updated or revised instructions necessitates measures
+                  that significantly exceed the level specified in the Data Protection Laws and the Data Processor incurs more than minor additional expenses for 
+                  taking the necessary measures, the Data Pro-cessor shall be entitled to receive reasonable compensation, as agreed in advance be-tween the Parties,
+                  for the additional work. 
+                </p>
+                <p>
+                  The Data Processor shall ensure that all persons who are acting under the authority of the Data Processor and have access to the personal data 
+                  referred to in this Agreement are aware of their obligations pertaining to the processing of personal data and only process personal data in accordance
+                  with the Procurement Contract, the terms and conditions set out in this Agreement and the instructions provided by the Data Controller.
+                </p>
+                <p>
+                  The Data Processor shall notify the Data Controller forthwith if the instructions provided by the Data Controller, in the Data Processor’s opinion, 
+                  are incomplete or violate the Data Protection Laws. Upon receipt of such notice, the Data Controller shall review the instruc-tions and promptly provide
+                  the Data Processor with revised instructions or a written con-firmation that the original instructions comply with the Data Protection Laws.
+                </p>
+
+              <h3>10. Obligation to assist and data subjects’ right of access</h3>
+                <p>
+                  The Data Processor shall, upon the Data Controller’s request, provide the Data Controller with all the information that the Data Controller needs to demonstrate
+                  compliance with the data protection regulations and fulfilment of the Data Controller’s obligations. The Data Processor shall, among other things, document all 
+                  processing activities performed under this Agreement and the Procurement Contract in an electronic format and, upon the Data Controller’s request, promptly provide
+                  the Data Controller with information about pro-cessing activities. The Data Processor shall be obligated to assist the Data Controller with preparing and maintaining
+                  descriptions and documents, such as data protection impact assessments, and conducting prior consultations as set out in the GDPR.    
+                </p>
+                <p>
+                  The Data Processor shall take appropriate technical and organisational measures to assist the Data Controller in the fulfilment of the Data Controller’s obligations 
+                  under the Data Pro-tection Laws pertaining to data subject rights. The Data Processor agrees to promptly noti-fy the Data Controller of any subject access requests 
+                  made by data subjects. The Data Processor shall not respond to subject access requests. The Data Processor shall assist the Data Controller in fulfilling its obligation
+                  to respond to subject access requests. To help the Data Controller respond to subject access requests, the Data Processor may have to, for example, assist the Data 
+                  Controller in communicating with data subjects, enforcing da-ta subject rights, rectifying or deleting personal data, restricting the processing of personal data, 
+                  or transferring a data subject’s personal data to a different IT environment.
+                </p>
+
+                <p>
+                  Any expenses incurred by the Data Processor in meeting the obligations referred to herein shall be included in the service fee specified in the Procurement Contract.
+                  If, however, compliance with the obligation to assist the Data Controller necessitates measures that significantly exceed the level specified in the Data Protection 
+                  Laws and the Data Proces-sor incurs more than minor additional expenses in the course of taking these measures, the Data Processor shall be entitled to receive 
+                  reasonable compensation, as agreed in advance between the Parties, for the additional work.
+                </p>
+
+              <h3>11. Information security</h3>
+                <p>
+                  The Data Processor hereby agrees to comply with the information security requirements set out in the Procurement Contract and the 
+                  Data Protection Laws and implement appro-priate technical and organisational measures to ensure a level of security appropriate to 
+                  the risks presented by the Data Processor’s processing activities. While assessing the ap-propriate level of security, the Data 
+                  Processor must consider the risks presented by pro-cessing and, in particular, the protection of personal data from accidental or 
+                  unlawful de-struction, loss, alteration, unauthorised disclosure or unauthorised access.
+                </p>
+                <p>
+                  The Data Processor shall without undue delay notify the Data Controller of any suspicions that a personal data breach has taken 
+                  place or is currently taking place. The Data Proces-sor’s notification of a personal data breach must include sufficient and 
+                  comprehensive in-formation about the breach, including a description of the personal data breach, the impact of the personal 
+                  data breach, the measures that have or will be taken in response to the personal data breach and other details requested by 
+                  the Data Controller. The Data Pro-cessor shall also report to the Data Controller all processing activities that violate the 
+                  Data Protection Laws, the Procurement Contract, this Agreement or the instructions provided by the Data Controller.
+                </p>
+
+              <h3>12. Data Controller’s right to conduct data protection audits</h3>
+                <p>
+                  The Data Controller, or an auditor authorised by the Data Controller, shall be entitled to perform audits and inspections that are
+                  necessary to confirm the compliance of the Data Processor and possible Subprocessors with their obligations under the Data 
+                  Protection Laws. The Data Processor shall ensure that its Subprocessors sign agreements that en-sure that the Data Controller
+                  is also authorised to audit the Data Processor’s Subproces-sors. An audit may include, among other things, requests for 
+                  information, inspections and other applicable audit activities. The Data Processor shall ensure that data protection au-dits can
+                  also cover its Subprocessors that process personal data on behalf of the Data Controller to deliver the services specified in 
+                  the Procurement Contract. 
+                </p>
+                <p>
+                  Audits may be conducted once a year unless the Data Controller has a valid reason for conducting audits more frequently. 
+                  The Data Processor undertakes to assist the Data Controller with audits and participate in them. The Data Controller shall 
+                  be responsible for its own and the auditor’s expenses incurred in the course of data protection audits. The Data Processor 
+                  shall be responsible for its own expenses incurred in the course of data protection audits.
+                </p>
+                <p>
+                  Audits shall, if possible, be conducted during the Data Processor’s normal opening times and with as little inconvenience to 
+                  the Data Processor as possible. In case any problems or weaknesses are detected during an audit, the Data Processor shall be
+                  responsible for resolving the problems or weaknesses at its own expense.
+                </p>
+                <p>
+                  Alternatively, the Data Processor may, with the Data Controller’s prior consent, demon-strate its regulatory compliance by 
+                  presenting an up-to-date audit report or certificate is-sued by an external, independent and impartial auditor.
+                </p>
+                
+              <h3>13. Transfer of personal data</h3>
+                <p>
+                  The Data Processor may not transfer personal data outside the EEA, or make personal data held in the EEA accessible in countries
+                  outside the EEA, without the Data Controller’s prior written consent. The Data Processor shall ensure that a possible transfer 
+                  of personal data outside the EEA, or the provision of access to personal data in countries outside the EEA, is conducted in 
+                  compliance with the Data Protection Laws.  
+                </p>
+
+                <h3>14. Confidentiality</h3>
+                <p>
+                  The Data Processor undertakes to treat in strict confidence all personal data, and all in-formation related to the processing thereof,
+                  to which the Data Processor gains access pursuant to this Agreement or the Procurement Contract. The confidentiality obligations shall
+                  survive the termination or expiration of the Procurement Contract.
+                </p>
+                <p>
+                  The Data Processor warrants and undertakes that all persons who are working under the authority of the Data Processor and are authorised
+                  to process the personal data referred to in this Agreement agree to strictly comply with the confidentiality obligations referred to
+                  herein or are under an appropriate statutory obligation of confidentiality.
+                </p>                
+
+              <h3>15. Liability</h3>
+                <p>
+                  The Data Processor shall be solely and fully liable for any losses, damages or costs in-curred by the Data Controller, a data subject or
+                  a third party due the Data Processor’s breach of the obligations set forth in this Agreement or in the Data Protection Laws. 
+                </p>
+                <p>
+                  The Data Processor shall be liable for any and all damages and costs resulting from cor-ruption, destruction or loss of personal data or
+                  other materials held by the Data Controller, including costs associated with restoring or recreating such data. 
+                </p>
+                <p>
+                  Possible limitations of liability set out in the Procurement Contract or any other documents shall not apply to the Data Processor’s 
+                  liability under this Agreement.
+                </p>
+                <p>
+                  Where a Party has paid full compensation for damage suffered by a data subject as a re-sult of a violation of the Data Protection Laws,
+                  that Party shall be entitled to claim back from the other Party that part of the compensation corresponding to the other Party’s part
+                  of responsibility for the damage. The amount of compensation that a data subject can re-ceive for a personal data breach is determined
+                  based on Article 82, Paragraph 2 of the GDPR or similar provisions set out in other Data Protection Laws.
+                </p>
+
+              <h3>16. Validity and termination of this Agreement</h3>
+                <p>
+                  This Agreement shall become effective after both Parties have signed the Procurement Contract, and this Agreement shall apply as of the 
+                  date when the Data Processor starts processing personal data referred to in this Agreement on behalf of the Data Controller   This Agreement
+                  shall expire when the Procurement Contract expires or is terminated. Notwithstanding the foregoing, this Agreement shall remain in full
+                  force and effect for as long as the Data Processor processes personal data on behalf of the Data Controller.
+                </p>
+                <p>
+                  After the Procurement Contract expires or is terminated, the Data Processor shall, at its own expense, promptly return to the Data Controller
+                  or destroy all personal data that the Data Processor has received on behalf of the Data Controller. The obligation to destroy personal data 
+                  shall apply to all documents, data, information, disks, external storage me-dia and any and all storage media that contain data included in 
+                  the scope of this Agree-ment, unless the Court of Justice of the European Union or the legislation of a Member State requires the retention 
+                  of personal data. This obligation also applies to possible re-productions, copies and backup copies. 
+                </p>
+
+              <h3>17. Other terms and conditions</h3>
+                <p>
+                  This Agreement may only be amended by mutual written agreement signed by both Par-ties. The updating of the instructions for processing personal
+                  data referred to in Section 9 above shall not be considered as an amendment to this Agreement.
+                </p>
+
+              <h2>Description of processing activities</h2>
+                <p>
+                  This description of processing activities constitutes an integral part of the Data Pro-cessing Agreement. This description specifies the 
+                  assignment to process personal data on behalf of the Data Controller as set out in the Procurement Contract and the Data Pro-cessing Agreement. 
+                </p>
+
+                <fieldset>
+                    <legend>Categories of data subjects whose personal data will be processed:</legend>
+                    <label><input type="checkbox" name="dataSubjects" value="staff"> Staff (including visiting researchers and lecturers)</label><br>
+                    <label><input type="checkbox" name="dataSubjects" value="students"> Students</label><br>
+                    <label><input type="checkbox" name="dataSubjects" value="jobCandidates"> Job candidates</label><br>
+                    <label><input type="checkbox" name="dataSubjects" value="studentApplicants"> Student Applicants</label><br>
+                    <label><input type="checkbox" name="dataSubjects" value="researchParticipants"> Research Participants</label><br>
+                    <label><input type="checkbox" name="dataSubjects" value="contactPersons">Contact persons of stakeholder groups (partners, service providers, customers, public authorities)</label><br>
+                    <label><input type="checkbox" id="otherCheckboxCategoriesPersonalData" name="dataSubjects" value="other">Other, please specify:</label><br>
+                    <textarea id="otherCategoriesPersonalData" name="otherCategoriesPersonalData" rows="2" cols="40" placeholder="Enter Text here..." style="display: none;"></textarea><br>
+                      <script>
+                        document.getElementById("otherCheckboxCategoriesPersonalData").addEventListener("change",function(){
+                          var textarea = document.getElementById("otherCategoriesPersonalData");
+                          if (this.checked){
+                            textarea.style.display='block';
+                          }else{
+                            textarea.style.display='none';
+                          }
+                        });
+                      </script>
+                </fieldset>
+                <fieldset>
+                  <legend>Categories of personal data that will be processed:</legend><br>
+                  <label><input type="checkbox" id="personalDataBasicInfo" name="personalData" value="basicInformation">Basic information, including:</label><br>
+                  <div id="nameBasicInfoContainer" style="display: none;">
+                    <label><input type="checkbox" id="nameBasicInfo" name="personalData" value="name">Name</label>
+                  </div>
+                  <br>
+                  <div id="personalIDNumberContainer" style="display: none;">
+                    <label><input type="checkbox" id="personalIDNumber" name="personalData" value="personalIdentityNumber">Personal identity number</label><br>
+                  </div>
+                  <br>
+                  <div id="agePersonalDataContainer" style="display: none;">
+                    <label><input type="checkbox" id="agePersonalData" name="personalData" value="age">Age/date of birth</label>
+                  </div>
+                  <br>
+                  <div id="genderPersonalDataContainer" style="display: none;">
+                    <label><input type="checkbox" id="genderPersonalData" name="personalData" value="Gender">Gender</label>
+                  </div>
+                  <br>
+                  <div id="userIDPersonalDataContainer" style="display: none;">
+                    <label><input type="checkbox" id="userIDPersonalData" name="personalData" value="userID">User ID</label>
+                  </div>
+                  <br>
+                  <div id="signaturePersonalDataContainer" style="display: none;">
+                    <label><input type="checkbox" id="signaturePersonalData" name="personalData" value="signature">Signature</label>
+                  </div>
+                  <br>
+                  <div id="ipAddressPersonalDataContainer" style="display: none;">
+                    <label><input type="checkbox" id="ipAddressPersonalData" name="personalData" value="ipAddress">IP address</label>
+                  </div>
+                  <br>
+                  <div id="otherPersonalDataContainer" style="display: none;">
+                    <label><input type="checkbox" id="otherPersonalData" name="personalData" value="personalData">Other, please specify:</label>
+                    <textarea id="textareaOtherPersonalData" name="textareaOtherPersonalData" rows="2" cols="40" placeholder="Enter Text here..." style="display: none;" ></textarea>
+                  </div>
+                </fieldset>
+                  <script>
+                    document.addEventListener("DOMContentLoaded",function(){
+                      var checkboxBasicInfo = document.getElementById('personalDataBasicInfo');
+                      var checkboxNameBasicInfoContainer = document.getElementById('nameBasicInfoContainer');
+                      var checkboxPersonalIDNumberContainer = document.getElementById('personalIDNumberContainer');
+                      var checkboxAgePersonalDataContainer = document.getElementById('agePersonalDataContainer');
+                      var checkboxGenderPersonalDataContainer = document.getElementById('genderPersonalDataContainer');
+                      var checkboxUserIDPersonalDataContainer = document.getElementById('userIDPersonalDataContainer');
+                      var checkboxSignaturePersonalDataContainer = document.getElementById('signaturePersonalDataContainer');
+                      var checkboxIpAddressPersonalDataContainer = document.getElementById('ipAddressPersonalDataContainer');
+                      var checkboxOtherPersonalDataContainer = document.getElementById('otherPersonalDataContainer');
+
+                      // Function to toggle the display of checkboxes
+                      function toggleCheckboxes(show){
+                        var displayStyle = show? 'inline-block':'none';
+                        checkboxNameBasicInfoContainer.style.display = displayStyle;
+                        checkboxPersonalIDNumberContainer.style.display = displayStyle;
+                        checkboxAgePersonalDataContainer.style.display = displayStyle;
+                        checkboxGenderPersonalDataContainer.style.display = displayStyle;
+                        checkboxUserIDPersonalDataContainer.style.display = displayStyle;
+                        checkboxSignaturePersonalDataContainer.style.display = displayStyle;
+                        checkboxIpAddressPersonalDataContainer.style.display = displayStyle;
+                        checkboxOtherPersonalDataContainer.style.display = displayStyle;
+                      }
+
+                      // Event listener for changes to the basic info checkbox
+                      checkboxBasicInfo.addEventListener('change',function(){
+                        toggleCheckboxes(this.checked);
+                      });
+                      // Initialize checkboxes based on the basic info checkbox's initial state
+                      toggleCheckboxes(checkboxBasicInfo.checked);
+
+                      document.getElementById('otherPersonalData').addEventListener("change",function(){
+                        var textareaOtherPData = document.getElementById("textareaOtherPersonalData");
+                          if (this.checked){
+                            textareaOtherPData.style.display='block';
+                          }else{
+                            textareaOtherPData.style.display='none';
+                          }
+                      })
+                    });
+                  </script>
+
+
+              <fieldset>
+                  <label><input type="checkbox" id="contactInfo" name="personalDataContactInfo" value="contactInformation">Contact information, including:</label><br>
+                  <div id="homeAddressContainer" style="display: none;">
+                    <label><input type="checkbox" id="homeAdress" name="personalDataContactInfo" value="homeAddressOrLocation">Home address or location </label><br>
+                  </div>
+                  <div id="workAddressContainer" class="data-container" style="display: none;">
+                    <label><input type="checkbox" id="workAddress" name="personalDataContactInfo" value="workOrCompanyAddress">Work/company address</label><br>
+                  </div>
+                  <div id="emailContainer" class="data-container" style="display: none;">
+                    <label><input type="checkbox" id="email" name="personalDataContactInfo" value="email">Email address/fax number</label><br>
+                  </div>
+                  <div id="phoneNumberContainer" class="data-container" style="display: none;">
+                    <label><input type="checkbox" id="phoneNumber" name="personalDataContactInfo" value="phoneNro">Phone number</label><br>
+                  </div>
+                  <div id="jobTitleContainer" class="data-container" style="display: none;">
+                    <label><input type="checkbox" id="jobTitle" name="personalDataContactInfo" value="jobTitleRole">Job title/role</label>
+                  </div>
+                  <div id="otherContactInfoContainer" class="data-container" style="display: none;">
+                    <label><input type="checkbox" id="otherContact" name="personalDataContactInfo" value="otherContactInfo">Other, please specify:</label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                </fieldset>
+
+                <script>
+
+                  document.AddEventListener("DOMContentLoaded", function(){
+                    var checkboxContactInfo = document.getElementById("contactInfo");
+                    var allContainers = document.querySelectorAll(".data-container");
+
+                    // Toggle visibility of all containers
+                    function toggleCheckboxes(show){
+                      var displayStyle = show? 'block' : 'none' ;
+                      allContainers.forEach(container =>{
+                        container.style.display = displayStyle;
+                      });
+                      checkboxContactInfo.AddEventListener('change',function(){
+                        toggleCheckboxes(checkboxContactInfo.checked);
+                      });
+
+                      
+
+                    }
+
+                  });
+
+                </script>
+
+
+                <fieldset>
+                  <label><input type="checkbox" id="contactInfo" name="personalDataContactInfo" value="contactInformation">Contact information, including:</label><br>
+                  <div id="homeAddressContainer" style="display: none;">
+                    <label><input type="checkbox" id="homeAdress" name="personalDataContactInfo" value="homeAddressOrLocation">Home address or location </label><br>
+                  </div>
+                  <div id="workAddressContainer" style="display: none;">
+                    <label><input type="checkbox" id="workAddress" name="personalDataContactInfo" value="workOrCompanyAddress">Work/company address</label><br>
+                  </div>
+                  <div id="emailContainer" style="display: none;">
+                    <label><input type="checkbox" id="email" name="personalDataContactInfo" value="email">Email address/fax number</label><br>
+                  </div>
+                  <div id="phoneNumberContainer" style="display: none;">
+                    <label><input type="checkbox" id="phoneNumber" name="personalDataContactInfo" value="phoneNro">Phone number</label><br>
+                  </div>
+                  <div id="jobTitleContainer" style="display: none;">
+                    <label><input type="checkbox" id="jobTitle" name="personalDataContactInfo" value="jobTitleRole">Job title/role</label>
+                  </div>
+                  <div id="otherContactInfoContainer" style="display: none;">
+                    <label><input type="checkbox" id="otherContact" name="personalDataContactInfo" value="otherContactInfo">Other, please specify:</label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                  <div id="" style="display: none;">
+                    <label><input type="checkbox" id="" name="" value=""></label>
+                  </div>
+                </fieldset>                
+
+
+
+
+                <fieldset>
+                  <legend></legend>
+                </fieldset>
+               
+
+       
+                <fieldset>
+                    <legend>Categories of personal data that will be processed:</legend>
+                    <label><input type="checkbox" name="personalData" value="name"> Name</label><br>
+                    <label><input type="checkbox" name="personalData" value="personalIdentityNumber"> Personal identity number</label><br>
+                    <!-- Add other data types similarly -->
+                </fieldset>
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <h3></h3>
+                <p>
+                
+                </p>
+                <p>
+                
+                </p>
+
+            <h3>4. SCOPE OF PROCESSING ACTIVITIES</h3>
+            <p>For the purposes referred to in Chapter 2 of this Agreement, the Parties shall:</p>
+            <p>Add a description of the scope of planned processing activities:
+              Note: If a privacy notice has already been prepared, you may refer to the privacy notice here. </p>
+            <p>What personal data is collected/processed?<span class="required">*</span> </p>
+            <p><textarea id="whatPersonalDataCollected" name="whatPersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
+            <p>Whose personal data is collected/processed?<span class="required">*</span> </p>
+            <p><textarea id="whosePersonalDataCollected" name="whosePersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
+            <p>Why personal data is collected/processed?<span class="required">*</span> </p>  
+            <p><textarea id="whyPersonalDataCollected" name="whyPersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
+            <p>How personal data is collected/processed?<span class="required">*</span> </p>  
+            <p><textarea id="howPersonalDataCollected" name="howPersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
+              
+            <h3>5. DATA PROCESSING</h3>
+            <h4>5.1	Lawfulness of processing</h4>
+            <p>Each Party acts as a data controller as defined in Data Protection Laws and shall ensure that its processing activities under the Co-Operation Agreement and this Agreement are lawful under this Agreement and the applicable Data Protection Laws.</p>              
+            <h4>5.2	Risk and impact assessments</h4>            
+            <p>The Parties will assess in co-operation the risks related to the processing of personal data prior to collecting personal data.</p>
+            <p>If the risk assessment implies that the planned processing activities are likely to result in a high risk to the rights and freedoms of natural persons, the Parties shall, prior to the collecting personal data, carry out in co-operation a data protection impact assessment (“DPIA”) as stipulated in Article 35 of the GDPR. Both the risk assessment and, where required, the DPIA shall be documented and reviewed periodically.</p>
+            <p>Where the planned processing would require prior consultation of supervisory authority in accordance with Article 36 of the GDPR, the Parties agree that 
+              <label for="nameParty2"></label> 
+            <input type="text" id="nameParty2" name="nameParty2" required placeholder="[PARTY]"><span class="required">*</span> shall coordinate the consultation process. Each other Party shall, at its own cost, provide assistance as reasonably requested by the coordinating Party in order to complete the consultation process.
+            </p>
+            <h4>5.3 Obligation to inform the data subjects</h4>
+            <p>The Parties shall in co-operation draft and maintain privacy notices fulfilling the requirements of Articles 12—14 of the GDPR. Each Party shall ensure for its own part that the data subjects are provided with the privacy notice in accordance with Articles 13—14 of the GDPR.</p>
+            <h4>5.4	Records of processing activities</h4>
+            <p>Each Party shall maintain a record of its processing activities as set forth in Article 30 of the GDPR.</p>            
+            <h4>5.5	Rights of the data subject</h4>
+            <label for="nameParty3" ></label>           
+            <p><input type="text" id="nameParty3" name="nameParty3" required placeholder="[PARTY]"><span class="required">*</span> 
+              shall act as a principal contact point for data subjects’ requests and shall be named as the principal contact point in the privacy notices referred to in Chapter 5.3. above. Data subject access requests and other requests relating to use of data subject rights shall be forwarded without undue delay to the Party acting as the principal contact point. The Party acting as the principal contact point shall address any requests without undue delay. Each Party shall assist, at its own cost, the principal contact point in responding to data subject requests as reasonably requested by the principal contact point.
+            </p>
+            <p>Notwithstanding the aforementioned, each Party may respond to data subject requests individually insofar as the request solely pertains to the processing operations of that Party.</p>  
+            <h4>5.6	Information security and collection, storage and transfer of personal data</h4>
+            <p>Each Party shall collect, store and otherwise process personal data in accordance with its internal information security practices and policies and implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk relating to the processing of personal data.</p>            
+            <p>The Parties have agreed on the following practices relating to the collection, storage, and exchange of personal data:</p>
+            <h5>5.6.1	Collection of personal data</h5>
+                <p>Add a brief description of the agreed collection practices (i.e. how data is collected and how security of the data is taken into account in the collection process <span class="required">*</span> </p>
+                <textarea id="collectionPersonalData" name="collectionPersonalData" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+            <h5>5.6.2	Storing personal data during the Project</h5>
+              <p>Add a brief description of data storage practices, i.a.:</p>
+              <p>How, where, and by whom personal data will be stored:<span class="required">*</span> </p>
+              <textarea id="howWhereWhomPersonalDataStored" name="howWhereWhomPersonalDataStored" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+              <p>How long personal data will be stored <span class="required">*</span> </p>
+              <textarea id="howLongPersonalDataStored" name="howLongPersonalDataStored" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+              <p>Applicable security measures, such as pseudonymization or technical measures <span class="required">*</span> </p>
+              <textarea id="securityMeasuresPersonalData" name="securityMeasuresPersonalData" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+            <h5>5.6.3	Exchange of personal data</h5>
+             <p>Add a brief description of how the data is transferred between the parties:</p>
+             <p>In what form/format will data be transferred? <span class="required">*</span> </p>
+             <textarea id="formFormatDataTransferred" name="formFormatDataTransferred" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+             <p>How will the data be transferred (e.g. secure e-mail, in-person delivery of storage device..) <span class="required">*</span> </p>
+             <textarea id="howDataTransferred" name="howDataTransferred" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+             <p>How will the data be secured in transfer (e.g. encrypted files) <span class="required">*</span> </p>
+             <textarea id="securedDataTransfer" name="securedDataTransfer" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
+             <p>Potential contact persons for the exchange of personal data <span class="required">*</span> </p>           
+             <textarea id="contactPersonExchangePersonalData" name="contactPersonExchangePersonalData" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>  
+             <p>Each Party shall notify the other party/parties without undue delay of any personal data breaches (as defined in Data Protection Laws), as well as of any other factors that may affect the other Party’s performance under this Agreement.</p>
+             <p>Each Party shall document personal data breaches in accordance with their internal processes and, where required, provide notifications to the supervisory authority and/or the data subject (as required by Articles 33 and 34 of the GDPR, respectively) individually. </p>
+             <h4>5.7	Use of data after the co-operation</h4>
+             <p>The Parties have agreed on the following practices relating to the use of data after the end of the co-operation:</p>
+             <p>Add a description of how personal data will be used after the co-operation, e.g. will the data be returned/delivered to one Party, will the data be destroyed, will the data be archived (where, for what purposes and for how long) <span class="required">*</span> </p>
+             <textarea id="usePersonalDataAfterCooperation" name="usePersonalDataAfterCooperation" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>  
+             <h3>6. LIABILITY</h3>             
+             <p>Each Party shall be solely liable for any damage it has caused to third parties (including the data subjects). The liability of the Parties for damage caused to data subjects shall be determined in accordance with the stipulations of Article 82 of the GDPR. For the avoidance of doubt, the Parties agree that the term “compensation” as set forth in Article 82(5) of the GDPR shall include reasonable attorney’s fees and legal costs incurred by a Party due to a breach of this Agreement or Data Protection Laws by the other Party / Parties. </p>
+             <p>Each Party shall be liable for direct damages to the other Party resulting from a breach of this Joint Controller Agreement. Any limitations of liability agreed elsewhere shall not be applied to a Party’s liability hereunder.</p>
+             <h3>7. EFFECTIVE DATE AND TERMINATION</h3>             
+             <p>This Agreement shall enter into force from the last date of signature and shall in all cases apply retrospectively form the date the Parties have commenced the processing activities defined in this Agreement.</p>
+             <p>This Agreement shall remain in force for the duration of the co-operation defined above. During the co-operation period, this Agreement may be terminated in accordance with the provisions of the Co-operation Agreement. Provisions that are by their nature intended to survive the termination or expiry of this Agreement shall remain in full force and effect regardless of the termination or expiry of this Agreement.</p>
+             <h3>8. OTHER PROVISIONS</h3>
+             <p>A Party may not assign or transfer this Agreement or the righs or obligations pertaining to it to any third party, without the prior written consent of the other Party / Parties.</p>
+             <p>This Agreement may only be amended through a written document signed by an authorized representative of each Party.</p>
+             <h3>9. CHOICE OF LAW, FORUM AND DISPUTE RESOLUTION.</h3>
+             <p>Unless otherwise agreed in the Co-operation Agreement, This Agreement shall be governed and interpreted in accordance with the laws of Finland without regard to its choice of law provisions. The Parties shall seek to solve any disputes amicably. Insofar as an amicable solution can not be reached, Pirkanmaa District Court shall have jurisdiction as the first instance.</p>
+             <h3>SIGNATURE</h3>
+             <p>This Agreement has been signed by the duly authorized representative of each Party.</p>
+             <p>TAMPERE UNIVERSITY FOUNDATION SR</p>
+                <p>
+                  <label for="placeTAU">Place:<span class="required">*</span></label>
+                  <input type="text" id="placeTAU" name="placeTAU" required>
+                </p>
+                <p>  
+                  <label for="dateTAU">Date:<span class="required">*</span></label>
+                  <input type="date" id="dateTAU" name="dateTAU" required>
+                </p>
+                <p>
+                  <label for="nameTAU">Name:<span class="required">*</span></label>
+                  <input type="text" id="nameTAU" name="nameTAU" required>
+                </p>
+                <p>
+                  <label for="titleTAU">Title:<span class="required">*</span></label>
+                  <input type="text" id="titleTAU" name="titleTAU" required>
+                </p>
+            <p>PARTY</p>
+            <p>
+              <label for="placeParty">Place:<span class="required">*</span></label>
+              <input type="text" id="placeParty" name="placeParty" required>
+            </p>
+            <p>  
+              <label for="dateParty">Date:<span class="required">*</span></label>
+              <input type="date" id="dateParty" name="dateParty" required>
+            </p>
+            <p>
+              <label for="nameParty4">Name:<span class="required">*</span></label>
+              <input type="text" id="nameParty4" name="nameParty4" required>
+            </p>
+            <p>
+              <label for="titleParty">Title:<span class="required">*</span></label>
+              <input type="text" id="titleParty" name="titleParty" required>
+            </p> 
+      </div>       
+        <script src="JCA.js"></script> 
+        <input type="button" class="button" value="Generate PDF" onclick="generatePDF()">
+    </form>   
+</body>
+</html>
+ 
