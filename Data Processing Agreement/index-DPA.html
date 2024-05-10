@@ -375,7 +375,7 @@
                   </div>
                   <br>
                   <div id="personalIDNumberContainer" style="display: none;">
-                    <label><input type="checkbox" id="personalIDNumber" name="personalData" value="personalIdentityNumber">Personal identity number</label><br>
+                    <label><input type="checkbox" id="personalIDNumber" name="personalData" value="personalIdentityNumber">Personal identity number</label>
                   </div>
                   <br>
                   <div id="agePersonalDataContainer" style="display: none;">
@@ -402,7 +402,113 @@
                     <label><input type="checkbox" id="otherPersonalData" name="personalData" value="personalData">Other, please specify:</label>
                     <textarea id="textareaOtherPersonalData" name="textareaOtherPersonalData" rows="2" cols="40" placeholder="Enter Text here..." style="display: none;" ></textarea>
                   </div>
-                </fieldset>
+
+                  <!--  For the Contact information, including:  -->
+                  <br><br>
+                  <label><input type="checkbox" id="contactInfo" name="personalDataContactInfo" value="contactInformation">Contact information, including:</label>
+                   <div id="homeAddressContainer" style="display: none;">
+                     <label><input type="checkbox" id="homeAdress" name="personalDataContactInfo" value="homeAddressOrLocation">Home address or location </label>
+                   </div>
+                   <div id="workAddressContainer" class="data-container" style="display: none;">
+                     <label><input type="checkbox" id="workAddress" name="personalDataContactInfo" value="workOrCompanyAddress">Work/company address</label>
+                   </div>
+                   <div id="emailContainer" class="data-container" style="display: none;">
+                     <label><input type="checkbox" id="email" name="personalDataContactInfo" value="email">Email address/fax number</label>
+                   </div>
+                   <div id="phoneNumberContainer" class="data-container" style="display: none;">
+                     <label><input type="checkbox" id="phoneNumber" name="personalDataContactInfo" value="phoneNro">Phone number</label>
+                   </div>
+                   <div id="jobTitleContainer" class="data-container" style="display: none;">
+                     <label><input type="checkbox" id="jobTitle" name="personalDataContactInfo" value="jobTitleRole">Job title/role</label>
+                   </div>
+                   <div id="otherContactInfoContainer" class="data-container" style="display: none;">
+                     <label><input type="checkbox" id="otherContact" name="personalDataContactInfo" value="otherContactInfo">Other, please specify:</label>
+                     <textarea id="textareaOtherContact" name="textareaOtherContact" rows="2" cols="40" placeholder="Enter Text here..." style="display: none;" ></textarea>
+                   </div>
+
+
+                   <!--  For the Employment information, including:  -->                 
+
+                   <br><br>
+                   <label><input type="checkbox" id="employmentInfo" name="employmentInformation" value="employmentInfo">For the Employment information, including: </label><br>
+                    <div id="employeeNumberContainer" class="employee-info" style="display: none;">
+                      <label><input type="checkbox" id="employeenumber" name="employmentInformation" value="employeenumber">Employee number</label><br>
+                    </div>
+                    <div id="employeeTasksContainer" class="employee-info" style="display: none;">
+                      <label><input type="checkbox" id="employeeTask" name="employmentInformation" value="employeeTask">Position and information about tasks, qualifications, internships, educational background, length of service, working hours, absences and annual leave </label><br>
+                    </div>
+                    <div id="employeeSalaryContainer" class="employee-info" style="display: none;">
+                      <label><input type="checkbox" id="employeeSalary" name="employmentInformation" value="employeeSalary">Salary, bank account, taxation</label><br>
+                    </div>
+                    <div id="employeeReviewContainer" class="employee-info" style="display: none;">
+                      <label><input type="checkbox" id="employeeReview" name="employmentInformation" value="employeeReview">Professional development reviews and other assessments</label><br>
+                    </div>
+                    <div id="employeeAccessContainer" class="employee-info" style="display: none;">
+                      <label><input type="checkbox" id="employeeAccess" name="employmentInformation" value="employeeAccess">Campus access control records </label>
+                    </div>
+                    <div id="employeeRecruitmentContainer" class="employee-info" style="display: none;">
+                      <label><input type="checkbox" id="employeeRecruitment" name="employmentInformation" value="employeeRecruitment">Information about recruitment, such as job applications, CVs, interviews and the results of aptitude testse</label>
+                    </div>
+                    <div id="employeeOtherContainer" class="employee-info" style="display: none;">
+                      <label><input type="checkbox" id="employeeOther" name="employmentInformation" value="employeeOther">Other, please specify:</label>
+                      <textarea id="employeeOtherContact" name="employeeOtherContact" rows="2" cols="40" placeholder="Enter Text here..." style="display: none;" ></textarea>
+                    </div>
+
+                    <!--  For the Student information, including:  -->  
+                    
+                    <br><br>
+                    <label><input type="checkbox" id="studentInfo" name="studentInformation" value="studentInfo">Students’ information, including: </label>
+                     <div id="studentNumberContainer" class="student-info" style="display: none;">
+                       <label><input type="checkbox" id="studentNumber" name="studentInformation" value="studentNumber">Student number</label>
+                     </div>
+                     <div id="studentRightContainer" class="student-info" style="display: none;">
+                       <label><input type="checkbox" id="studentRight" name="studentInformation" value="studentRight">Information about the right to study, including the institution, degree programme, major and minor subjects and the duration of the right to study  </label>
+                     </div>
+                     <div id="studentAttendanceContainer" class="student-info" style="display: none;">
+                       <label><input type="checkbox" id="studentAttendance" name="studentInformation" value="studentAttendance">Attendance records </label>
+                     </div>
+                     <div id="studentStudiesContainer" class="student-info" style="display: none;">
+                       <label><input type="checkbox" id="studentStudies" name="studentInformation" value="studentStudies">Information about studies, including course registration, completed courses, course completion dates, course content, academic record, grades and assessments, completed degrees </label>
+                     </div>
+                     <div id="studentAdmissionContainer" class="student-info" style="display: none;">
+                       <label><input type="checkbox" id="studentAdmission" name="studentInformation" value="studentAdmission">Information about student admission, including registration for an entrance examination, participa-tion in an entrance examination, exam answers, marks and grades, and the results of aptitude tests</label>
+                     </div>
+                     <div id="studentOtherContainer" class="student-info" style="display: none;">
+                       <label><input type="checkbox" id="studentOther" name="studentInformation" value="studentOther">Other, please specify:</label>
+                       <textarea id="studentOtherContact" name="studentOtherContact" rows="2" cols="40" placeholder="Enter Text here..." style="display: none;" ></textarea>
+                     </div>
+
+
+                    <!--  Information about stakeholders, including:  -->                   
+                  
+                    <br><br>
+                    <label><input type="checkbox" id="stakeholderInfo" name="stakeholderInformation" value="stakeholderInfo">Information about stakeholders, including:</label>
+                     <div id="stakeholderCustomerContainer" class="stakeholder-info" style="display: none;">
+                       <label><input type="checkbox" id="stakeholderCustomer" name="stakeholderInformation" value="stakeholderCustomer">Information about interactions with customers, partners and service providers </label>
+                     </div>
+                     <div id="stakeholderLocationContainer" class="stakeholder-info" style="display: none;">
+                       <label><input type="checkbox" id="stakeholderLocation" name="stakeholderInformation" value="stakeholderLocation">Information about the location where services or products are delivered or where research is con-ducted</label>
+                     </div>
+                     <div id="stakeholderPaymentContainer" class="stakeholderinfo" style="display: none;">
+                       <label><input type="checkbox" id="stakeholderPayment" name="stakeholderInformation" value="stakeholderPayment">Payments and invoices</label>
+                     </div>
+                     <div id="stakeholderOtherContainer" class="stakeholder-info" style="display: none;">
+                       <label><input type="checkbox" id="stakeholderOther" name="stakeholderInformation" value="stakeholderOther">Other, please specify:</label>
+                       <textarea id="stakeholderOtherContact" name="stakeholderOtherContact" rows="2" cols="40" placeholder="Enter Text here..." style="display: none;" ></textarea>
+                     </div>
+
+
+                    <!--  Information about Research Participants, including:  --> 
+                    <br><br>
+                    <label><input type="checkbox" id="researchParticipant" name="ResearchParticipant" value="researchParticipant">Information about research participants, including (please note that identifying information and all research data, such as survey results, interviews, recordings, videos etc. including pseudonymised data are considered personal data): </label><br>
+                    <textarea id="researchParticipantInfo" name="researchParticipantInfo" rows="2" cols="40" placeholder="Enter Text here..." ></textarea>
+
+                    <!--  Other personal data (please specify):  --> 
+                    <br><br>
+                    <label><input type="checkbox" id="otherPersonalData" name="otherPD" value="otherPersonalData">Other personal data (please specify):</label> <br>
+                    <textarea id="otherPersonalDataTextArea" name="otherPersonalDataTextArea" rows="2" cols="40" placeholder="Enter Text here..." ></textarea>                                    
+                 </fieldset>
+
                   <script>
                     document.addEventListener("DOMContentLoaded",function(){
                       var checkboxBasicInfo = document.getElementById('personalDataBasicInfo');
@@ -444,52 +550,10 @@
                           }
                       })
                     });
-                  </script>
 
+                   // For the Contact information, including: ----------------------------------
 
-              <fieldset>
-                  <label><input type="checkbox" id="contactInfo" name="personalDataContactInfo" value="contactInformation">Contact information, including:</label><br>
-                  <div id="homeAddressContainer" style="display: none;">
-                    <label><input type="checkbox" id="homeAdress" name="personalDataContactInfo" value="homeAddressOrLocation">Home address or location </label><br>
-                  </div>
-                  <div id="workAddressContainer" class="data-container" style="display: none;">
-                    <label><input type="checkbox" id="workAddress" name="personalDataContactInfo" value="workOrCompanyAddress">Work/company address</label><br>
-                  </div>
-                  <div id="emailContainer" class="data-container" style="display: none;">
-                    <label><input type="checkbox" id="email" name="personalDataContactInfo" value="email">Email address/fax number</label><br>
-                  </div>
-                  <div id="phoneNumberContainer" class="data-container" style="display: none;">
-                    <label><input type="checkbox" id="phoneNumber" name="personalDataContactInfo" value="phoneNro">Phone number</label><br>
-                  </div>
-                  <div id="jobTitleContainer" class="data-container" style="display: none;">
-                    <label><input type="checkbox" id="jobTitle" name="personalDataContactInfo" value="jobTitleRole">Job title/role</label>
-                  </div>
-                  <div id="otherContactInfoContainer" class="data-container" style="display: none;">
-                    <label><input type="checkbox" id="otherContact" name="personalDataContactInfo" value="otherContactInfo">Other, please specify:</label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                </fieldset>
-
-                <script>
-
-                  document.AddEventListener("DOMContentLoaded", function(){
+                  document.addEventListener("DOMContentLoaded", function(){
                     var checkboxContactInfo = document.getElementById("contactInfo");
                     var allContainers = document.querySelectorAll(".data-container");
 
@@ -499,182 +563,206 @@
                       allContainers.forEach(container =>{
                         container.style.display = displayStyle;
                       });
-                      checkboxContactInfo.AddEventListener('change',function(){
+                    }
+                        // Initial toggle based on current checkbox state
+                         toggleCheckboxes(checkboxContactInfo.checked);
+
+                        // Setup change listener
+                      checkboxContactInfo.addEventListener('change',function(){
                         toggleCheckboxes(checkboxContactInfo.checked);
                       });
 
-                      
-
-                    }
-
+                      //Other specify:
+                      document.getElementById('otherContact').addEventListener("change",function(){
+                        var textareaOtherPDataContactInfo = document.getElementById("textareaOtherContact");
+                          if (this.checked){
+                            textareaOtherPDataContactInfo.style.display='block';
+                          }else{
+                            textareaOtherPDataContactInfo.style.display='none';
+                          }
+                      })
+                    
                   });
 
+                  //For the Employment information, including:-----------------------------------
+
+                  document.addEventListener("DOMContentLoaded", function(){
+                    var checkboxEmployeeInfo = document.getElementById("employmentInfo");
+                    var allContainers = document.querySelectorAll(".employee-info");
+
+                    // Toggle visibility of all containers
+                    function toggleCheckboxes(show){
+                      var displayStyle = show? 'block' : 'none' ;
+                      allContainers.forEach(container =>{
+                        container.style.display = displayStyle;
+                      });
+                    }
+                        // Initial toggle based on current checkbox state
+                         toggleCheckboxes(checkboxEmployeeInfo.checked);
+
+                        // Setup change listener
+                      checkboxEmployeeInfo.addEventListener('change',function(){
+                        toggleCheckboxes(checkboxEmployeeInfo.checked);
+                      });
+
+                      //Other specify:
+                      document.getElementById('employeeOther').addEventListener("change",function(){
+                        var textareaOtherPDataContactInfo = document.getElementById("employeeOtherContact");
+                          if (this.checked){
+                            textareaOtherPDataContactInfo.style.display='block';
+                          }else{
+                            textareaOtherPDataContactInfo.style.display='none';
+                          }
+                      })
+                    
+                  });
+
+                  //Students’ information, including: ---------------------------------------
+
+                  document.addEventListener("DOMContentLoaded", function(){
+                    var checkboxStudentInfo = document.getElementById("studentInfo");
+                    var allContainers = document.querySelectorAll(".student-info");
+
+                    // Toggle visibility of all containers
+                    function toggleCheckboxes(show){
+                      var displayStyle = show? 'block' : 'none' ;
+                      allContainers.forEach(container =>{
+                        container.style.display = displayStyle;
+                      });
+                    }
+                        // Initial toggle based on current checkbox state
+                         toggleCheckboxes(checkboxStudentInfo.checked);
+
+                        // Setup change listener
+                        checkboxStudentInfo.addEventListener('change',function(){
+                        toggleCheckboxes(checkboxStudentInfo.checked);
+                      });
+
+                      //Other specify:
+                      document.getElementById('studentOther').addEventListener("change",function(){
+                        var textareaStudentOtherPDataContactInfo = document.getElementById("studentOtherContact");
+                          if (this.checked){
+                            textareaStudentOtherPDataContactInfo.style.display='block';
+                          }else{
+                            textareaStudentOtherPDataContactInfo.style.display='none';
+                          }
+                      })
+                    
+                  });
+
+                  //Information about stakeholders, including:-------------------------------
+                  document.addEventListener("DOMContentLoaded", function(){
+                    var checkboxStakeholderInfo = document.getElementById("stakeholderInfo");
+                    var allContainers = document.querySelectorAll(".stakeholder-info");
+
+                    // Toggle visibility of all containers
+                    function toggleCheckboxes(show){
+                      var displayStyle = show? 'block' : 'none' ;
+                      allContainers.forEach(container =>{
+                        container.style.display = displayStyle;
+                      });
+                    }
+                        // Initial toggle based on current checkbox state
+                         toggleCheckboxes(checkboxStakeholderInfo.checked);
+
+                        // Setup change listener
+                        checkboxStakeholderInfo.addEventListener('change',function(){
+                        toggleCheckboxes(checkboxStakeholderInfo.checked);
+                      });
+
+                      //Other specify:
+                      document.getElementById('stakeholderOther').addEventListener("change",function(){
+                        var textareaStudentOtherPDataContactInfo = document.getElementById("stakeholderOtherContact");
+                          if (this.checked){
+                            textareaStudentOtherPDataContactInfo.style.display='block';
+                          }else{
+                            textareaStudentOtherPDataContactInfo.style.display='none';
+                          }
+                      })                    
+                  });
+
+                  //Special category data will not be processed. 
+
+
                 </script>
-
-
                 <fieldset>
-                  <label><input type="checkbox" id="contactInfo" name="personalDataContactInfo" value="contactInformation">Contact information, including:</label><br>
-                  <div id="homeAddressContainer" style="display: none;">
-                    <label><input type="checkbox" id="homeAdress" name="personalDataContactInfo" value="homeAddressOrLocation">Home address or location </label><br>
-                  </div>
-                  <div id="workAddressContainer" style="display: none;">
-                    <label><input type="checkbox" id="workAddress" name="personalDataContactInfo" value="workOrCompanyAddress">Work/company address</label><br>
-                  </div>
-                  <div id="emailContainer" style="display: none;">
-                    <label><input type="checkbox" id="email" name="personalDataContactInfo" value="email">Email address/fax number</label><br>
-                  </div>
-                  <div id="phoneNumberContainer" style="display: none;">
-                    <label><input type="checkbox" id="phoneNumber" name="personalDataContactInfo" value="phoneNro">Phone number</label><br>
-                  </div>
-                  <div id="jobTitleContainer" style="display: none;">
-                    <label><input type="checkbox" id="jobTitle" name="personalDataContactInfo" value="jobTitleRole">Job title/role</label>
-                  </div>
-                  <div id="otherContactInfoContainer" style="display: none;">
-                    <label><input type="checkbox" id="otherContact" name="personalDataContactInfo" value="otherContactInfo">Other, please specify:</label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                  <div id="" style="display: none;">
-                    <label><input type="checkbox" id="" name="" value=""></label>
-                  </div>
-                </fieldset>                
+                  <legend>Special category data that will be processed (if applicable):</legend>
+                  <label><input type="checkbox" id="categoryDataNoProcessed" name="specialCategoryDataNowillbeProcessed" value="categoryDataNoProcessed">Special category data will not be processed.</label><br>
 
+                  <p>The following special category data, as defined in Articles 9 and 10 of the GDPR, will be processed un-der this Agreement: </p>
 
-
-
-                <fieldset>
-                  <legend></legend>
+                  <label><input type="checkbox" id="racialEthnic" name="specialCategoryOfData" value="racialEthnic">Racial or ethnic origin </label><br>
+                  <label><input type="checkbox" id="politicalOpinion" name="specialCategoryOfData" value="politicalOpinion"> Political opinions</label><br>
+                  <label><input type="checkbox" id="religious" name="specialCategoryOfData" value="religious">Religious or political beliefs</label><br>
+                  <label><input type="checkbox" id="tradeUnion" name="specialCategoryOfData" value="tradeUnion">Trade union membership</label><br>
+                  <label><input type="checkbox" id="geneticData" name="specialCategoryOfData" value="geneticData">Genetic data</label><br>
+                  <label><input type="checkbox" id="biometricData" name="specialCategoryOfData" value="biometricData">Biometric data used for identification purposes</label><br>
+                  <label><input type="checkbox" id="healthData" name="specialCategoryOfData" value="healthData">Health data</label><br>
+                  <label><input type="checkbox" id="sexualOrientation" name="specialCategoryOfData" value="sexualOrientation">Data concerning a person’s sex life or sexual orientation</label><br>
+                  <label><input type="checkbox" id="criminal" name="specialCategoryOfData" value="criminal">Criminal convictions and offences </label><br>
                 </fieldset>
-               
-
-       
+                
                 <fieldset>
-                    <legend>Categories of personal data that will be processed:</legend>
-                    <label><input type="checkbox" name="personalData" value="name"> Name</label><br>
-                    <label><input type="checkbox" name="personalData" value="personalIdentityNumber"> Personal identity number</label><br>
-                    <!-- Add other data types similarly -->
+                  <legend>Nature of and the purpose(s) of processing on behalf of the Data Controller </legend>
+                  <p>You can refer to the Procurement Contact or otherwise describe the activities or the purpose of the Contract, such as: </p>
+                  <p> - jointly delivered services </p>
+                  <p> - research project or plan </p>
+                  <p> - process </p>
+                  <p> - collaboration between the parties</p>
+
+                  <p>In addition, describe the IT systems, services or tools that will be used in the course of the processing activities and where personal data will be processed.
+
+                  <p> Try to describe the processing activities as clearly and concretely as possible.</p>
+                  <textarea id="natureAndPurpose" name="natureAndPurpose" rows="2" cols="40" placeholder="Enter Text here..." ></textarea>                                    
+
                 </fieldset>
 
 
+                <fieldset>
+                  <legend>Procedure and deadline for deleting personal data after the contract expires  </legend>
+                  <p>Describe how long the categories of personal data will be retained and when they will be deleted </p>
+                  <p>Specify the agreed deadlines and the practices/procedures for returning or destroying personal data.</p>
+                  <p>Upon the Data Controller’s request, the Data Processor and Subprocessor must provide the Data Con-troller with a signed document where they confirm that all personal data has been returned or de-stroyed in accordance with the contract. </p>
+                  <textarea id="procedureAndDeadline" name="procedureAndDeadline" rows="2" cols="40" placeholder="Enter Text here..." ></textarea>                                    
+                </fieldset>
 
-                
+                <fieldset>
+                  <legend>Goals, nature and duration of processing activities carried out by a Subprocessor or Subprocessors.   </legend>
+                  <p>Describe the goals, nature and duration of processing activities carried out by a Subprocessor or Subprocessors. </p>
+                  <textarea id="goalsNatureAndDuration" name="goalsNatureAndDuration" rows="2" cols="40" placeholder="Enter Text here..." ></textarea>                                    
+                </fieldset>
 
+                <!-- Location of personal data (if the location is outside of the EU/EEA, please also fill out the section “Transfer of personal data”) -->
 
+                <fieldset>
+                  <legend>Location of personal data (if the location is outside of the EU/EEA, please also fill out the section “Transfer of personal data”)</legend>
+                  <label><input type="checkbox" id="eUEEAMemberState" name="locationPersonalData" value="eUEEAMemberState">EU/EEA member states</label><br>
+                  <label><input type="checkbox" id="USA" name="locationPersonalData" value="USA">USA</label><br>
+                  <label><input type="checkbox" id="otherLocationEUEEA" name="locationPersonalData" value="otherLocationEUEEA">Other, please specify: </label><br>
+                  <textarea id="otherTextAreaLocationEU" name="otherTextAreaLocationEU" rows="2" cols="40" placeholder="Enter Text here..." ></textarea>                                    
+                </fieldset>
 
+                <!-- Transfer of personal data -->
 
+                <fieldset>
+                  <legend>Transfer of personal data</legend>
+                  <label><input type="checkbox" id="processingPersonalData" name="transferPersonalData" value="processingPersonalData">The processing of personal data outside of the EU/EEA is not permitted.</label><br>
+                  <label><input type="checkbox" id="personalDataOutside" name="transferPersonalData" value="personalDataOutside">Personal data may be processed outside of the EU/EEA under the following: </label><br>
+                  <label><input type="checkbox" id="europeanComission" name="transferPersonalData" value="europeanComission">The European Commission’s decision on an adequate level of protection for personal data in a coun-try located outside of the EU  </label><br>
+                  <label><input type="checkbox" id="standardContractual" name="transferPersonalData" value="standardContractual">Standard Contractual Clauses  </label><br>
+                  <label><input type="checkbox" id="bindingCorporate" name="transferPersonalData" value="bindingCorporate">Binding Corporate Rules  </label><br>
+                  <label><input type="checkbox" id="clearConsent" name="transferPersonalData" value="clearConsent">Clear and explicit consent of the data subject  </label><br>
+                  <label><input type="checkbox" id="otherTransferPersonalData" name="transferPersonalData" value="otherTransferPersonalData">Other, please specify: </label><br>
+                  <textarea id="otherTransferTextArea" name="otherTransferTextArea" rows="2" cols="40" placeholder="Enter Text here..." ></textarea>                                    
+                </fieldset>
 
+                <!-- Other terms and conditions -->
+                <fieldset>
+                  <legend>Other terms and conditions</legend>
+                  <textarea id="otherTermsAndConditions" name="otherTermsAndConditions" rows="2" cols="40" placeholder="Enter Text here..." ></textarea>                                    
+                </fieldset>          
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              <h3></h3>
-                <p>
-                
-                </p>
-                <p>
-                
-                </p>
-
-            <h3>4. SCOPE OF PROCESSING ACTIVITIES</h3>
-            <p>For the purposes referred to in Chapter 2 of this Agreement, the Parties shall:</p>
-            <p>Add a description of the scope of planned processing activities:
-              Note: If a privacy notice has already been prepared, you may refer to the privacy notice here. </p>
-            <p>What personal data is collected/processed?<span class="required">*</span> </p>
-            <p><textarea id="whatPersonalDataCollected" name="whatPersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
-            <p>Whose personal data is collected/processed?<span class="required">*</span> </p>
-            <p><textarea id="whosePersonalDataCollected" name="whosePersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
-            <p>Why personal data is collected/processed?<span class="required">*</span> </p>  
-            <p><textarea id="whyPersonalDataCollected" name="whyPersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
-            <p>How personal data is collected/processed?<span class="required">*</span> </p>  
-            <p><textarea id="howPersonalDataCollected" name="howPersonalDataCollected" rows="5" cols="50" required placeholder=" Enter text here..."></textarea></p>
-              
-            <h3>5. DATA PROCESSING</h3>
-            <h4>5.1	Lawfulness of processing</h4>
-            <p>Each Party acts as a data controller as defined in Data Protection Laws and shall ensure that its processing activities under the Co-Operation Agreement and this Agreement are lawful under this Agreement and the applicable Data Protection Laws.</p>              
-            <h4>5.2	Risk and impact assessments</h4>            
-            <p>The Parties will assess in co-operation the risks related to the processing of personal data prior to collecting personal data.</p>
-            <p>If the risk assessment implies that the planned processing activities are likely to result in a high risk to the rights and freedoms of natural persons, the Parties shall, prior to the collecting personal data, carry out in co-operation a data protection impact assessment (“DPIA”) as stipulated in Article 35 of the GDPR. Both the risk assessment and, where required, the DPIA shall be documented and reviewed periodically.</p>
-            <p>Where the planned processing would require prior consultation of supervisory authority in accordance with Article 36 of the GDPR, the Parties agree that 
-              <label for="nameParty2"></label> 
-            <input type="text" id="nameParty2" name="nameParty2" required placeholder="[PARTY]"><span class="required">*</span> shall coordinate the consultation process. Each other Party shall, at its own cost, provide assistance as reasonably requested by the coordinating Party in order to complete the consultation process.
-            </p>
-            <h4>5.3 Obligation to inform the data subjects</h4>
-            <p>The Parties shall in co-operation draft and maintain privacy notices fulfilling the requirements of Articles 12—14 of the GDPR. Each Party shall ensure for its own part that the data subjects are provided with the privacy notice in accordance with Articles 13—14 of the GDPR.</p>
-            <h4>5.4	Records of processing activities</h4>
-            <p>Each Party shall maintain a record of its processing activities as set forth in Article 30 of the GDPR.</p>            
-            <h4>5.5	Rights of the data subject</h4>
-            <label for="nameParty3" ></label>           
-            <p><input type="text" id="nameParty3" name="nameParty3" required placeholder="[PARTY]"><span class="required">*</span> 
-              shall act as a principal contact point for data subjects’ requests and shall be named as the principal contact point in the privacy notices referred to in Chapter 5.3. above. Data subject access requests and other requests relating to use of data subject rights shall be forwarded without undue delay to the Party acting as the principal contact point. The Party acting as the principal contact point shall address any requests without undue delay. Each Party shall assist, at its own cost, the principal contact point in responding to data subject requests as reasonably requested by the principal contact point.
-            </p>
-            <p>Notwithstanding the aforementioned, each Party may respond to data subject requests individually insofar as the request solely pertains to the processing operations of that Party.</p>  
-            <h4>5.6	Information security and collection, storage and transfer of personal data</h4>
-            <p>Each Party shall collect, store and otherwise process personal data in accordance with its internal information security practices and policies and implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk relating to the processing of personal data.</p>            
-            <p>The Parties have agreed on the following practices relating to the collection, storage, and exchange of personal data:</p>
-            <h5>5.6.1	Collection of personal data</h5>
-                <p>Add a brief description of the agreed collection practices (i.e. how data is collected and how security of the data is taken into account in the collection process <span class="required">*</span> </p>
-                <textarea id="collectionPersonalData" name="collectionPersonalData" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
-            <h5>5.6.2	Storing personal data during the Project</h5>
-              <p>Add a brief description of data storage practices, i.a.:</p>
-              <p>How, where, and by whom personal data will be stored:<span class="required">*</span> </p>
-              <textarea id="howWhereWhomPersonalDataStored" name="howWhereWhomPersonalDataStored" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
-              <p>How long personal data will be stored <span class="required">*</span> </p>
-              <textarea id="howLongPersonalDataStored" name="howLongPersonalDataStored" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
-              <p>Applicable security measures, such as pseudonymization or technical measures <span class="required">*</span> </p>
-              <textarea id="securityMeasuresPersonalData" name="securityMeasuresPersonalData" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
-            <h5>5.6.3	Exchange of personal data</h5>
-             <p>Add a brief description of how the data is transferred between the parties:</p>
-             <p>In what form/format will data be transferred? <span class="required">*</span> </p>
-             <textarea id="formFormatDataTransferred" name="formFormatDataTransferred" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
-             <p>How will the data be transferred (e.g. secure e-mail, in-person delivery of storage device..) <span class="required">*</span> </p>
-             <textarea id="howDataTransferred" name="howDataTransferred" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
-             <p>How will the data be secured in transfer (e.g. encrypted files) <span class="required">*</span> </p>
-             <textarea id="securedDataTransfer" name="securedDataTransfer" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>
-             <p>Potential contact persons for the exchange of personal data <span class="required">*</span> </p>           
-             <textarea id="contactPersonExchangePersonalData" name="contactPersonExchangePersonalData" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>  
-             <p>Each Party shall notify the other party/parties without undue delay of any personal data breaches (as defined in Data Protection Laws), as well as of any other factors that may affect the other Party’s performance under this Agreement.</p>
-             <p>Each Party shall document personal data breaches in accordance with their internal processes and, where required, provide notifications to the supervisory authority and/or the data subject (as required by Articles 33 and 34 of the GDPR, respectively) individually. </p>
-             <h4>5.7	Use of data after the co-operation</h4>
-             <p>The Parties have agreed on the following practices relating to the use of data after the end of the co-operation:</p>
-             <p>Add a description of how personal data will be used after the co-operation, e.g. will the data be returned/delivered to one Party, will the data be destroyed, will the data be archived (where, for what purposes and for how long) <span class="required">*</span> </p>
-             <textarea id="usePersonalDataAfterCooperation" name="usePersonalDataAfterCooperation" rows="3" cols="50" required placeholder=" Enter text here..."></textarea>  
-             <h3>6. LIABILITY</h3>             
-             <p>Each Party shall be solely liable for any damage it has caused to third parties (including the data subjects). The liability of the Parties for damage caused to data subjects shall be determined in accordance with the stipulations of Article 82 of the GDPR. For the avoidance of doubt, the Parties agree that the term “compensation” as set forth in Article 82(5) of the GDPR shall include reasonable attorney’s fees and legal costs incurred by a Party due to a breach of this Agreement or Data Protection Laws by the other Party / Parties. </p>
-             <p>Each Party shall be liable for direct damages to the other Party resulting from a breach of this Joint Controller Agreement. Any limitations of liability agreed elsewhere shall not be applied to a Party’s liability hereunder.</p>
-             <h3>7. EFFECTIVE DATE AND TERMINATION</h3>             
-             <p>This Agreement shall enter into force from the last date of signature and shall in all cases apply retrospectively form the date the Parties have commenced the processing activities defined in this Agreement.</p>
-             <p>This Agreement shall remain in force for the duration of the co-operation defined above. During the co-operation period, this Agreement may be terminated in accordance with the provisions of the Co-operation Agreement. Provisions that are by their nature intended to survive the termination or expiry of this Agreement shall remain in full force and effect regardless of the termination or expiry of this Agreement.</p>
-             <h3>8. OTHER PROVISIONS</h3>
-             <p>A Party may not assign or transfer this Agreement or the righs or obligations pertaining to it to any third party, without the prior written consent of the other Party / Parties.</p>
-             <p>This Agreement may only be amended through a written document signed by an authorized representative of each Party.</p>
-             <h3>9. CHOICE OF LAW, FORUM AND DISPUTE RESOLUTION.</h3>
-             <p>Unless otherwise agreed in the Co-operation Agreement, This Agreement shall be governed and interpreted in accordance with the laws of Finland without regard to its choice of law provisions. The Parties shall seek to solve any disputes amicably. Insofar as an amicable solution can not be reached, Pirkanmaa District Court shall have jurisdiction as the first instance.</p>
-             <h3>SIGNATURE</h3>
+            <h3>SIGNATURE</h3>
              <p>This Agreement has been signed by the duly authorized representative of each Party.</p>
              <p>TAMPERE UNIVERSITY FOUNDATION SR</p>
                 <p>
