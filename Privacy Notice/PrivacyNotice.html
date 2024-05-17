@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Privacy Notice for Scientific Research</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+<style>
+  /* Add CSS styles to match the picture as closely as possible */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  .form-title {
+    background-color: #660099;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  .form-section {
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .required {
+    color: red;
+}
+  .button {
+    display: block;
+    margin-top: 20px;
+  }
+  #dpiTemplateLink {
+    color: #0000EE; /* Blue color like standard link */
+    text-decoration: none; /* No underline by default */
+  }
+  #dpiTemplateLink:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  .article {
+    background-color: #f3d4f9;
+    border: 1px solid #5c0567;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .article h2 {
+    background-color: #e7e7e7;
+    padding: 10px;
+    margin-top: 0;
+  }
+  .article ol {
+    padding-left: 20px;
+  }
+  .article ol li {
+    margin-bottom: 10px;
+  }
+  #additionalFormLegitimateInterest {
+    display: none; /* Hide the form by default */
+  }
+  .data-container {
+            margin-bottom: 10px; /* Adds spacing between checkbox groups */
+        }
+ .section { margin-bottom: 20px; }
+  h1 { font-size: 24px; margin-bottom: 10px; }
+  h2 { font-size: 20px; margin-top: 20px; margin-bottom: 10px; }
+  label { display: block; margin-top: 5px; }
+  input[type="text"], textarea { width: 100%; padding: 8px; margin-top: 5px; }
+  input[type="checkbox"] { margin-right: 5px; }
+</style>
+</head>
+<body>
+<div class="form-title"><h1>Privacy notice for scientific research</h1></div>
+<p>EU General Data Protection Regulation (EU 2016/679), art. 12, 13, 14</p>
+
+<div class="section">
+    <h2>1. Title, nature and duration of research</h2>
+    <label>Title of research:
+        <input type="text" name="titleOfResearch">
+    </label>
+    <label>
+        <input type="checkbox" name="researchType" value="Case Study"> Case study
+    </label>
+    <label>
+        <input type="checkbox" name="researchType" value="Follow-up Study"> Follow-up study
+    </label>
+    <label>Duration of research:
+        <input type="text" name="durationOfResearch">
+    </label>
+    <label>Duration of data processing:
+        <input type="text" name="durationOfDataProcessing">
+    </label>
+</div>
+
+<div class="section">
+    <h2>2. Data Controller</h2>
+    <label>
+        <input type="checkbox" name="employmentContract"> Research will be conducted in an employment contract with the Tampere University, indicating the University to be the data controller.
+    </label>
+    <p>Tampere University Foundation sr, 33014 Tampere University, Kalevantie 4, 33100 Tampere, Business ID: 2844561-8</p>
+    <p>Data Protection Officer of Tampere University <a href="mailto:dpo@tuni.fi">dpo@tuni.fi</a></p>
+</div>
+
+<div class="section">
+    <h2>3. Principal investigator or research group</h2>
+    <label>Name:
+        <input type="text" name="principalInvestigatorName">
+    </label>
+    <label>Contact detail:
+        <input type="text" name="principalInvestigatorContact">
+    </label>
+</div>
+
+<div class="section">
+    <h2>4. Researchers</h2>
+    <textarea name="researchers" rows="4"></textarea>
+</div>
+
+<div class="section">
+    <h2>5. Content of research records</h2>
+    <textarea name="contentOfRecords" rows="4"></textarea>
+</div>
+
+<div class="section">
+    <h2>6. Sources of personal data</h2>
+    <textarea name="sourcesOfData" rows="2"></textarea>
+</div>
+
+<div class="section">
+    <h2>7. Purpose of processing personal data</h2>
+    <textarea name="purposeOfData" rows="2"></textarea>
+</div>
+
+<div class="section">
+    <h2>8. Lawful basis for processing personal data</h2>
+    <label>
+        <input type="checkbox" name="lawfulBasis" value="Public Interest"> Public interest or the exercise of official authority
+    </label>
+</div>
+<h2>Lawful Basis for Data Processing</h2>
+    <label><input type="checkbox" name="consent">Consent</label>
+    <label><input type="checkbox" name="legalObligation">Legal obligation of the data controlled</label>
+    <label><input type="checkbox" name="legitimateInterests">Legitimate interests of the Data Controller or a third party</label>
+    <textarea name="legitimateInterestsDetails" placeholder="Please specify the legitimate interests:"></textarea>
+    <label><input type="checkbox" name="otherBasis">Other, please specify:</label>
+    <textarea name="otherBasisDetails"></textarea>
+    
+    <div class="section">
+        <h2>9. Sensitive Personal Data</h2>
+        <label><input type="checkbox" name="noSensitiveData">No sensitive personal data will be processed during the research project</label>
+        <label><input type="checkbox" name="sensitiveData">The following types of sensitive personal data will be processed during the research project:</label>
+        <div style="padding-left: 20px;">
+            <label><input type="checkbox" name="racial">Racial or ethnic origin</label>
+            <label><input type="checkbox" name="politicalOpinions">Political opinions</label>
+            <label><input type="checkbox" name="religiousBeliefs">Religious or political beliefs</label>
+            <label><input type="checkbox" name="tradeUnion">Trade union membership</label>
+            <label><input type="checkbox" name="geneticData">Genetic data</label>
+            <label><input type="checkbox" name="biometricData">Biometric data to uniquely identify a person</label>
+            <label><input type="checkbox" name="healthData">Health data</label>
+            <label><input type="checkbox" name="sexualData">Data concerning a natural person's sex life or sexual orientation</label>
+        </div>
+        <p>Will personal data concerning criminal convictions and offences be processed during the research project?</p>
+        <label><input type="radio" name="criminalData" value="no"> No</label>
+        <label><input type="radio" name="criminalData" value="yes"> Yes</label>
+
+        <h2>Lawful Basis for Processing of Sensitive Personal Data</h2>
+    <p>The lawful basis for processing is EU General Data Protection Regulation, Articles 9 (special categories of personal data) and 10 (personal data relating to criminal convictions and offences), and the Data Protection Act (1050/2018) §§ 6 and 7.</p>
+    <label><input type="checkbox" name="consent">Consent of the data subject</label>
+    <label><input type="checkbox" name="publicData">The processing activities relate to personal data that has been manifestly made public by the data subject</label>
+    <label><input type="checkbox" name="scientificResearch">The processing activities are conducted for the purpose of scientific or historical research in the public interest, for statistical purposes, or in connection with the exercise of official authority</label>
+    <label><input type="checkbox" name="archivingPublicInterest">The processing of personal data is necessary for archiving purposes in the public interest</label>
+
+    </div>
+    
+    <div class="section">
+        <h2>10. Regarding a Joint Controllership in a Collaborative Research Project</h2>
+        <p>Please provide a brief description of the respective responsibilities of the Joint Controllers.</p>
+        <textarea name="jointControllershipDetails" rows="4" placeholder="Enter text here..."></textarea>
+        <p>Contact Person. Research subjects will be advised to send all requests relating to the research (including subject access requests referred to in Section III of the GDPR) to the contact person identified here.</p>
+        <textarea name="contactPersonDetails" rows="3" placeholder="Enter text here.."></textarea>
+    </div>
+    
+    <div class="section">
+        <h2>11. Transfer of Data to External Parties</h2>
+        <label><input type="checkbox" name="transferData">Personal data will be regularly transferred to parties other than the members of the research group.</label>
+        <p>Please describe the type of data that will be transferred, the recipient and the legal grounds for transferring personal data.</p>
+        <textarea name="transferDataDetails" rows="3" placeholder="Enter text here..."></textarea>
+        <label><input type="checkbox" name="outsourced">Processing activities will be outsourced (for example to a subcontractor). Please specify:</label>
+        <textarea name="outsourcingDetails" placeholder="Specify details about outsourcing."></textarea>
+        <label><input type="checkbox" name="dataDisclosed">Data will be disclosed. To whom it will be disclosed, please specify:</label>
+        <textarea name="disclosureDetails" placeholder="Specify the parties to whom data will be disclosed and the legal basis."></textarea>
+    </div>
+    
+    <div class="section">
+        <h2>12. Transfer or Disclosure of Data Outside the EU/EEA</h2>
+        <label><input type="checkbox" name="transferOutsideEU" value="no">No</label>
+        <label><input type="checkbox" name="transferOutsideEU" value="yes">Yes, please specify (contact always Data Protection Officer):</label>
+        <p>Description of the measures taken to protect data.</p>
+        <textarea name="outsideEUDetails" placeholder="Enter text here..."></textarea>
+    </div>
+    
+    <div class="section">
+        <h2>13. Data Protection Principles</h2>
+        <label><input type="checkbox" name="protectionManual">Protection of manual materials (e.g., paper documents):</label>
+        <p>Specify how manual materials are protected, e.g., in a locked room, cupboard.</p>
+        <textarea name="manualProtectionDetails" placeholder="Enter text here..."></textarea>
+        <label><input type="checkbox" name="protectionDigital">Protection of digital materials (e.g., information systems and equipment):</label>
+        <p>Specify digital protection measures, e.g., usernames, MFA, access management.</p>
+        <textarea name="digitalProtectionDetails" placeholder="Enter text here"></textarea>
+    </div>
+    
+    <div class="section">
+        <h2>14. Processing of Personal Data after the Research Project Has Been Concluded</h2>
+        <label><input type="checkbox" name="dataDestroyed">The research records will be destroyed</label>
+        <label><input type="checkbox" name="dataAnonymised">The research records will be anonymised and archived without personally identifiable data</label>
+        <label><input type="checkbox" name="dataArchived">The research records will be archived without anonymisation</label>
+        <p>Where will the research materials be stored and for how long.</p>
+        <textarea name="dataStorageDetails" placeholder="Enter text here..."></textarea>
+    </div>
+    
+    <div class="section">
+        <h2>15. Data Subjects' Rights and Possible Restriction Thereof</h2>
+        <p>Data subjects have the following rights under the EU’s General Data Protection Regulation (GDPR):</p>
+        <textarea name="dataSubjectsRights" placeholder="Enter text here..."></textarea>
+    </div>
+    <div class="section">
+        <h2>Right of access</h2>
+        <ul>
+            <li>Data subjects are entitled to find out what information the University holds about them or to receive confirmation that their personal data is not processed by the University.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Right to rectification</h2>
+        <ul>
+            <li>Data subjects have the right to have any incorrect, inaccurate, or incomplete personal details held by the University revised or supplemented without undue delay.</li>
+            <li>In addition, data subjects are entitled to have any unnecessary personal data deleted from the University's systems.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Right to erasure</h2>
+        <ul>
+            <li>In exceptional circumstances, data subjects have the right to have their personal data erased from the Data Controller’s records ('right to be forgotten').</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Right to restrict processing</h2>
+        <ul>
+            <li>In certain circumstances, data subjects have the right to request the University to restrict processing their personal data until the accuracy of their data, or the basis for processing their data, has been appropriately reviewed and potentially revised or supplemented.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Right to object</h2>
+        <ul>
+            <li>In certain circumstances, data subjects may at any time object to the processing of their personal data for compelling personal reasons.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Right to data portability</h2>
+        <ul>
+            <li>Data subjects have the right to obtain a copy of the personal data that they have submitted to the University in a commonly used, machine-readable format and transfer the data to another Data Controller.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Right to lodge a complaint with a supervisory authority</h2>
+        <ul>
+            <li>Data subjects have the right to lodge a complaint with a supervisory authority in their permanent place of residence or place of work, if they consider the processing of their personal data to violate the provisions of the GDPR (EU 2016/679).</li>
+            <li>In addition, data subjects may follow other administrative procedures to address grievances.</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Contact Information</h2>
+        <div class="contact-details">
+            <p>Office of the Data Protection Ombudsman</p>
+            <ul>
+                <li>Street address: Lintulahdenkuja 4, 00530 Helsinki, Finland</li>
+                <li>Postal address: PO Box 800, FI-00531 Helsinki, Finland</li>
+                <li>Switchboard: tel. +358 29 56 66700</li>
+                <li>Fax: +358 29 56 66735</li>
+                <li>Email address: <a href="mailto:tietosuoja@om.fi">tietosuoja@om.fi</a></li>
+            </ul>
+        </div>
+        <p>The Data Controller follows a GDPR-compliant procedure for responding to subject access requests.</p>
+    </div>
+     <script src="PrivacyNotice.js" type="module"></script>
+    <input type="button" class="button" value="Generate PDF" onclick="generatePDF()">
+
+
+</body>
+</html>
