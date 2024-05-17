@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+<title>Informed Consent Form</title>
+<style>
+    
+   p {
+        text-align: justify;
+        font-size: 14px;
+    }
+    label, input, textarea {
+        font-size: 14px;
+        display: block;
+        margin-top: 10px;
+    }
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+    }
+    .header {
+        margin-bottom: 20px;
+        background-color: #660099;
+        color: white;
+        padding: 10px;
+        text-align: center;
+    }
+    .footer {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 30px;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  .form-title {
+    background-color: #660099;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  .form-section {
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .required {
+    color: red;
+}
+  .button {
+    display: block;
+    margin-top: 20px;
+  }
+  #dpiTemplateLink {
+    color: #0000EE; /* Blue color like standard link */
+    text-decoration: none; /* No underline by default */
+  }
+  #dpiTemplateLink:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  .article {
+    background-color: #f3d4f9;
+    border: 1px solid #5c0567;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .article h2 {
+    background-color: #e7e7e7;
+    padding: 10px;
+    margin-top: 0;
+  }
+  .article ol {
+    padding-left: 20px;
+  }
+  .article ol li {
+    margin-bottom: 10px;
+  }
+  #additionalFormLegitimateInterest {
+    display: none; /* Hide the form by default */
+  }
+</style>
+</head>
+<body>
+<div class="header">
+    <!-- <img src="logo.png" alt="Tampere University Logo" style="width: 100px; height: auto;"> -->
+    <h1>Informed Consent Form</h1>
+</div>
+<form>
+<h3>Please note that instead of a written consent form, you can also ask for verbal consent. However, remember to immediately record the consent. The Ethics Committee recommends written consent only in certain research settings. Only collect the personal data that is necessary for the research.</h3>
+
+<h2>INFORMED CONSENT FORM</h2>
+<label for="studyName">Name of the study:</label>
+<input type="text" id="studyName" name="studyName">
+
+<label for="consentText">Consent for participation in a research study:</label>
+<p>
+I have been requested to participate in the research study identified above. I have received information about the study in writing and have had the opportunity to ask questions from the researcher(s) conducting the study.
+
+I understand that participating in the study is voluntary. I am aware that I have the right to refuse to participate and the right to withdraw from the study permanently or for a temporary period at any time and without giving a reason. I understand that any personal data collected in the course of the study will remain confidential.
+
+I hereby give my voluntary consent for participation in this study.
+</p>
+
+<label for="placeDate">Place and date:</label>
+<input type="text" id="placeDate" name="placeDate">
+
+<label for="nameInBlockLetters">Name in block letters:</label>
+<input type="text" id="nameInBlockLetters" name="nameInBlockLetters">
+
+<label for="signature">Signature:</label>
+<input type="text" id="signature" name="signature">
+
+<label for="phoneNumber">Phone number:</label>
+<input type="text" id="phoneNumber" name="phoneNumber">
+
+<label for="emailAddress">Email address:</label>
+<input type="text" id="emailAddress" name="emailAddress">
+
+<div class="footer">
+    F-33904 Tampere University, Finland | Tel. +358 294 5211 | Business ID: 0245901-3 | www.tuni.fi
+</div>
+<script src="ConsentForm.js"></script> 
+<!-- <input type="button" class="button" value="Generate PDF" onclick="generatePDF()"> -->
+<button onclick="generatePDF()">Generate PDF</button>
+</form>
+</body>
+</html>
