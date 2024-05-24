@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
 <title>Anonymization Plan Document</title>
 <style>
@@ -77,13 +78,13 @@
 <form>
   <fieldset>
     <legend>General Information</legend>
-    <label for="datasetName">Dataset name:</label>
+    <label for="datasetName">Dataset name:<span class="required">*</span></label>
     <input type="text" id="datasetName" name="datasetName"><br>
 
-    <label for="creator">Creator(s) of the plan:</label>
+    <label for="creator">Creator(s) of the plan:<span class="required">*</span></label>
     <input type="text" id="creator" name="creator"><br>
 
-    <label for="anonymiser">Person(s) carrying out anonymisation:</label>
+    <label for="anonymiser">Person(s) carrying out anonymisation:<span class="required">*</span></label>
     <input type="text" id="anonymiser" name="anonymiser">
     <p>
       <a href="https://www.fsd.uta.fi/aineistonhallinta/en/anonymisation-and-identifiers.html#bases-of-anonymisation" target="_blank">
@@ -95,30 +96,30 @@
 
   <fieldset>
     <legend>Factors Affecting Anonymisation Decisions</legend>
-    <label for="populationSampling">Population and sampling:</label>
+    <label for="populationSampling">Population and sampling:<span class="required">*</span></label>
     <p>Who were the target population of the study and how was sampling conducted? </p>
     <p>How many people belonging to the population were included in the sample? </p>
     <p>What is known about the population beforehand (e.g. distribution of gender and age)?</p>
     <p>Do individuals belonging to the population share a rare phenomenon?</p>
     <textarea id="populationSampling" name="populationSampling" rows="4"></textarea>
 
-    <label for="contentOfData">Content of the data:</label>
+    <label for="contentOfData">Content of the data:<span class="required">*</span></label>
     <p>a) What kinds of direct and indirect identifiers do the data contain? What combinations of information in the data could be used to identify an individual? </p>
     <p>b) Does the dataset contain information related to third persons and can individuals be identified based on this information?</p>
     <p>c) Does the dataset contain exceptional or unique information?</p>
     <p>d) Does the dataset contain sensitive information?</p>
     <textarea id="contentOfData" name="contentOfData" rows="4"></textarea>
 
-    <label for="datasetAge">Dataset age:</label>
+    <label for="datasetAge">Dataset age:<span class="required">*</span></label>
     <p>Have the data of the population in the dataset changed over time?</p>
     <textarea id="datasetAge" name="datasetAge" rows="4"></textarea>
 
-    <label for="infoFromOtherSources">Information on the respondents available from other sources:</label>
+    <label for="infoFromOtherSources">Information on the respondents available from other sources:<span class="required">*</span></label>
     <p>Is it possible to connect the information in the data to information from other sources? Is it possible to identify 
         individuals based on information available in other sources?</p>
     <textarea id="infoFromOtherSources" name="infoFromOtherSources" rows="4"></textarea>
 
-    <label for="usabilityVsAnonymity">Usability vs. anonymity:</label>
+    <label for="usabilityVsAnonymity">Usability vs. anonymity:<span class="required">*</span></label>
     <p>What types of information in the data are the most significant 
         with regard to research, i.e. what information must be preserved during anonymisation and 
         what information can be removed?</p>
@@ -126,26 +127,26 @@
   </fieldset>
 
   <fieldset>
-    <legend>Anonymisation Decisions</legend>
-    <p>What is removed, categorised, coarsened? Quantitative datasets: How are open-ended responses 
+    <legend>Anonymisation Decisions<span class="required">*</span></legend>
+    <label for="anonymisationDecisions">What is removed, categorised, coarsened? Quantitative datasets: How are open-ended responses 
         processed? Note that any documents relating to anonymisation cannot contain pseudonymous 
         information or other information based on which individuals could still be identified. For instance, 
         lists of aliases/pseudonyms used for personal names must be destroyed when they are no longer 
-        needed</p>
+        needed</label>
     <textarea id="anonymisationDecisions" name="anonymisationDecisions" rows="4"></textarea>
   </fieldset>
 
   <fieldset>
-    <legend>Rationale for Anonymisation and Assessing Disclosure Risk After Anonymisation</legend>
-    <p>Provide rationale for anonymisation solutions and policies. Assess the possibility of identifying 
+    <legend>Rationale for Anonymisation and Assessing Disclosure Risk After Anonymisation<span class="required">*</span></legend>
+    <label for="rationaleForAnonymisation">Provide rationale for anonymisation solutions and policies. Assess the possibility of identifying 
         individuals in the data now and in the future. Think about when the anonymity of the data should be 
         reviewed again (residual risk assessment). You can also provide further information regarding, for 
         instance, the anonymisation process, how anonymisations are marked, and possible errors that 
-        secondary users of the data should take into account</p>
+        secondary users of the data should take into account</label>
     <textarea id="rationaleForAnonymisation" name="rationaleForAnonymisation" rows="4"></textarea>
   </fieldset>
-  <script src="PlanAnonymization.js"></script> 
-  <button onclick="generateEditablePDF()">Generate PDF</button>
-</form>
+  <script src="PlanAnonymization.js"></script>
+  <input type="button" class="button" value="Generate PDF" onclick="generateEditablePDF()"> 
+ </form>
 </body>
 </html>
