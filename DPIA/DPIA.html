@@ -5,8 +5,8 @@
 <title>Data Protection Impact Assessment</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  /* Add CSS styles to match the picture as closely as possible */
   body {
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -24,7 +24,7 @@
   }
   .required {
     color: red;
-}
+  }
   .button {
     display: block;
     margin-top: 20px;
@@ -57,452 +57,557 @@
     display: none; /* Hide the form by default */
   }
   .data-container {
-            margin-bottom: 10px; /* Adds spacing between checkbox groups */
-        }
- .section { margin-bottom: 20px; }
+    margin-bottom: 10px; /* Adds spacing between checkbox groups */
+  }
+  .section { margin-bottom: 20px; }
   h1 { font-size: 24px; margin-bottom: 10px; }
   h2 { font-size: 20px; margin-top: 20px; margin-bottom: 10px; }
   label { display: block; margin-top: 5px; }
   input[type="text"], textarea { width: 100%; padding: 8px; margin-top: 5px; }
   input[type="checkbox"] { margin-right: 5px; }
   table { width: 100%; border-collapse: collapse; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background-color: #f2f2f2; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  th { background-color: #f2f2f2; }
 </style>
 </head>
 <body>
 <div class="form-title"><h1>Data Protection Impact Assessment</h1></div>
 
 <div class="section">
-    <h2>1. Description of processing activities</h2>
-    <div class="subsection">
-        <h3>1.1. Basic information about the research</h3>
-        <p><strong>1.1.1. Name of the research study or other identifier</strong></p>
-        <input type="text" placeholder="Name of the research study or other identifier">
-        <p><strong>1.1.2. Principal investigator and research group</strong></p>
-        <p>Principal investigator: <input type="text" placeholder="Principal investigator"></p>
-        <p>Contact information: <input type="text" placeholder="Principal investigator’s contact details"></p>
-        <p>Research group: <input type="text" placeholder="Research group or field of research"></p>
-    </div>
-    <div class="subsection">
-        <h3>1.2. Scope of processing activities</h3>
-        <p>Number of research subjects: <input type="text" placeholder="Number of research subjects (estimate)"></p>
-        <p>Planned duration of the research study: <input type="text" placeholder="Start date— End date"></p>
-    </div>
-    <div class="subsection">
-        <h3>1.3. Categories of personal data to be processed</h3>
-        <p><strong>1.3.1. Categories and sources of personal data</strong></p>
-        <p>The term personal data refers to all information relating to an identified or identifiable natural person. Natural persons are considered identifiable if they can be identified (directly or indirectly) in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or one or more factors specific to their physical, physiological, genetic, mental, economic, cultural or social identity.</p>
-        <p>What types of personal data will be processed during the research study? Describe the personal data that will be processed (types of personal data), whose personal data will be processed (groups of data subjects) and how or from whom personal data will be collected (sources of personal data). You must also indicate the purposes for processing personal data (purpose of processing) and the lawful basis for each processing activity (lawful basis of processing)</p>
-        <p>Details about the categories and sources of personal data</p>
-        <textarea placeholder="Enter text" id="categoriesPersonalData"></textarea>
-        <p><strong>1.3.2. Processing special category personal data</strong></p>
-        <p>The term special category personal data refers to data that reveals an individual’s racial or ethnic origin, political opinions, religious or philosophical beliefs or trade union membership, genetic or biometric data (when used for identification purposes), health data, or data concerning his or her sexual behaviour or orientation. </p>
-        <p>Details about processing special category personal data</p>
-        <textarea placeholder="Enter text" id="processingPersonalData"></textarea>
-    </div>
-    <p>Will your process special category personal data (sensitive personal data) or data concerning criminal convictions or offences in the course of your research? Describe the personal data that will be processed (types of personal data), whose personal data will be processed (groups of data subjects), how or from whom personal data will be collected (sources of personal data). Also indicate the purposes for processing personal data (purpose of processing) and the lawful basis for each processing activity
-        (lawful basis of processing).</p>
-        <p>Special categories of personal data and data concerning criminal convictions</p>
-        <textarea placeholder="Enter text" id="specialPersonalData"></textarea>
+  <h2>1. Description of processing activities</h2>
+  <div class="subsection">
+    <h3>1.1. Basic information about the research</h3>
+    <p><strong>1.1.1. Name of the research study or other identifier</strong></p>
+    <input type="text" placeholder="Name of the research study or other identifier" title="Name of the research study or other identifier">
+    <p><strong>1.1.2. Principal investigator and research group</strong></p>
+    <p>Principal investigator: <input type="text" placeholder="Principal investigator" title="Principal investigator"></p>
+    <p>Contact information: <input type="text" placeholder="Principal investigator’s contact details" title="Principal investigator’s contact details"></p>
+    <p>Research group: <input type="text" placeholder="Research group or field of research" title="Research group or field of research"></p>
+  </div>
+  <div class="subsection">
+    <h3>1.2. Scope of processing activities</h3>
+    <p>Number of research subjects: <input type="text" placeholder="Number of research subjects (estimate)" title="Number of research subjects (estimate)"></p>
+    <p>Planned duration of the research study: <input type="text" placeholder="Start date— End date" title="Start date— End date"></p>
+  </div>
+  <div class="subsection">
+    <h3>1.3. Categories of personal data to be processed</h3>
+    <p><strong>1.3.1. Categories and sources of personal data</strong></p>
+    <p>The term personal data refers to all information relating to an identified or identifiable natural person. Natural persons are considered identifiable if they can be identified (directly or indirectly) in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or one or more factors specific to their physical, physiological, genetic, mental, economic, cultural or social identity.</p>
+    <p>What types of personal data will be processed during the research study? Describe the personal data that will be processed (types of personal data), whose personal data will be processed (groups of data subjects) and how or from whom personal data will be collected (sources of personal data). You must also indicate the purposes for processing personal data (purpose of processing) and the lawful basis for each processing activity (lawful basis of processing)</p>
+    <p>Details about the categories and sources of personal data</p>
+    <textarea placeholder="Enter text" id="categoriesPersonalData" title="Categories and sources of personal data"></textarea>
+    <p><strong>1.3.2. Processing special category personal data</strong></p>
+    <p>The term special category personal data refers to data that reveals an individual’s racial or ethnic origin, political opinions, religious or philosophical beliefs or trade union membership, genetic or biometric data (when used for identification purposes), health data, or data concerning his or her sexual behaviour or orientation. </p>
+    <p>Details about processing special category personal data</p>
+    <textarea placeholder="Enter text" id="processingPersonalData" title="Processing special category personal data"></textarea>
+  </div>
+  <p>Will your process special category personal data (sensitive personal data) or data concerning criminal convictions or offences in the course of your research? Describe the personal data that will be processed (types of personal data), whose personal data will be processed (groups of data subjects), how or from whom personal data will be collected (sources of personal data). Also indicate the purposes for processing personal data (purpose of processing) and the lawful basis for each processing activity (lawful basis of processing).</p>
+  <p>Special categories of personal data and data concerning criminal convictions</p>
+  <textarea placeholder="Enter text" id="specialPersonalData" title="Special categories of personal data and data concerning criminal convictions"></textarea>
 </div>
 <div class="section">
-    <h2>1.3.3. Description of processing activities</h2>
-    <p>Draw up a systematic description of the nature, scope, context, and purpose of processing personal data. Consider the entire lifecycle of personal data from the collection of data to the destruction/archiving of data.</p>
-    <p>The description should indicate why and how personal data will be processed during your research study. Address especially the following questions: How will you process personal data? Where will you store personal data? Who will take part in processing personal data, and what are their respective roles and responsibilities? How will data be shared with possible other stakeholders involved in the processing activities? What will happen to the data after your study has been completed? </p>
-    <p>If you have prepared a separate data flow map or description of your processing activities, you can refer to these documents in this section.  </p> 
-    <textarea placeholder="Enter description of processing activities" id="processingAct"></textarea>
-    <h2>1.3.4. Codes of conduct</h2>
-    <p>Will your processing activities be carried out in compliance with specific codes of conduct as referred to in article 40 of the GDPR?</p>
-    <textarea placeholder="Indicate the codes of conduct, if applicable." id="codeOfConduct"></textarea>
+  <h2>1.3.3. Description of processing activities</h2>
+  <p>Draw up a systematic description of the nature, scope, context, and purpose of processing personal data. Consider the entire lifecycle of personal data from the collection of data to the destruction/archiving of data.</p>
+  <p>The description should indicate why and how personal data will be processed during your research study. Address especially the following questions: How will you process personal data? Where will you store personal data? Who will take part in processing personal data, and what are their respective roles and responsibilities? How will data be shared with possible other stakeholders involved in the processing activities? What will happen to the data after your study has been completed? </p>
+  <p>If you have prepared a separate data flow map or description of your processing activities, you can refer to these documents in this section.  </p> 
+  <textarea placeholder="Enter description of processing activities" id="processingAct" title="Description of processing activities"></textarea>
+  <h2>1.3.4. Codes of conduct</h2>
+  <p>Will your processing activities be carried out in compliance with specific codes of conduct as referred to in article 40 of the GDPR?</p>
+  <textarea placeholder="Indicate the codes of conduct, if applicable." id="codeOfConduct" title="Codes of conduct"></textarea>
 </div>
 
 <div class="section">
-    <h2>2. Necessity and Proportionality</h2>
-    <h3>2.1. Purpose Limitations</h3>
-    <p>Personal data may only be collected for specified, explicit, and legitimate purposes and may not be further processed in a manner that is incompatible with the original purposes.</p>
-    <p>What are the specific purposes for collecting and processing personal data? How will you ensure that personal data will not be processed for any other purposes?</p>
-    <textarea placeholder="Demonstrate adherence to the purpose limitation principle" id="necessity"></textarea>
-    <h3>2.2. Data Minimisation</h3>
-    <p>Personal data must be adequate, relevant, and limited to what is necessary in relation to the purposes for which they are processed.</p>
-    <p>How do you ensure that only relevant and necessary personal data, which you need to fulfil your specified purposes, will be collected and processed in the course of your study? </p>
-    <textarea placeholder="Demonstrate adherence to the data minimisation principle" id="dataMinimisation"></textarea>
+  <h2>2. Necessity and Proportionality</h2>
+  <h3>2.1. Purpose Limitations</h3>
+  <p>Personal data may only be collected for specified, explicit, and legitimate purposes and may not be further processed in a manner that is incompatible with the original purposes.</p>
+  <p>What are the specific purposes for collecting and processing personal data? How will you ensure that personal data will not be processed for any other purposes?</p>
+  <textarea placeholder="Demonstrate adherence to the purpose limitation principle" id="necessity" title="Purpose limitations"></textarea>
+  <h3>2.2. Data Minimisation</h3>
+  <p>Personal data must be adequate, relevant, and limited to what is necessary in relation to the purposes for which they are processed.</p>
+  <p>How do you ensure that only relevant and necessary personal data, which you need to fulfil your specified purposes, will be collected and processed in the course of your study? </p>
+  <textarea placeholder="Demonstrate adherence to the data minimisation principle" id="dataMinimisation" title="Data minimisation"></textarea>
 </div>
 <div>
-    <h2>2.3. Transparency and timely communication</h2>
-    <p>Data subjects must be made aware of how the personal data you hold about them will be processed and used. All information and communications must be provided in a concise, transparent, intelligible and easily accessible form using clear and plain language.</p>
-    <p>What information will you provide to data subjects about your processing activities?  How will you provide the information about your processing activities? When will you provide this information?</p>
-    <textarea placeholder="Describe how the data subjects will be informed of the processing" id="transparency"></textarea>
+  <h2>2.3. Transparency and timely communication</h2>
+  <p>Data subjects must be made aware of how the personal data you hold about them will be processed and used. All information and communications must be provided in a concise, transparent, intelligible and easily accessible form using clear and plain language.</p>
+  <p>What information will you provide to data subjects about your processing activities?  How will you provide the information about your processing activities? When will you provide this information?</p>
+  <textarea placeholder="Describe how the data subjects will be informed of the processing" id="transparency" title="Transparency and timely communication"></textarea>
 
-    <h2>2.4. Consent management (if lawful basis for processing is consent)</h2>
-    <p>If you ask your data subjects to provide consent for the processing of their personal data, how will you handle the consent management process? How will data subjects provide their consent? How will you record their consent? How can data subjects withdraw their consent?</p>
-    <p>Describe the consent management process if the lawful basis for your processing activities is consent (GDPR Art. 6.1(a)).</p>
-    <textarea placeholder="Enter text" id="consent"></textarea>
+  <h2>2.4. Consent management (if lawful basis for processing is consent)</h2>
+  <p>If you ask your data subjects to provide consent for the processing of their personal data, how will you handle the consent management process? How will data subjects provide their consent? How will you record their consent? How can data subjects withdraw their consent?</p>
+  <p>Describe the consent management process if the lawful basis for your processing activities is consent (GDPR Art. 6.1(a)).</p>
+  <textarea placeholder="Enter text" id="consent" title="Consent management"></textarea>
 
-    <h2>2.5. Storage limitation and anonymisation or pseudonymisation</h2>
-    <p>Personal data must be kept in a form that permits the identification of data subjects for no longer than is necessary for the purposes for which their personal data are processed. Data controllers must set deadlines for the deletion of personal data or for the periodical review of personal data to ensure that personal data is not held for any longer than is necessary.</p>
-    <p>How have you set a retention period for the personal data you will collect or specified the criteria for setting the retention period? Have you considered possible further use of personal data when setting the retention period? How and when will you carry out anonymisation or pseudonymisation procedures? </p>
-    <p>Storage limitation and anonymisation or pseudonymisation procedures</p>
-    <textarea placeholder="Enter text" id="storage"></textarea>
+  <h2>2.5. Storage limitation and anonymisation or pseudonymisation</h2>
+  <p>Personal data must be kept in a form that permits the identification of data subjects for no longer than is necessary for the purposes for which their personal data are processed. Data controllers must set deadlines for the deletion of personal data or for the periodical review of personal data to ensure that personal data is not held for any longer than is necessary.</p>
+  <p>How have you set a retention period for the personal data you will collect or specified the criteria for setting the retention period? Have you considered possible further use of personal data when setting the retention period? How and when will you carry out anonymisation or pseudonymisation procedures? </p>
+  <p>Storage limitation and anonymisation or pseudonymisation procedures</p>
+  <textarea placeholder="Enter text" id="storage" title="Storage limitation and anonymisation or pseudonymisation"></textarea>
 
-    <h2>2.6. Data subjects' rights and exemptions</h2>
-    <p>Depending on the lawful basis for processing, data subjects may have the right to obtain a copy of their personal data (right of access), the right to rectification, the right to erasure (the right to be forgotten), the right to restrict processing, and the right to object to the processing of their personal data.</p>
-    <p>Describe the process for ensuring the enforcement of data subjects’ rights. Who is identified as the contact person for inquiries? How will you ensure that information requested by data subjects can be provided and that their other requests can be fulfilled? How will you document and store requests and responses? </p>
-    <p>Process for ensuring the enforcement of data subjects' rights</p>
-    <textarea placeholder="Enter text" id="dataSubject"></textarea>
-    <p>Under certain circumstances, data protection laws allow an exemption from particular data protection provisions. Are there exemptions that apply to your study?</p>
-    <textarea placeholder="Enter text" id="circumstances"></textarea>
-    <div>
-        <h2>2.7. Integrity, confidentiality and availability</h2>
-        <p>Personal data must be processed in a manner that ensures appropriate security of the personal data, including protection against unauthorised or unlawful processing and against accidental loss, destruction or damage using appropriate technical or organisational measures.</p>
-        <p>Describe the measures (including the information security measures) that you will take to ensure the integrity and confidentiality of personal data during the different stages of processing throughout the data lifecycle. </p>
-        <p>Describe the measures for ensuring integrity and confidentiality throughout the data lifecycle</p>
-        <textarea id="integrityMeasures" placeholder="Enter text"></textarea>
-    
-        <h2>2.8. Transfer of personal data and the recipients</h2>
-        <h3>2.8.1. Joint controllers</h3>
-        <p>If there are at least two data controllers who jointly determine the purposes and means of processing personal data, they are referred to as joint controllers.</p>
-        <p>If multiple data controllers participate in the processing of personal data as joint controllers, provide their names, contact details, their role in the processing activities, and the contact details of their designated data protection officer, if applicable.</p>
-        <textarea id="jointControllersDetails" placeholder="Details of joint controllers"></textarea>        
-    </div>
-    <div>
-        <h3>2.8.2. Data processors (subcontractors)</h3>
-        <label for="dataProcessors">If data processors participate in the processing activities, indicate their names, contact details, and roles:</label>
-        <p>If data processors (such as providers of survey, analysis or transcription services) participate in the processing activities, indicate their names, contact details, their role in the processing activities, and the contact details of their designated data protection officer, if applicable.  </p>
-        <textarea id="dataProcessors"></textarea>
-    
-        <h3>2.8.3. Third parties and data recipients</h3>
-        <label for="dataRecipients">Will personal data be transferred or disclosed to third parties? Provide details:</label>
-        <textarea id="dataRecipients"></textarea>
-    
-        <h3>2.8.4. Transfer of personal data outside of the European Economic Area (EEA)</h3>
-        <label for="dataTransferOutsideEEA">Any transfer of personal data outside the EEA must comply with GDPR requirements. Provide details:</label>
-        <textarea id="dataTransferOutsideEEA"></textarea>
-        <p>If personal data will be transferred outside the EEA, where will data be transferred? What GDPR-compliant transfer mechanism (Chapter V of the GDPR) will be applied to the transfer?</p>
-        <p>You can also state this information in sections 2.8.1—2.8.3 above based on the role of each data recipient.</p>
+  <h2>2.6. Data subjects' rights and exemptions</h2>
+  <p>Depending on the lawful basis for processing, data subjects may have the right to obtain a copy of their personal data (right of access), the right to rectification, the right to erasure (the right to be forgotten), the right to restrict processing, and the right to object to the processing of their personal data.</p>
+  <p>Describe the process for ensuring the enforcement of data subjects’ rights. Who is identified as the contact person for inquiries? How will you ensure that information requested by data subjects can be provided and that their other requests can be fulfilled? How will you document and store requests and responses? </p>
+  <p>Process for ensuring the enforcement of data subjects' rights</p>
+  <textarea placeholder="Enter text" id="dataSubject" title="Data subjects' rights and exemptions"></textarea>
+  <p>Under certain circumstances, data protection laws allow an exemption from particular data protection provisions. Are there exemptions that apply to your study?</p>
+  <textarea placeholder="Enter text" id="circumstances" title="Exemptions"></textarea>
+  <div>
+    <h2>2.7. Integrity, confidentiality and availability</h2>
+    <p>Personal data must be processed in a manner that ensures appropriate security of the personal data, including protection against unauthorised or unlawful processing and against accidental loss, destruction or damage using appropriate technical or organisational measures.</p>
+    <p>Describe the measures (including the information security measures) that you will take to ensure the integrity and confidentiality of personal data during the different stages of processing throughout the data lifecycle. </p>
+    <p>Describe the measures for ensuring integrity and confidentiality throughout the data lifecycle</p>
+    <textarea id="integrityMeasures" placeholder="Enter text" title="Integrity, confidentiality and availability"></textarea>
 
-<table>
-    <thead>
-        <tr>
-            <th>Type of personal data</th>
-            <th>Recipient</th>
-            <th>Location</th>
-            <th>Transfer mechanism</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><input id="dataType" type="text" placeholder="Enter type of personal data"></td>
-            <td><input id="dataRecipient" type="text" placeholder="Enter recipient"></td>
-            <td><input id="dataLocation" type="text" placeholder="Enter location"></td>
-            <td><input id="transferMechanism" type="text" placeholder="Enter transfer mechanism"></td>
-        </tr>
-    </tbody>
-</table>
-    </div>
-    
-    <div>
-        <h2>3. Risks Associated with the Processing</h2>
-        <h3>3.1. Identifying the risks associated with processing personal data</h3>
-        <p>Assess the risks that your processing activities may pose to data subjects, especially the risks arising from unauthorized access, loss, or alteration of personal data:</p>        
+    <h2>2.8. Transfer of personal data and the recipients</h2>
+    <h3>2.8.1. Joint controllers</h3>
+    <p>If there are at least two data controllers who jointly determine the purposes and means of processing personal data, they are referred to as joint controllers.</p>
+    <p>If multiple data controllers participate in the processing of personal data as joint controllers, provide their names, contact details, their role in the processing activities, and the contact details of their designated data protection officer, if applicable.</p>
+    <textarea id="jointControllersDetails" placeholder="Details of joint controllers" title="Joint controllers"></textarea>
+  </div>
+  <div>
+    <h3>2.8.2. Data processors (subcontractors)</h3>
+    <label for="dataProcessors">If data processors participate in the processing activities, indicate their names, contact details, and roles:</label>
+    <p>If data processors (such as providers of survey, analysis or transcription services) participate in the processing activities, indicate their names, contact details, their role in the processing activities, and the contact details of their designated data protection officer, if applicable.  </p>
+    <textarea id="dataProcessors" placeholder="Data processors" title="Data processors"></textarea>
+
+    <h3>2.8.3. Third parties and data recipients</h3>
+    <label for="dataRecipients">Will personal data be transferred or disclosed to third parties? Provide details:</label>
+    <textarea id="dataRecipients" placeholder="Third parties and data recipients" title="Third parties and data recipients"></textarea>
+
+    <h3>2.8.4. Transfer of personal data outside of the European Economic Area (EEA)</h3>
+    <label for="dataTransferOutsideEEA">Any transfer of personal data outside the EEA must comply with GDPR requirements. Provide details:</label>
+    <textarea id="dataTransferOutsideEEA" placeholder="Transfer outside the EEA" title="Transfer outside the EEA"></textarea>
+    <p>If personal data will be transferred outside the EEA, where will data be transferred? What GDPR-compliant transfer mechanism (Chapter V of the GDPR) will be applied to the transfer?</p>
+    <p>You can also state this information in sections 2.8.1—2.8.3 above based on the role of each data recipient.</p>
+
+    <table id="dataOutsideEU">
+      <thead>
+          <tr>
+              <th>Type of personal data</th>
+              <th>Recipient</th>
+              <th>Location</th>
+              <th>Transfer mechanism</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td><textarea id="dataType1" placeholder="Enter type of personal data" title="Type of personal data"></textarea></td>
+              <td><textarea id="dataRecipient1" placeholder="Enter recipient" title="Recipient"></textarea></td>
+              <td><textarea id="dataLocation1" placeholder="Enter location" title="Location"></textarea></td>
+              <td><textarea id="transferMechanism1" placeholder="Enter transfer mechanism" title="Transfer mechanism"></textarea></td>
+              <td>
+                  <button type="button" onclick="addRowDataOutsideEU()">+</button>
+                  <button type="button" onclick="removeRowDataOutsideEU(this)">-</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  
+  <script>
+  let rowCount_dataOutsideEU = 1;
+  
+  function addRowDataOutsideEU() {
+      rowCount_dataOutsideEU++;
+      const table = document.getElementById('dataOutsideEU').getElementsByTagName('tbody')[0];
+      const newRow = table.insertRow();
+      const cell1 = newRow.insertCell(0);
+      const cell2 = newRow.insertCell(1);
+      const cell3 = newRow.insertCell(2);
+      const cell4 = newRow.insertCell(3);
+      const cell5 = newRow.insertCell(4);
+  
+      cell1.innerHTML = `<textarea id="dataType${rowCount_dataOutsideEU}" placeholder="Enter type of personal data" title="Type of personal data"></textarea>`;
+      cell2.innerHTML = `<textarea id="dataRecipient${rowCount_dataOutsideEU}" placeholder="Enter recipient" title="Recipient"></textarea>`;
+      cell3.innerHTML = `<textarea id="dataLocation${rowCount_dataOutsideEU}" placeholder="Enter location" title="Location"></textarea>`;
+      cell4.innerHTML = `<textarea id="transferMechanism${rowCount_dataOutsideEU}" placeholder="Enter transfer mechanism" title="Transfer mechanism"></textarea>`;
+      cell5.innerHTML = `
+          <button type="button" onclick="addRowDataOutsideEU()">+</button>
+          <button type="button" onclick="removeRowDataOutsideEU(this)">-</button>`;
+  }
+  
+  function removeRowDataOutsideEU(button) {
+      const row = button.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+  }
+  </script>
+  
+  </div>
+
+  <div>
+    <h2>3. Risks Associated with the Processing</h2>
+    <h3>3.1. Identifying the risks associated with processing personal data</h3>
+    <p>Assess the risks that your processing activities may pose to data subjects, especially the risks arising from unauthorized access, loss, or alteration of personal data:</p>        
     <ol>
-        <li>unauthorised disclosure of or access to personal data,</li>
-        <li>unintentional or unauthorised destruction or modification of personal data,</li>
-        <li>the loss or alteration of personal data.</li>
+      <li>unauthorised disclosure of or access to personal data,</li>
+      <li>unintentional or unauthorised destruction or modification of personal data,</li>
+      <li>the loss or alteration of personal data.</li>
     </ol>
     <p>How would you rate the severity of the possible harm or damage if the risks are realised? How would you rate the likelihood of the risks? Potential risks include:</p>
     <ul>
-        <li>unauthorised re-identification of pseudonymised data or loss of control over the use of personal data,</li>
-        <li>identity theft or fraud, financial loss,</li>
-        <li>other social disadvantage, such as reputational damage, or</li>
-        <li>physical harm (especially when processing special category data).</li>
+      <li>unauthorised re-identification of pseudonymised data or loss of control over the use of personal data,</li>
+      <li>identity theft or fraud, financial loss,</li>
+      <li>other social disadvantage, such as reputational damage, or</li>
+      <li>physical harm (especially when processing special category data).</li>
     </ul>
     <p>Identify measures that you can take to mitigate the risks. You can consider, for example, the following questions:
-        -	How will you restrict access to personal data to ensure that only individuals who need to process this data for research purposes are able to gain access?
-        -	Where will personal data be stored? How will you securely store personal data to maintain the integrity and confidentiality of data? 
-        -	How will personal data be securely transferred during different stages of the study?
-        Type your comments in the tables below. You can refer to your earlier risk assessment as well as the mitigation measures listed in Section 2 of this DPIA.   
-        </p>
-        <p>Describe the identified risks and their potential impacts:</p>
+      - How will you restrict access to personal data to ensure that only individuals who need to process this data for research purposes are able to gain access?
+      - Where will personal data be stored? How will you securely store personal data to maintain the integrity and confidentiality of data? 
+      - How will personal data be securely transferred during different stages of the study?
+      Type your comments in the tables below. You can refer to your earlier risk assessment as well as the mitigation measures listed in Section 2 of this DPIA.   
+    </p>
+    <p>Describe the identified risks and their potential impacts:</p>
     <label for="riskAssessment"></label>
-    <textarea id="riskAssessment" placeholder="Enter Text"></textarea>
-    </div>
+    <textarea id="riskAssessment" placeholder="Enter Text" title="Risk assessment"></textarea>
+  </div>
 </div>
 
-<h3>3.2.	Unauthorised disclosure of or access to personal data</h3>
+<h3>3.2. Unauthorised disclosure of or access to personal data</h3>
 
-<table>
-    <thead>
-        <tr>
-            <th>Risk</th>
-            <th>Likelihood</th>
-            <th>Severity</th>
-            <th>Mitigation</th>
-            <th>Remaining Risk</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><textarea id="risk1_34"></textarea></td>
-            <td>
-                <select id="likelihood1_34">
-                    <option value="">Select</option>
-                    <option value="improbable_34">Improbable</option>
-                    <option value="possible_34">Possible</option>
-                    <option value="probable_34">Probable</option>
-                    <option value="almost_certain_34">Almost certain</option>
-                </select>
-            </td>
-            <td>
-                <select id="severity1_34">
-                    <option>Select</option>
-                    <option value="seriosHarm_34">Serious Harm</option>
-                    <option value="someImpact_34">Some Impact</option>
-                    <option value="minimalImpact_34">Minimal Impact</option>
-                </select>
-            </td>
-            <td><textarea id="mitigation1_34"></textarea></td>
-            <td>
-                <select id="remainingRisk1_34">
-                    <option>Select</option>
-                    <option value="lowRisk_34">Low Risk</option>
-                    <option value="mediumRisk_34">Medium Risk</option>
-                    <option value="highRisk_34">High Risk</option>
-                </select>
-            </td>
-        </tr>
-        <!-- Repeat rows as needed, changing IDs for unique identification -->
-        <tr>
-            <td><textarea id="risk2_34"></textarea></td>
-            <td>
-                <select id="likelihood2_34">
-                    <option value="">Select</option>
-                    <option value="improbable2_34">Improbable</option>
-                    <option value="possible2"_34>Possible</option>
-                    <option value="probable2"_34>Probable</option>
-                    <option value="almost_certain2_34">Almost certain</option>
-                </select>
-            </td>
-            <td>
-                <select id="severity2_34">
-                    <option>Select</option>
-                    <option value="seriosHarm2_34">Serious Harm</option>
-                    <option value="someImpact2_34">Some Impact</option>
-                    <option value="minimalImpact2_34">Minimal Impact</option>
-                </select>
-            </td>
-            <td><textarea id="mitigation2_34"></textarea></td>
-            <td>
-                <select id="remainingRisk2_34">
-                    <option>Select</option>
-                    <option value="lowRisk2_34">Low Risk</option>
-                    <option value="mediumRisk2_34">Medium Risk</option>
-                    <option value="highRisk2_34">High Risk</option>
-                </select>
-            </td>
-        </tr>
-    </tbody>
+<table id="riskTable_32">
+  <thead>
+    <tr>
+      <th>Risk</th>
+      <th>Likelihood</th>
+      <th>Severity</th>
+      <th>Mitigation</th>
+      <th>Remaining Risk</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><textarea id="risk32_1" placeholder="Enter risk" title="Risk"></textarea></td>
+      <td>
+        <select id="likelihood32_1" title="Likelihood">
+          <option value="">Select</option>
+          <option value="improbable">Improbable</option>
+          <option value="possible">Possible</option>
+          <option value="probable">Probable</option>
+          <option value="almost_certain">Almost certain</option>
+        </select>
+      </td>
+      <td>
+        <select id="severity32_1" title="Severity">
+          <option>Select</option>
+          <option value="seriousHarm">Serious Harm</option>
+          <option value="someImpact">Some Impact</option>
+          <option value="minimalImpact">Minimal Impact</option>
+        </select>
+      </td>
+      <td><textarea id="mitigation32_1" placeholder="Enter mitigation" title="Mitigation"></textarea></td>
+      <td>
+        <select id="remainingRisk32_1" title="Remaining risk">
+          <option>Select</option>
+          <option value="lowRisk">Low Risk</option>
+          <option value="mediumRisk">Medium Risk</option>
+          <option value="highRisk">High Risk</option>
+        </select>
+      </td>
+      <td>
+        <button type="button" onclick="addRow32()">+</button>
+        <button type="button" onclick="removeRow32(this)">-</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
+<script>
+let rowCount_32 = 1;
+
+function addRow32() {
+  rowCount_32++;
+  const table = document.getElementById('riskTable_32').getElementsByTagName('tbody')[0];
+  const newRow = table.insertRow();
+  const cell1 = newRow.insertCell(0);
+  const cell2 = newRow.insertCell(1);
+  const cell3 = newRow.insertCell(2);
+  const cell4 = newRow.insertCell(3);
+  const cell5 = newRow.insertCell(4);
+  const cell6 = newRow.insertCell(5);
+
+  cell1.innerHTML = `<textarea id="risk32_${rowCount_32}" placeholder="Enter risk" title="Risk"></textarea>`;
+  cell2.innerHTML = `
+    <select id="likelihood32_${rowCount_32}" title="Likelihood">
+      <option value="">Select</option>
+      <option value="improbable">Improbable</option>
+      <option value="possible">Possible</option>
+      <option value="probable">Probable</option>
+      <option value="almost_certain">Almost certain</option>
+    </select>`;
+  cell3.innerHTML = `
+    <select id="severity32_${rowCount_32}" title="Severity">
+      <option>Select</option>
+      <option value="seriousHarm">Serious Harm</option>
+      <option value="someImpact">Some Impact</option>
+      <option value="minimalImpact">Minimal Impact</option>
+    </select>`;
+  cell4.innerHTML = `<textarea id="mitigation32_${rowCount_32}" placeholder="Enter mitigation" title="Mitigation"></textarea>`;
+  cell5.innerHTML = `
+    <select id="remainingRisk32_${rowCount_32}" title="Remaining risk">
+      <option>Select</option>
+      <option value="lowRisk">Low Risk</option>
+      <option value="mediumRisk">Medium Risk</option>
+      <option value="highRisk">High Risk</option>
+    </select>`;
+  cell6.innerHTML = `
+    <button type="button" onclick="addRow32()">+</button>
+    <button type="button" onclick="removeRow32(this)">-</button>`;
+}
+
+function removeRow32(button) {
+  const row = button.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+}
+</script>
 
 <h3>3.3. Destruction or unauthorised modification of personal data</h3>
 
-<table>
-    <thead>
-        <tr>
-            <th>Risk</th>
-            <th>Likelihood</th>
-            <th>Severity</th>
-            <th>Mitigation</th>
-            <th>Remaining Risk</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><textarea id="risk1_34"></textarea></td>
-            <td>
-                <select id="likelihood1_34">
-                    <option value="">Select</option>
-                    <option value="improbable_34">Improbable</option>
-                    <option value="possible_34">Possible</option>
-                    <option value="probable_34">Probable</option>
-                    <option value="almost_certain_34">Almost certain</option>
-                </select>
-            </td>
-            <td>
-                <select id="severity1_34">
-                    <option>Select</option>
-                    <option value="seriosHarm_34">Serious Harm</option>
-                    <option value="someImpact_34">Some Impact</option>
-                    <option value="minimalImpact_34">Minimal Impact</option>
-                </select>
-            </td>
-            <td><textarea id="mitigation1_34"></textarea></td>
-            <td>
-                <select id="remainingRisk1_34">
-                    <option>Select</option>
-                    <option value="lowRisk_34">Low Risk</option>
-                    <option value="mediumRisk_34">Medium Risk</option>
-                    <option value="highRisk_34">High Risk</option>
-                </select>
-            </td>
-        </tr>
-        <!-- Repeat rows as needed, changing IDs for unique identification -->
-        <tr>
-            <td><textarea id="risk2_34"></textarea></td>
-            <td>
-                <select id="likelihood2_34">
-                    <option value="">Select</option>
-                    <option value="improbable2_34">Improbable</option>
-                    <option value="possible2"_34>Possible</option>
-                    <option value="probable2"_34>Probable</option>
-                    <option value="almost_certain2_34">Almost certain</option>
-                </select>
-            </td>
-            <td>
-                <select id="severity2_34">
-                    <option>Select</option>
-                    <option value="seriosHarm2_34">Serious Harm</option>
-                    <option value="someImpact2_34">Some Impact</option>
-                    <option value="minimalImpact2_34">Minimal Impact</option>
-                </select>
-            </td>
-            <td><textarea id="mitigation2_34"></textarea></td>
-            <td>
-                <select id="remainingRisk2_34">
-                    <option>Select</option>
-                    <option value="lowRisk2_34">Low Risk</option>
-                    <option value="mediumRisk2_34">Medium Risk</option>
-                    <option value="highRisk2_34">High Risk</option>
-                </select>
-            </td>
-        </tr>
-    </tbody>
+<table id="riskTable_33">
+  <thead>
+    <tr>
+      <th>Risk</th>
+      <th>Likelihood</th>
+      <th>Severity</th>
+      <th>Mitigation</th>
+      <th>Remaining Risk</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><textarea id="risk1_33" placeholder="Enter risk" title="Risk"></textarea></td>
+      <td>
+        <select id="likelihood1_33" title="Likelihood">
+          <option value="">Select</option>
+          <option value="improbable">Improbable</option>
+          <option value="possible">Possible</option>
+          <option value="probable">Probable</option>
+          <option value="almost_certain">Almost certain</option>
+        </select>
+      </td>
+      <td>
+        <select id="severity1_33" title="Severity">
+          <option>Select</option>
+          <option value="seriousHarm">Serious Harm</option>
+          <option value="someImpact">Some Impact</option>
+          <option value="minimalImpact">Minimal Impact</option>
+        </select>
+      </td>
+      <td><textarea id="mitigation1_33" placeholder="Enter mitigation" title="Mitigation"></textarea></td>
+      <td>
+        <select id="remainingRisk1_33" title="Remaining risk">
+          <option>Select</option>
+          <option value="lowRisk">Low Risk</option>
+          <option value="mediumRisk">Medium Risk</option>
+          <option value="highRisk">High Risk</option>
+        </select>
+      </td>
+      <td>
+        <button type="button" onclick="addRow33()">+</button>
+        <button type="button" onclick="removeRow33(this)">-</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
-<h3>3.4.Loss or alteration of personal data</h3>
+<script>
+let rowCount_33 = 1;
 
-<table>
-    <thead>
-        <tr>
-            <th>Risk</th>
-            <th>Likelihood</th>
-            <th>Severity</th>
-            <th>Mitigation</th>
-            <th>Remaining Risk</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><textarea id="risk1_34"></textarea></td>
-            <td>
-                <select id="likelihood1_34">
-                    <option value="">Select</option>
-                    <option value="improbable_34">Improbable</option>
-                    <option value="possible_34">Possible</option>
-                    <option value="probable_34">Probable</option>
-                    <option value="almost_certain_34">Almost certain</option>
-                </select>
-            </td>
-            <td>
-                <select id="severity1_34">
-                    <option>Select</option>
-                    <option value="seriosHarm_34">Serious Harm</option>
-                    <option value="someImpact_34">Some Impact</option>
-                    <option value="minimalImpact_34">Minimal Impact</option>
-                </select>
-            </td>
-            <td><textarea id="mitigation1_34"></textarea></td>
-            <td>
-                <select id="remainingRisk1_34">
-                    <option>Select</option>
-                    <option value="lowRisk_34">Low Risk</option>
-                    <option value="mediumRisk_34">Medium Risk</option>
-                    <option value="highRisk_34">High Risk</option>
-                </select>
-            </td>
-        </tr>
-        <!-- Repeat rows as needed, changing IDs for unique identification -->
-        <tr>
-            <td><textarea id="risk2_34"></textarea></td>
-            <td>
-                <select id="likelihood2_34">
-                    <option value="">Select</option>
-                    <option value="improbable2_34">Improbable</option>
-                    <option value="possible2"_34>Possible</option>
-                    <option value="probable2"_34>Probable</option>
-                    <option value="almost_certain2_34">Almost certain</option>
-                </select>
-            </td>
-            <td>
-                <select id="severity2_34">
-                    <option>Select</option>
-                    <option value="seriosHarm2_34">Serious Harm</option>
-                    <option value="someImpact2_34">Some Impact</option>
-                    <option value="minimalImpact2_34">Minimal Impact</option>
-                </select>
-            </td>
-            <td><textarea id="mitigation2_34"></textarea></td>
-            <td>
-                <select id="remainingRisk2_34">
-                    <option>Select</option>
-                    <option value="lowRisk2_34">Low Risk</option>
-                    <option value="mediumRisk2_34">Medium Risk</option>
-                    <option value="highRisk2_34">High Risk</option>
-                </select>
-            </td>
-        </tr>
-    </tbody>
+function addRow33() {
+  rowCount_33++;
+  const table = document.getElementById('riskTable_33').getElementsByTagName('tbody')[0];
+  const newRow = table.insertRow();
+
+  const cell1 = newRow.insertCell(0);
+  const cell2 = newRow.insertCell(1);
+  const cell3 = newRow.insertCell(2);
+  const cell4 = newRow.insertCell(3);
+  const cell5 = newRow.insertCell(4);
+  const cell6 = newRow.insertCell(5);
+
+  cell1.innerHTML = `<textarea id="risk33_${rowCount_33}" placeholder="Enter risk" title="Risk"></textarea>`;
+  cell2.innerHTML = `
+    <select id="likelihood33_${rowCount_33}" title="Likelihood">
+      <option value="">Select</option>
+      <option value="improbable">Improbable</option>
+      <option value="possible">Possible</option>
+      <option value="probable">Probable</option>
+      <option value="almost_certain">Almost certain</option>
+    </select>`;
+  cell3.innerHTML = `
+    <select id="severity33_${rowCount_33}" title="Severity">
+      <option>Select</option>
+      <option value="seriousHarm">Serious Harm</option>
+      <option value="someImpact">Some Impact</option>
+      <option value="minimalImpact">Minimal Impact</option>
+    </select>`;
+  cell4.innerHTML = `<textarea id="mitigation33_${rowCount_33}" placeholder="Enter mitigation" title="Mitigation"></textarea>`;
+  cell5.innerHTML = `
+    <select id="remainingRisk33_${rowCount_33}" title="Remaining risk">
+      <option>Select</option>
+      <option value="lowRisk">Low Risk</option>
+      <option value="mediumRisk">Medium Risk</option>
+      <option value="highRisk">High Risk</option>
+    </select>`;
+  cell6.innerHTML = `
+    <button type="button" onclick="addRow33()">+</button>
+    <button type="button" onclick="removeRow33(this)">-</button>`;
+}
+
+function removeRow33(button) {
+  const row = button.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+}
+</script>
+
+<h3>3.4. Loss or alteration of personal data</h3>
+
+<table id="riskTable_34">
+  <thead>
+    <tr>
+      <th>Risk</th>
+      <th>Likelihood</th>
+      <th>Severity</th>
+      <th>Mitigation</th>
+      <th>Remaining Risk</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><textarea id="risk34_1" placeholder="Enter risk" title="Risk"></textarea></td>
+      <td>
+        <select id="likelihood34_1" title="Likelihood">
+          <option value="">Select</option>
+          <option value="improbable">Improbable</option>
+          <option value="possible">Possible</option>
+          <option value="probable">Probable</option>
+          <option value="almost_certain">Almost certain</option>
+        </select>
+      </td>
+      <td>
+        <select id="severity34_1" title="Severity">
+          <option>Select</option>
+          <option value="seriousHarm">Serious Harm</option>
+          <option value="someImpact">Some Impact</option>
+          <option value="minimalImpact">Minimal Impact</option>
+        </select>
+      </td>
+      <td><textarea id="mitigation34_1" placeholder="Enter mitigation" title="Mitigation"></textarea></td>
+      <td>
+        <select id="remainingRisk34_1" title="Remaining risk">
+          <option>Select</option>
+          <option value="lowRisk">Low Risk</option>
+          <option value="mediumRisk">Medium Risk</option>
+          <option value="highRisk">High Risk</option>
+        </select>
+      </td>
+      <td>
+        <button type="button" onclick="addRow34()">+</button>
+        <button type="button" onclick="removeRow34(this)">-</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
+
+<script>
+let rowCount_34 = 1;
+
+function addRow34() {
+  rowCount_34++;
+  const table = document.getElementById('riskTable_34').getElementsByTagName('tbody')[0];
+  const newRow = table.insertRow();
+
+  const cell1 = newRow.insertCell(0);
+  const cell2 = newRow.insertCell(1);
+  const cell3 = newRow.insertCell(2);
+  const cell4 = newRow.insertCell(3);
+  const cell5 = newRow.insertCell(4);
+  const cell6 = newRow.insertCell(5);
+
+  cell1.innerHTML = `<textarea id="risk34_${rowCount_34}" placeholder="Enter risk" title="Risk"></textarea>`;
+  cell2.innerHTML = `
+    <select id="likelihood34_${rowCount_34}" title="Likelihood">
+      <option value="">Select</option>
+      <option value="improbable">Improbable</option>
+      <option value="possible">Possible</option>
+      <option value="probable">Probable</option>
+      <option value="almost_certain">Almost certain</option>
+    </select>`;
+  cell3.innerHTML = `
+    <select id="severity34_${rowCount_34}" title="Severity">
+      <option>Select</option>
+      <option value="seriousHarm">Serious Harm</option>
+      <option value="someImpact">Some Impact</option>
+      <option value="minimalImpact">Minimal Impact</option>
+    </select>`;
+  cell4.innerHTML = `<textarea id="mitigation34_${rowCount_34}" placeholder="Enter mitigation" title="Mitigation"></textarea>`;
+  cell5.innerHTML = `
+    <select id="remainingRisk34_${rowCount_34}" title="Remaining risk">
+      <option>Select</option>
+      <option value="lowRisk">Low Risk</option>
+      <option value="mediumRisk">Medium Risk</option>
+      <option value="highRisk">High Risk</option>
+    </select>`;
+  cell6.innerHTML = `
+    <button type="button" onclick="addRow34()">+</button>
+    <button type="button" onclick="removeRow34(this)">-</button>`;
+}
+
+function removeRow34(button) {
+  const row = button.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+}
+</script>
 
 <h3>3.5. Summary</h3>
 <p>Overall assessment of the data protection risks: </p>
-<select id="overalRisk">
-    <option value="lowRisk2_35">Low Risk</option>
-    <option value="mediumRisk2_35">Medium Risk</option>
-    <option value="highRisk2_35">High Risk</option>
+<select id="overalRisk" title="Overall risk">
+  <option value="lowRisk2_35">Low Risk</option>
+  <option value="mediumRisk2_35">Medium Risk</option>
+  <option value="highRisk2_35">High Risk</option>
 </select>
 
-<h2>4.	Stakeholder comments</h2>
+<h2>4. Stakeholder comments</h2>
 
 <div class="container">
-    <h2>4.1. Comments by the data protection officer</h2>
-    <label for="dpoName">Name:</label>
-    <input type="text" id="dpoName" placeholder="Click or tap here to enter text.">
-    
-    <label for="dpoDate">Date:</label>
-    <input type="text" id="dpoDate" placeholder="Click or tap here to enter a date.">
+  <h2>4.1. Comments by the data protection officer</h2>
+  <label for="dpoName">Name:</label>
+  <input type="text" id="dpoName" placeholder="Click or tap here to enter text." title="Data protection officer's name">
+  
+  <label for="dpoDate">Date:</label>
+  <input type="text" id="dpoDate" placeholder="Click or tap here to enter a date." title="Data protection officer's date">
 
-    <label for="dpoComments">Data protection officer's comments:</label>
-    <textarea id="dpoComments"></textarea>
+  <label for="dpoComments">Data protection officer's comments:</label>
+  <textarea id="dpoComments" title="Data protection officer's comments"></textarea>
 </div>
 
 <div class="container">
-    <h2>4.2. Comments by other stakeholders</h2>
-    <label for="stakeholderGroup">Stakeholder group:</label>
-    <input type="text" id="stakeholderGroup" placeholder="Click or tap here to enter text.">
+  <h2>4.2. Comments by other stakeholders</h2>
+  <label for="stakeholderGroup">Stakeholder group:</label>
+  <input type="text" id="stakeholderGroup" placeholder="Click or tap here to enter text." title="Stakeholder group">
 
-    <label for="stakeholderName">Name:</label>
-    <input type="text" id="stakeholderName" placeholder="Click or tap here to enter text.">
+  <label for="stakeholderName">Name:</label>
+  <input type="text" id="stakeholderName" placeholder="Click or tap here to enter text." title="Stakeholder name">
 
-    <label for="stakeholderDate">Date:</label>
-    <input type="text" id="stakeholderDate" placeholder="Click or tap here to enter a date.">
+  <label for="stakeholderDate">Date:</label>
+  <input type="text" id="stakeholderDate" placeholder="Click or tap here to enter a date." title="Stakeholder date">
 
-    <label for="stakeholderComments">Stakeholder comments:</label>
-    <textarea id="stakeholderComments"></textarea>
+  <label for="stakeholderComments">Stakeholder comments:</label>
+  <textarea id="stakeholderComments" title="Stakeholder comments"></textarea>
 </div>
 
 <h2>9. Summary</h2>
 
 <div class="container">
-    <p>The planned measures for eliminating or controlling data protection risks are adequate and therefore the processing activities are not likely to pose a high risk to the rights and freedoms of data subjects (to be filled in by the person who carries out the DPIA):</p>
-    <label for="dpiaYes"><input type="checkbox" id="dpiaYes"> Yes</label>
-    <label for="dpiaNo"><input type="checkbox" id="dpiaNo"> No</label>
+  <p>The planned measures for eliminating or controlling data protection risks are adequate and therefore the processing activities are not likely to pose a high risk to the rights and freedoms of data subjects (to be filled in by the person who carries out the DPIA):</p>
+  <label for="dpiaYes"><input type="radio" id="dpiaYes" name="radioSummary" title="Summary - Yes"> Yes</label>
+  <label for="dpiaNo"><input type="radio" id="dpiaNo" name="radioSummary" title="Summary - No"> No</label>
 </div>
 <div class="container">
-    <p>If the planned measures are not adequate to mitigate the risks associated with the processing activities, or if there are no measures that can be implemented to mitigate the risks, a prior consultation with the supervisory authority (in Finland the Finnish Data Protection Ombudsman) is required before initiating the processing of personal data. Contact Tampere University’s designated data protection officer for assistance with the prior consultation.</p>
-    <p>Data protection officer at Tampere University: dpo@tuni.fi</p>
-
+  <p>If the planned measures are not adequate to mitigate the risks associated with the processing activities, or if there are no measures that can be implemented to mitigate the risks, a prior consultation with the supervisory authority (in Finland the Finnish Data Protection Ombudsman) is required before initiating the processing of personal data. Contact Tampere University’s designated data protection officer for assistance with the prior consultation.</p>
+  <p>Data protection officer at Tampere University: dpo@tuni.fi</p>
 </div>
 
 <script src="DPIA.js"></script> 
