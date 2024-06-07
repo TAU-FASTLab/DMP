@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <title>DPIA Checklist</title>
+    <style>
+      /* Add CSS styles to match the picture as closely as possible */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .form-title {
+        background-color: #660099;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+      .form-section {
+        border: 1px solid black;
+        margin-top: 10px;
+        padding: 10px;
+      }
+      .required {
+        color: red;
+    }
+      .button {
+        display: block;
+        margin-top: 20px;
+      }
+      #dpiTemplateLink {
+        color: #0000EE; /* Blue color like standard link */
+        text-decoration: none; /* No underline by default */
+      }
+      #dpiTemplateLink:hover {
+        text-decoration: underline; /* Underline on hover */
+      }
+      .article {
+        background-color: #f3d4f9;
+        border: 1px solid #5c0567;
+        padding: 20px;
+        margin: 20px 0;
+      }
+      .article h2 {
+        background-color: #e7e7e7;
+        padding: 10px;
+        margin-top: 0;
+      }
+      .article ol {
+        padding-left: 20px;
+      }
+      .article ol li {
+        margin-bottom: 10px;
+      }
+      #additionalFormLegitimateInterest {
+        display: none; /* Hide the form by default */
+      }
+      .data-container {
+                margin-bottom: 10px; /* Adds spacing between checkbox groups */
+            }
+     .section { margin-bottom: 20px; }
+      h1 { font-size: 24px; margin-bottom: 10px; }
+      h2 { font-size: 20px; margin-top: 20px; margin-bottom: 10px; }
+      label { display: block; margin-top: 5px; }
+      input[type="text"], textarea { width: 100%; padding: 8px; margin-top: 5px; }
+      input[type="checkbox"] { margin-right: 5px; }
+      table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+        th { background-color: #f2f2f2; }
+        label { cursor: pointer; }
+        .scenario { font-weight: bold; }
+        .criteria { margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <form>
+    <fieldset>
+    <div class="form-title"><h1>Checklist for Determining Whether a Data Protection Impact Assessment (DPIA) is Required</h1></div>
+    <p>A Data Protection Impact Assessment (DPIA) is mandatory under the EU's General Data Protection Regulation (GDPR) if:</p>
+    <ol>
+        <li>The processing of personal data meets at least two of the criteria for determining whether processing is likely to result in a high risk to the rights and freedoms of individuals;</li>
+        <li>The processing activities are included in the data protection authority's list of specific processing situations;</li>
+        <li>The data controller relies on some conditional exemptions to the rights of data subjects (research participants) under the GDPR.</li>
+    </ol>
+    
+
+    <p>Three scenarios where the need to carry out a DPIA must be assessed are presented below:</p>
+    <p>Complete the screening questions to determine whether you will need to do a DPIA before starting your research.</p>
+    <p>If your answer to at least two of the questions is “yes”, you may need to carry out a DPIA. If your answer to at least three of the questions is “yes”, you must carry out a DPIA.</p>
+
+    <table>
+        <tr>
+            <td><input type="checkbox" id="sensitiveData">
+               <label for="sensitiveData">Processing of special category data (sensitive data) or other data of a highly personal nature includes:</label>
+                <ul>
+                    <li>Health-related data</li>
+                    <li>Location data (tracking an individual’s location)</li>
+                    <li>Genetic data</li>
+                    <li>Biometric data for the purpose of uniquely identifying a person</li>
+                    <li>Racial or ethnic origin</li>
+                    <li>Political opinions</li>
+                    <li>Religious or political beliefs</li>
+                    <li>Trade union membership</li>
+                    <li>Sexual orientation or behaviour</li>
+                    <li>Criminal convictions and offences</li>
+                    <li>Financial data that may be used to commit payment fraud</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="largeScaleProcessing">
+            <label for="largeScaleProcessing" class="scenario">Large-scale processing of personal data</label>
+            <div class="criteria">
+               <p>Processing can be considered large scale if:</p> 
+                <ul>
+                    <li>the number of research participants is 10,000 or higher;</li>
+                    <li>a great deal of data is collected on specific individuals;</li>
+                    <li>data is collected on a large number of individuals who belong to a specific group;</li>
+                    <li>processing activities continue on a permanent or a long-term basis;</li>
+                    <li>processing occurs over a large geographical area.</li>
+                </ul>
+            </div></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="unexpectedCombination">
+            <label for="unexpectedCombination" class="scenario">Unexpected combination of datasets</label>
+            <div class="criteria">
+                <p>During your study, will you combine personal data from multiple sources in a way that would exceed the reasonable expectations of your data subjects?</p>
+            </div></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="vulnerableDataSubjects">
+            <label for="vulnerableDataSubjects" class="scenario">Processing of data concerning vulnerable data subjects</label>
+            <div class="criteria">
+                <p> Will you process data about individuals who may have difficulty exercising their data subject rights due
+                     to their vulnerable position? For example, children, elderly people, employees, patients and asylum 
+                     seekers are considered vulnerable.</p>
+            </div></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="innovativeSolutions">
+            <label for="innovativeSolutions" class="scenario">Innovative use or application of new technological or organisational solutions</label>
+            <div class="criteria">
+                <p>Will you use new technology in innovative ways to process personal data during your study?</p>
+            </div></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="evaluationScoring">
+            <label for="evaluationScoring" class="scenario">Evaluation and scoring</label>
+            <div class="criteria">
+            <p> Will you process personal data for the purpose of evaluating or scoring your research participants?</p>
+            </div></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="automatedDecisionMaking">
+            <label for="automatedDecisionMaking" class="scenario">Automated decision-making that affects data subject rights</label>
+            <div class="criteria">
+            <p>Will your processing involve automated decision-making that has significant impacts on research participants?</p>
+                <a href="https://tietosuoja.fi/en/automated-decision-making-and-profiling">Read more about automated decision-making.</a>
+            </div></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="systematicMonitoring">
+            <label for="systematicMonitoring" class="scenario">Systematic monitoring of data subjects</label>
+            <div class="criteria">
+            <p>Will your study entail the systematic monitoring of research participants?</p>
+            </div></td>
+        </tr>
+    </table>
+    
+    
+    <h2>Examples of research scenarios where a DPIA is required:</h2>
+    <ul>
+        <li>Special category data (sensitive data) will be processed during the study AND personal data will be processed on a large scale.</li>
+        <li>Personal data will be combined in a way that would exceed the reasonable expectations of data subjects AND data concerning vulnerable research participants (such as children, pa-tients or elderly people) will be processed during the study.</li>
+        <li>New technological solutions will be utilised during the study AND personal data will be processed on a large scale.</li>
+    </ul>
+    <p>The data protection authority has drawn up a list of specific processing situations. You will need to carry out a DPIA if your processing activities qualify as high risk based on at least one of the criteria presented in the above table AND you will process personal data that falls into the following categories:</p>
+    <ul>
+        <li><input type="checkbox"> Biometric data for the purpose of uniquely identifying a person</li>
+        <li><input type="checkbox"> Genetic data</li>
+        <li><input type="checkbox"> Location data</li>
+        <li><input type="checkbox"> Personal data collected from another source than the data subject, and the data controller relies on an exemption to the obligation to inform data subjects.</li>
+    </ul>
+    <h2>Examples of Research Scenarios Where a DPIA is Required:</h2>
+    <ul>
+        <li>Genetic data will be processed during the study (specific processing situation) AND genetic data will be processed on a large scale (indicates high risk).</li>
+        <li>Location data will be processed during the study (specific processing situation) AND location data will be combined with other personal datasets in a way that would exceed the reasonable expectations of data subjects (indicates high risk).</li>
+        <li>Data subjects will not be (personally) informed of the processing of their personal data because providing the information to the individuals would be impossible or involve a disproportionate effort (specific processing situation) AND personal data concerning vulnerable individuals will be processed during the study (indicates high risk).</li>
+    </ul>
+    <h2>Derogation from Data Subject Rights</h2>
+    <p>A DPIA is required if special category data will be processed in the context of scientific or historical research or for statistical purposes and the data controller will rely on an exemption to data subject rights.</p>
+    <ul>
+        <li><input type="checkbox"> Special category data is processed during the study, and the data controller relies on an exemption to data subject rights.</li>
+    </ul>
+    <h2>Summary</h2>
+    <form>
+        <input type="radio" name="isDpiaRequired"> A DPIA is required. Contact the data protection officer at <a href="mailto:dpo@tuni.fi">dpo@tuni.fi</a>.<br>
+        <input type="radio" name="isDpiaRequired"> A DPIA is not required. Carry out a concise risk assessment.<br>
+        <label for="name">Name of study:</label>
+        <input type="text" id="name"><br>
+        <label for="formFilledOut">Form fill out by:</label>
+        <input type="text" id="formFilledOut"><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date"><br>
+    </form>
+    <p>Read more about Data Protection Impact Assessment: <a href="https://tietosuoja.fi/en/impact-assessments">here</a>.</p>
+</fieldset>
+</form>
+    <script src="DPIACheckList.js"></script> 
+    <input type="button" class="button" value="Generate PDF" onclick="generatePDF()">
+</body>
+</html>
