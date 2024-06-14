@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
             orientation: 'p',
             unit: 'mm',
             format: 'a4'
-        });
+        }); 
 
         let y = 10; // Starting vertical position
-        const pageHeight = doc.internal.pageSize.height; // Get the page height
+        const pageHeight = doc.internal.pageSize.height; // Get the page height 
 
         // Function to add text with automatic line breaks and page management
         function addText(text, x, y, maxLineWidth, isBold = false) {
@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
             let lineHeight = isBold ? 8 : 7; // Slightly more space for section titles
             const lines = doc.splitTextToSize(text, maxLineWidth); // Split text to fit into the specified width
             lines.forEach(function(line) {
-                if (y + lineHeight > pageHeight - 30) { // Check if the text reaches the bottom of the page
+                if (y + lineHeight > pageHeight - 10) { //Check if the text reaches the bottom of the page
                     doc.addPage(); // Add a new page
-                    y = 20; // Reset y to the top of the new page
+                    y = 10; // Reset y to the top of the new page
                 }
-                doc.text(line, x);
+                doc.text(line, x, y);
                 y += lineHeight;
             });
             return y; // Return the new Y position after adding text
@@ -29,12 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add the form title
         const title = document.querySelector('.form-title h1').textContent;
-        y = addText(title, 10, y, 190); // Title in bold
+        y = addText(title, 10, y, 190, true); // Title in bold
         y += 2;
 
         // Add all paragraphs, ordered lists, and list items
         document.querySelectorAll('p, ol, li').forEach(element => {
-            if (element.tagName === 'P') {
+            if (element.tagName === 'P' || element.tagName === 'LI') {
                 y = addText(element.textContent, 10, y, 190);
                 if (element.tagName === 'LI') y += 2; // Extra space after list items
             } else if (element.tagName === 'OL') {
