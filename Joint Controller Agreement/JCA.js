@@ -1,3 +1,4 @@
+//Issues open, code not ready
 function generatePDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
