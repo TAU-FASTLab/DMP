@@ -1,3 +1,4 @@
+// Issues open, code not ready
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('button[onclick="generatePDF()"]').addEventListener('click', generatePDF);
 });
