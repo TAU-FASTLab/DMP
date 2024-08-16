@@ -1,3 +1,4 @@
+// ticket 3, more comments to follow
 document.addEventListener('DOMContentLoaded', function() {
     const { jsPDF } = window.jspdf;
 
