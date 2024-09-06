@@ -1,65 +1,178 @@
-// ticket 3, more comments to follow
-document.addEventListener('DOMContentLoaded', function() {
-    const { jsPDF } = window.jspdf;
+function generatePDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({
+    orientation: 'portrait',
+    unit: 'mm',
+    format: 'a4',
+  });
 
-    function generatePDF() {
-        const doc = new jsPDF({
-            orientation: 'p',
-            unit: 'mm',
-            format: 'a4'
-        });
+  let y = 20; // Initial y position with top margin
+  const lineHeight = 10; // Line height for text
+  const leftMargin = 20; // Left margin
+  const rightMargin = 190; // Right margin to control text width
+  const pageHeight = 297; // A4 page height
+  const pageWidth = 210; // A4 page width
 
-        let y = 10; // Starting vertical position
-        const pageHeight = doc.internal.pageSize.height; // Get the page height
+  doc.setFontSize(12);
 
-        // Function to add text with automatic line breaks and page management
-        function addText(text, x, y, maxLineWidth, isBold = false) {
-            doc.setFont('helvetica', isBold ? 'bold' : 'normal');
-            let lineHeight = isBold ? 8 : 7; // Slightly more space for section titles
-            const lines = doc.splitTextToSize(text, maxLineWidth); // Split text to fit into the specified width
-            lines.forEach(function(line) {
-                if (y + lineHeight > pageHeight - 10) { // Check if the text reaches the bottom of the page
-                    doc.addPage(); // Add a new page
-                    y = 10; // Reset y to the top of the new page
-                }
-                doc.text(line, x, y);
-                y += lineHeight;
-            });
-            return y; // Return the new Y position after adding text
-        }
+  // Validation function to check if all required fields are filled
+  function validateFields() {
+    const requiredFields = [
+      'processingData',
+      'assessmentdata',
+      'dpiAssessment',
+      'privacynotice',
+      'dataprocessorrole',
+      'agreeprocessingpersonaldata'
+    ];
 
-        // Add the form title
-        const title = document.querySelector('.form-title h1').textContent;
-        y = addText(title, 10, y, 190, true); // Title in bold
-        y += 2;
+    let valid = true;
+    requiredFields.forEach((field) => {
+      if (getRadioValue(field) === 'Not answered') {
+        valid = false;
+        alert(`Please answer the question in section: ${field}`);
+      }
+    });
 
-        // Add all paragraphs, ordered lists, and list items
-        document.querySelectorAll('p, ol, li').forEach(element => {
-            if (element.tagName === 'P' || element.tagName === 'LI') {
-                y = addText(element.textContent, 10, y, 190);
-                if (element.tagName === 'LI') y += 2; // Extra space after list items
-            } else if (element.tagName === 'OL') {
-                element.querySelectorAll('li').forEach(li => {
-                    y = addText(`- ${li.textContent}`, 15, y, 175); // Add bullet points with indentation
-                });
-            }
-        });
-
-        // Add all labels and their associated inputs
-        document.querySelectorAll('label, input[type="text"], input[type="date"]').forEach(element => {
-            if (element.tagName === 'LABEL') {
-                y = addText(element.textContent, 10, y, 190, true); // Labels in bold
-            } else if (element.tagName === 'INPUT' && (element.type === 'text' || element.type === 'date') && element.id) {
-                let label = document.querySelector(`label[for="${element.id}"]`);
-                let labelText = label ? label.textContent : '';
-                y = addText(`${labelText}: ${element.value}`, 10, y, 190);
-            }
-        });
-
-        // Save PDF
-        doc.save('DPIAChecklist.pdf');
+    // If DPIA is required, check the related fields
+    if (document.getElementById('dpiIsRequired')?.checked) {
+      if (getRadioValue('dpiCompleted') === 'Not answered') {
+        valid = false;
+        alert('Please complete the DPIA field.');
+      }
     }
 
-    // Attach the event listener to the button
-    document.querySelector('.button').addEventListener('click', generatePDF);
-});
+    return valid;
+  }
+
+  // Add section title
+  function addSectionTitle(title) {
+    doc.setFont('helvetica', 'bold');
+    doc.text(title, leftMargin, y);
+    doc.setFont('helvetica', 'normal');
+    y += lineHeight;
+  }
+
+  // Add question and response
+  function addQuestionAndResponse(question, response) {
+    const wrappedQuestion = doc.splitTextToSize(question, rightMargin - leftMargin); // Wrap question text
+    doc.text(wrappedQuestion, leftMargin, y);
+    y += wrappedQuestion.length * lineHeight; // Adjust y position based on the number of lines
+    doc.text(`Answer: ${response}`, leftMargin, y);
+    y += lineHeight;
+  }
+
+  // Retrieve the selected value of a radio button group
+  function getRadioValue(name) {
+    const radios = document.querySelectorAll(`input[name="${name}"]`);
+    for (const radio of radios) {
+      if (radio.checked) {
+        return radio.value;
+      }
+    }
+    return 'Not answered'; // Default if no value is selected
+  }
+
+  // Function to add page number
+  function addPageNumber() {
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+      doc.setPage(i);
+      doc.setFontSize(10);
+      doc.text(`Page ${i}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
+    }
+  }
+
+  // Check if the content exceeds the page height and add a new page
+  function checkPageEnd() {
+    if (y + lineHeight > pageHeight - 20) { // Bottom margin of 20
+      doc.addPage();
+      y = 20; // Reset y position after new page
+    }
+  }
+
+  // First, validate the form fields
+  if (!validateFields()) {
+    return; // Stop PDF generation if validation fails
+  }
+
+  // Start generating PDF content if validation passes
+
+  // Title
+  doc.setFontSize(16);
+  doc.text('Data Protection – Personal Data: Checklist', leftMargin, y);
+  y += lineHeight * 2;
+  doc.setFontSize(12); // Reset font size
+
+  // 1. Processing of personal data
+  addSectionTitle('1. Processing of personal data');
+  addQuestionAndResponse(
+    'Will personal data be processed during your study?',
+    getRadioValue('processingData')
+  );
+  checkPageEnd(); // Check if a new page is needed
+
+  // 2. Assessment of data protection risks
+  addSectionTitle('2. Assessment of data protection risks');
+  addQuestionAndResponse(
+    'Has the processing of personal data been assessed for risks?',
+    getRadioValue('assessmentdata')
+  );
+  addQuestionAndResponse(
+    'Have you assessed the need for a DPIA?',
+    getRadioValue('dpiAssessment')
+  );
+  if (document.getElementById('dpiIsRequired')?.checked) {
+    addQuestionAndResponse(
+      'DPIA Completed?',
+      getRadioValue('dpiCompleted')
+    );
+  }
+  checkPageEnd(); // Check if a new page is needed
+
+  // 3. Informing your research participants
+  addSectionTitle('3. Informing your research participants');
+  addQuestionAndResponse(
+    'Have you prepared a research privacy notice?',
+    getRadioValue('privacynotice')
+  );
+  checkPageEnd(); // Check if a new page is needed
+
+  // 4. Roles of data processors
+  addSectionTitle('4. Roles of data processors');
+  addQuestionAndResponse(
+    'Have you defined the roles and responsibilities of data processors?',
+    getRadioValue('dataprocessorrole')
+  );
+  checkPageEnd(); // Check if a new page is needed
+
+  // 5. Agreeing on the processing of personal data
+  addSectionTitle('5. Agreeing on the processing of personal data');
+  addQuestionAndResponse(
+    'Have you drawn up the necessary data processing agreements?',
+    getRadioValue('agreeprocessingpersonaldata')
+  );
+  checkPageEnd(); // Check if a new page is needed
+
+  // 6. Summary
+  addSectionTitle('6. Summary');
+  const summaryText = 'If your research involves the processing of personal data and you need guidance, please contact Tampere University’s Research Data Services at researchdata@tuni.fi.';
+  const wrappedSummary = doc.splitTextToSize(summaryText, rightMargin - leftMargin); // Wrap summary text
+  doc.text(wrappedSummary, leftMargin, y);
+  y += wrappedSummary.length * lineHeight;
+  checkPageEnd(); // Check if a new page is needed
+
+  // 7. Planning the lifecycle of personal data processing
+  addSectionTitle('7. Planning the lifecycle of personal data processing');
+  const lifecycleText = 'Please find out more about planning and documenting the lifecycle of processing personal data at Data Management Guidelines.';
+  const wrappedLifecycle = doc.splitTextToSize(lifecycleText, rightMargin - leftMargin); // Wrap text
+  doc.text(wrappedLifecycle, leftMargin, y);
+  y += wrappedLifecycle.length * lineHeight;
+  checkPageEnd(); // Check if a new page is needed
+
+  // Add page numbers at the end
+  addPageNumber();
+
+  // Save the PDF
+  doc.save('CheckList_PersonalData_Protection.pdf');
+}
