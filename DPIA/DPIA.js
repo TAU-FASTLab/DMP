@@ -1,4 +1,4 @@
-// Issues open, code not ready
+// Issues open, code not ready, main issue to generate table in the pdf
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('button[onclick="generatePDF()"]').addEventListener('click', generatePDF);
 });
