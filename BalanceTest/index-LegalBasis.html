@@ -5,58 +5,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Data Protection Form</title>
+<!-- Include required JavaScript libraries -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
 <style>
-  /* Add CSS styles to match the picture as closely as possible */
+  /* General styling for the form and layout */
   body {
     font-family: Arial, sans-serif;
     margin: 20px;
   }
+
+  /* Styling for the form title */
   .form-title {
     background-color: #660099;
     color: white;
     padding: 10px;
     text-align: center;
   }
+
+  /* Styling for individual sections of the form */
   .form-section {
     border: 1px solid black;
     margin-top: 10px;
     padding: 10px;
   }
+
+  /* Style for required fields */
   .required {
     color: red;
-}
+  }
+
+  /* Button styling */
   .button {
     display: block;
     margin-top: 20px;
   }
+
+  /* Link styling for DPI template */
   #dpiTemplateLink {
-    color: #0000EE; /* Blue color like standard link */
-    text-decoration: none; /* No underline by default */
+    color: #0000EE;
+    text-decoration: none;
   }
+
   #dpiTemplateLink:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline;
   }
+
+  /* Styling for the "article" container */
   .article {
     background-color: #f3d4f9;
     border: 1px solid #5c0567;
     padding: 20px;
     margin: 20px 0;
   }
+
+  /* Styling for the header within articles */
   .article h2 {
     background-color: #e7e7e7;
     padding: 10px;
     margin-top: 0;
   }
+
+  /* Ordered list styling */
   .article ol {
     padding-left: 20px;
   }
+
   .article ol li {
     margin-bottom: 10px;
   }
+
+  /* Hide additional form by default */
   #additionalFormLegitimateInterest {
-    display: none; /* Hide the form by default */
+    display: none;
   }
 </style>
 </head>
