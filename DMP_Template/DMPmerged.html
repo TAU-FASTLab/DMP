@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Improved DMP PDF Generation</title>
+        <!-- Include jsPDF from a CDN or local file -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+        <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+        .form-title {
+          background-color: #660099; 
+          color: white;
+          padding: 10px;
+          text-align: center;
+        }
+        .form-section {
+          border: 1px solid black; 
+          margin-top: 10px;
+          padding: 10px; 
+        }
+        .required {
+          color: red;
+      }
+        .button {
+          display: block;
+          margin-top: 20px;
+        }
+        #dpiTemplateLink {
+          color: #0000EE; /* Blue color like standard link */
+          text-decoration: none; /* No underline by default */
+        }
+        #dpiTemplateLink:hover {
+          text-decoration: underline; /* Underline on hover */
+        }
+        .article {
+          background-color: #f3d4f9;
+          border: 1px solid #5c0567;
+          padding: 20px;
+          margin: 20px 0;
+        }
+        .article h2 {
+          background-color: #e7e7e7;
+          padding: 10px;
+          margin-top: 0;
+        }
+        .article ol {
+          padding-left: 20px;
+        }
+        .article ol li {
+          margin-bottom: 10px;
+        }
+        #additionalFormLegitimateInterest {
+          display: none; /* Hide the form by default */
+        }
+        .data-container {
+                  margin-bottom: 10px; /* Adds spacing between checkbox groups */
+              }
+       .section { margin-bottom: 20px; }
+        h1 { font-size: 24px; margin-bottom: 10px; }
+        h2 { font-size: 20px; margin-top: 20px; margin-bottom: 10px; }
+        label { display: block; margin-top: 5px; }
+        input[type="text"], textarea { width: 100%; padding: 8px; margin-top: 5px; }
+        input[type="checkbox"] { margin-right: 5px; }
+      </style>
+      </head>
+<body>
+
+    <div class="form-title"><h1>Data Management Plan (DMP) Form</h1></div>
+  <!-- ===================== Project Information ===================== -->
+  <h2>Project Information</h2>
+  <label for="projectNumber">Project Number</label><br>
+  <input type="text" id="projectNumber" placeholder="e.g., 12345"><br><br>
+
+  <label for="projectAcronym">Project Acronym</label><br>
+  <input type="text" id="projectAcronym" placeholder="e.g., FEROX"><br><br>
+
+  <label for="projectTitle">Project Title</label><br>
+  <input type="text" id="projectTitle" placeholder="Full Project Title"><br><br>
+
+  <!-- ===================== 1. Data Summary ===================== -->
+  <h2>1. Data Summary</h2>
+  <label for="dataPurpose">Purpose of the data collection/generation and its relation to the objectives of the project</label><br>
+  <textarea id="dataPurpose" rows="3" cols="70"></textarea><br><br>
+
+  <label for="dataTypesFormats">Types and formats of data the project will generate/collect</label><br>
+  <textarea id="dataTypesFormats" rows="3" cols="70"></textarea><br><br>
+
+  <label for="dataReuse">Re-use of existing data and how</label><br>
+  <textarea id="dataReuse" rows="3" cols="70"></textarea><br><br>
+
+  <label for="dataOrigin">Origin of the data</label><br>
+  <textarea id="dataOrigin" rows="3" cols="70"></textarea><br><br>
+
+  <label for="dataSize">Expected size of the data</label><br>
+  <textarea id="dataSize" rows="2" cols="70"></textarea><br><br>
+
+  <label for="dataUtility">Data utility (to whom will it be useful)</label><br>
+  <textarea id="dataUtility" rows="3" cols="70"></textarea><br><br>
+
+  <!-- ===================== 2. FAIR Data ===================== -->
+  <h2>2. FAIR Data</h2>
+  
+  <h3>2.1. Making data findable, including provisions for metadata</h3>
+  <label for="dataFindable">Are the data discoverable with metadata, identifiable, and locatable by means of a standard ID mechanism?</label><br>
+  <textarea id="dataFindable" rows="3" cols="70"></textarea><br><br>
+
+  <label for="namingConventions">What naming conventions do you follow?</label><br>
+  <textarea id="namingConventions" rows="3" cols="70"></textarea><br><br>
+
+  <label for="searchKeywords">Will search keywords be provided that optimize possibilities for re-use?</label><br>
+  <textarea id="searchKeywords" rows="2" cols="70"></textarea><br><br>
+
+  <label for="versionNumbers">Do you provide clear version numbers?</label><br>
+  <textarea id="versionNumbers" rows="2" cols="70"></textarea><br><br>
+
+  <label for="metadataCreation">What metadata will be created? (If standards do not exist, outline the approach.)</label><br>
+  <textarea id="metadataCreation" rows="3" cols="70"></textarea><br><br>
+
+  <h3>2.2. Making data openly accessible</h3>
+  <label for="dataAccessibility">Which data produced and/or used in the project will be made openly available as the default?</label><br>
+  <textarea id="dataAccessibility" rows="3" cols="70"></textarea><br><br>
+
+  <label for="dataRestrictions">Possibility for specific beneficiaries to keep data closed if relevant?</label><br>
+  <textarea id="dataRestrictions" rows="3" cols="70"></textarea><br><br>
+
+  <label for="dataAccessibleHow">How will the data be made accessible?</label><br>
+  <textarea id="dataAccessibleHow" rows="3" cols="70"></textarea><br><br>
+
+  <label for="softwareTools">What methods or software tools are needed to access the data?</label><br>
+  <textarea id="softwareTools" rows="2" cols="70"></textarea><br><br>
+
+  <label for="documentation">Is documentation about the software needed to access the data included?</label><br>
+  <textarea id="documentation" rows="2" cols="70"></textarea><br><br>
+
+  <label for="relevantSw">Is it possible to include the relevant software (e.g., in open source code)?</label><br>
+  <textarea id="relevantSw" rows="2" cols="70"></textarea><br><br>
+
+  <label for="metadata">Where will the data and associated metadata, documentation, and code be deposited?</label><br>
+  <textarea id="metadata" rows="3" cols="70"></textarea><br><br>
+
+  <label for="arrangements">Have you explored appropriate arrangements with the identified repository?</label><br>
+  <textarea id="arrangements" rows="3" cols="70"></textarea><br><br>
+
+  <label for="restriccions">If there are restrictions on use, how will access be provided?</label><br>
+  <textarea id="restriccions" rows="3" cols="70"></textarea><br><br>
+
+  <label for="dataAccessComittee">Is there a need for a data access committee?</label><br>
+  <textarea id="dataAccessComittee" rows="2" cols="70"></textarea><br><br>
+
+  <label for="conditionsForAccess">Are there well described conditions for access (machine readable license)?</label><br>
+  <textarea id="conditionsForAccess" rows="3" cols="70"></textarea><br><br>
+
+  <label for="identityOfPersonAccessingData">How will the identity of the person accessing the data be ascertained?</label><br>
+  <textarea id="identityOfPersonAccessingData" rows="3" cols="70"></textarea><br><br>
+
+  <h3>2.3. Making Data Interoperable</h3>
+  <label for="dataInteroperableDescription">Are the data produced in the project interoperable?</label><br>
+  <textarea id="dataInteroperableDescription" rows="3" cols="70"></textarea><br><br>
+
+  <label for="dataInteroperableStandards">Which vocabularies, standards, or methodologies will be followed?</label><br>
+  <textarea id="dataInteroperableStandards" rows="3" cols="70"></textarea><br><br>
+
+  <label for="standardVocabulariesUsage">Will you be using standard vocabularies for all data types?</label><br>
+  <textarea id="standardVocabulariesUsage" rows="2" cols="70"></textarea><br><br>
+
+  <label for="uncommonOntologiesMapping">If using uncommon or project-specific ontologies, will you provide mappings?</label><br>
+  <textarea id="uncommonOntologiesMapping" rows="2" cols="70"></textarea><br><br>
+
+  <h3>2.4. Increase Data Re-use (Through Clarifying Licences)</h3>
+  <label for="dataLicensing">How will the data be licensed to permit the widest re-use possible?</label><br>
+  <textarea id="dataLicensing" rows="2" cols="70"></textarea><br><br>
+
+  <label for="dataAvailabilityTiming">When will the data be made available for re-use? (Embargo details, etc.)</label><br>
+  <textarea id="dataAvailabilityTiming" rows="2" cols="70"></textarea><br><br>
+
+  <label for="dataUseByThirdParties">Are the data usable by third parties, in particular after the end of the project?</label><br>
+  <textarea id="dataUseByThirdParties" rows="2" cols="70"></textarea><br><br>
+
+  <label for="dataReusabilityDuration">How long is it intended that the data remains re-usable?</label><br>
+  <textarea id="dataReusabilityDuration" rows="2" cols="70"></textarea><br><br>
+
+  <label for="dataQualityAssuranceProcesses">Are data quality assurance processes described?</label><br>
+  <textarea id="dataQualityAssuranceProcesses" rows="2" cols="70"></textarea><br><br>
+
+  <label for="furtherFAIR">Further to the FAIR principles, DMPs should also address:</label><br>
+  <textarea id="furtherFAIR" rows="2" cols="70"></textarea><br><br>
+
+  <!-- ===================== 3. Allocation of Resources ===================== -->
+  <h2>3. Allocation of Resources</h2>
+  <label for="fairDataCosts">What are the costs for making data FAIR in your project?</label><br>
+  <textarea id="fairDataCosts" rows="2" cols="70"></textarea><br><br>
+
+  <label for="costCoverage">How will these be covered? (Costs related to open access to research data are eligible.)</label><br>
+  <textarea id="costCoverage" rows="2" cols="70"></textarea><br><br>
+
+  <label for="dataManagementResponsibility">Who will be responsible for data management in your project?</label><br>
+  <textarea id="dataManagementResponsibility" rows="2" cols="70"></textarea><br><br>
+
+  <label for="longTermPreservationResources">Are the resources for long term preservation discussed?</label><br>
+  <textarea id="longTermPreservationResources" rows="2" cols="70"></textarea><br><br>
+
+  <!-- ===================== 4. Data Security ===================== -->
+  <h2>4. Data Security</h2>
+  <label for="dataSecurityProvisions">What provisions are in place for data security (recovery, secure storage, transfer)?</label><br>
+  <textarea id="dataSecurityProvisions" rows="3" cols="70"></textarea><br><br>
+
+  <label for="dataStorageCertification">Is the data safely stored in certified repositories for long term preservation?</label><br>
+  <textarea id="dataStorageCertification" rows="2" cols="70"></textarea><br><br>
+
+  <!-- ===================== 5. Ethical Aspects ===================== -->
+  <h2>5. Ethical Aspects</h2>
+  <label for="ethicalIssues">Are there any ethical or legal issues that can have an impact on data sharing?</label><br>
+  <textarea id="ethicalIssues" rows="3" cols="70"></textarea><br><br>
+
+  <label for="ethicsReferences">Include references to ethics deliverables and ethics chapter in the DoA if relevant</label><br>
+  <textarea id="ethicsReferences" rows="3" cols="70"></textarea><br><br>
+
+  <label for="informedConsent">Is informed consent for data sharing and long term preservation included?</label><br>
+  <textarea id="informedConsent" rows="2" cols="70"></textarea><br><br>
+
+  <!-- ===================== 6. Other Issues ===================== -->
+  <h2>6. Other Issues</h2>
+  <label for="otherDataManagementProcedures">Do you make use of other national/funder/sectorial/departmental procedures for data management?</label><br>
+  <textarea id="otherDataManagementProcedures" rows="3" cols="70"></textarea><br><br>
+
+  <!-- ===================== Button to Generate PDF ===================== -->
+  <button onclick="generatePDF()">Generate PDF</button>
+
+  <!-- ===================== Script Code ===================== -->
+
+  <script>
+// Ensure DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // to attach an event listener instead of inline HTML onClick:
+  // document.querySelector('button[onclick="generatePDF()"]').addEventListener('click', generatePDF);
+});
+
+function generatePDF() {
+  // Collect all text inputs and textareas
+  const requiredFields = [
+    ...document.querySelectorAll('input[type="text"], textarea')
+  ];
+
+  // Check if any required field is empty (you can remove this check if not needed)
+  for (const field of requiredFields) {
+    if (!field.value.trim()) {
+      alert('Please fill in all the fields before generating the PDF.');
+      return;
+    }
+  }
+
+  // Load jsPDF from the global window object
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({
+    orientation: 'portrait',
+    unit: 'mm',
+    format: 'a4',
+  });
+
+  // Variables for text layout
+  let y = 10;              // Initial vertical position
+  const lineHeight = 10;   // Spacing between lines of text
+  const fontSize = 11;     // Base font size
+  doc.setFontSize(fontSize);
+
+  // Page dimensions
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
+
+  // A helper function to add multi-line text with page breaks
+  function addText(text, x = 10) {
+    const splitText = doc.splitTextToSize(text, 190); // Wrap text at ~190mm
+    splitText.forEach(line => {
+      doc.text(line, x, y);
+      y += lineHeight;
+      if (y > 280) { // If we approach the bottom, add a new page
+        doc.addPage();
+        y = 10;
+      }
+    });
+  }
+
+  // A helper function to add section titles in bold
+  function addSectionTitle(title, x = 10) {
+    doc.setFont('helvetica', 'bold');
+    addText(title, x);
+    doc.setFont('helvetica', 'normal');
+  }
+
+  // A helper function to add main section titles in larger font
+  function addSectionTitleMain(title, x = 10) {
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(16);
+    const splitText = doc.splitTextToSize(title, 190);
+    splitText.forEach(line => {
+      doc.text(line, x, y);
+      y += lineHeight;
+      if (y > 280) {
+        doc.addPage();
+        y = 10;
+      }
+    });
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(fontSize);
+  }
+
+  // A helper function to fetch text from a field and add it with a label
+  function addFieldText(label, fieldId) {
+    const field = document.getElementById(fieldId);
+    if (field) {
+      const fieldText = field.value.trim();
+      addText(`${label}: ${fieldText}`);
+    } else {
+      console.error(`Element with ID ${fieldId} not found.`);
+    }
+  }
+
+  // A helper function to add a hyperlink
+  function addLink(text, url, x = 10) {
+    doc.setTextColor(0, 0, 255);
+    doc.textWithLink(text, x, y, { url });
+    doc.setTextColor(0, 0, 0);
+    y += lineHeight;
+    if (y > 280) {
+      doc.addPage();
+      y = 10;
+    }
+  }
+
+  // ======== ADD CONTENT TO THE PDF ========
+
+  addSectionTitleMain('Data Management Plan');
+
+  addSectionTitle('Introduction');
+  addText('This Horizon 2020 DMP template has been designed to be applicable to any Horizon 2020 project that produces, collects or processes research data. In order to address specific issues under the different thematic priorities of the programme, though, updated versions can be prepared based on identified needs. In this template you will find specific annotations for projects funded from Societal Challenge 1 (Health, demographic change and wellbeing).');
+  addText('You should develop a single DMP for your project to cover its overall approach. However, where there are specific issues for individual datasets (e.g. regarding openness), you should clearly spell this out.');
+  addText('Guidelines on FAIR Data Management in Horizon 2020 are available in the');
+  addLink('Online Manual.', 'http://ec.europa.eu/research/participants/docs/h2020-funding-guide/cross-cutting-issues/open-access-data-management/data-management_en.htm');
+
+  addSectionTitle('FAIR Data management');
+  addText('In general terms, your research data should be \'FAIR\', that is findable, accessible, interoperable and re-usable. These principles precede implementation choices and do not necessarily suggest any specific technology, standard, or implementation-solution.');
+  addText('This template is not intended as a strict technical implementation of the FAIR principles, it is rather inspired by FAIR as a general concept.');
+  addLink('More Information about FAIR','http://ec.europa.eu/research/participants/docs/h2020-funding-guide/cross-cutting-issues/open-access-data-management/data-management_en.htm');
+  addLink('FAIR data principles (FORCE11 discussion forum)','https://www.force11.org/group/fairgroup/fairprinciples');
+  addLink('FAIR principles (article in Nature)','http://www.nature.com/articles/sdata201618');
+
+  addSectionTitle('Structure of the template');
+  addText('The template is a set of questions that you should answer with a level of detail appropriate to the project. It is not required to provide detailed answers to all the questions in the first version of the DMP that needs to be submitted by month 6 of the project. Rather, the DMP is intended to be a living document in which information can be made available on a finer level of granularity through updates as the implementation of the project progresses and when significant changes occur. Therefore, DMPs should have a clear version number and include a timestamp for updates. As a minimum, the DMP should be updated in the context of the periodic evaluation/assessment of the project. If there are no other periodic reviews envisaged within the grant agreement, an update needs to be made in time for the final review at the latest.');
+
+  addSectionTitle('Project Information');
+  addFieldText('Project Number', 'projectNumber');
+  addFieldText('Project Acronym', 'projectAcronym');
+  addFieldText('Project Title', 'projectTitle');
+
+  addSectionTitle('1. Data Summary');
+  addText('This section aims to address the following items: State the purpose of the data collection/generation; explain the relation to the objectives of the project; specify the types and formats of data generated/collected; specify if existing data is being re-used (if any); specify the origin of the data; state the expected size of the data (if known); outline the data utility: to whom will it be useful.');
+  addFieldText('Purpose of the data collection/generation and its relation to the objectives of the project', 'dataPurpose');
+  addFieldText('Types and formats of data the project will generate/collect', 'dataTypesFormats');
+  addFieldText('Re-use of existing data and how', 'dataReuse');
+  addFieldText('Origin of the data', 'dataOrigin');
+  addFieldText('Expected size of the data', 'dataSize');
+  addFieldText('Data utility', 'dataUtility');
+
+  addSectionTitle('2. FAIR Data');
+  addSectionTitle('2.1. Making data findable, including provisions for metadata');
+  addFieldText('Are the data produced and/or used in the project discoverable with metadata, identifiable and locatable by means of a standard identification mechanism?', 'dataFindable');
+  addFieldText('What naming conventions do you follow?', 'namingConventions');
+  addFieldText('Will search keywords be provided that optimize possibilities for re-use?', 'searchKeywords');
+  addFieldText('Do you provide clear version numbers?', 'versionNumbers');
+  addFieldText('What metadata will be created? In case metadata standards do not exist in your discipline, please outline what type of metadata will be created and how.', 'metadataCreation');
+
+  addSectionTitle('2.2. Making data openly accessible');
+  addFieldText('Which data produced and/or used in the project will be made openly available as the default?', 'dataAccessibility');
+  addFieldText('Note that in multi-beneficiary projects it is also possible for specific beneficiaries to keep their data closed if relevant provisions are made in the consortium agreement and are in line with the reasons for opting out.', 'dataRestrictions');
+  addFieldText('How will the data be made accessible?', 'dataAccessibleHow');
+  addFieldText('What methods or software tools are needed to access the data?', 'softwareTools');
+  addFieldText('Is documentation about the software needed to access the data included?', 'documentation');
+  addFieldText('Is it possible to include the relevant software (e.g. in open source code)?', 'relevantSw');
+  addFieldText('Where will the data and associated metadata, documentation and code be deposited?', 'metadata');
+  addFieldText('Have you explored appropriate arrangements with the identified repository?', 'arrangements');
+  addFieldText('If there are restrictions on use, how will access be provided?', 'restriccions');
+  addFieldText('Is there a need for a data access committee?', 'dataAccessComittee');
+  addFieldText('Are there well described conditions for access (i.e. a machine readable license)?', 'conditionsForAccess');
+  addFieldText('How will the identity of the person accessing the data be ascertained?', 'identityOfPersonAccessingData');
+
+  addSectionTitle('2.3. Making Data Interoperable');
+  addFieldText('Are the data produced in the project interoperable?', 'dataInteroperableDescription');
+  addFieldText('What data and metadata vocabularies, standards or methodologies will you follow to make your data interoperable?', 'dataInteroperableStandards');
+  addFieldText('Will you be using standard vocabularies for all data types present in your data set, to allow inter-disciplinary interoperability?', 'standardVocabulariesUsage');
+  addFieldText('In case it is unavoidable that you use uncommon or generate project specific ontologies or vocabularies, will you provide mappings to more commonly used ontologies?', 'uncommonOntologiesMapping');
+
+  addSectionTitle('2.4. Increase Data Re-use (Through Clarifying Licences)');
+  addFieldText('How will the data be licensed to permit the widest re-use possible?', 'dataLicensing');
+  addFieldText('When will the data be made available for re-use? If an embargo is sought to give time to publish or seek patents, specify why and how long this will apply.', 'dataAvailabilityTiming');
+  addFieldText('Are the data produced and/or used in the project usable by third parties, in particular after the end of the project?', 'dataUseByThirdParties');
+  addFieldText('How long is it intended that the data remains re-usable?', 'dataReusabilityDuration');
+  addFieldText('Are data quality assurance processes described?', 'dataQualityAssuranceProcesses');
+  addFieldText('Further to the FAIR principles, DMPs should also address:', 'furtherFAIR');
+
+  addSectionTitle('3. Allocation of Resources');
+  addFieldText('What are the costs for making data FAIR in your project?', 'fairDataCosts');
+  addFieldText('How will these be covered? Note that costs related to open access to research data are eligible as part of the Horizon 2020 grant.', 'costCoverage');
+  addFieldText('Who will be responsible for data management in your project?', 'dataManagementResponsibility');
+  addFieldText('Are the resources for long term preservation discussed?', 'longTermPreservationResources');
+
+  addSectionTitle('4. Data Security');
+  addFieldText('What provisions are in place for data security (including data recovery as well as secure storage and transfer of sensitive data)?', 'dataSecurityProvisions');
+  addFieldText('Is the data safely stored in certified repositories for long term preservation and curation?', 'dataStorageCertification');
+
+  addSectionTitle('5. Ethical Aspects');
+  addFieldText('Are there any ethical or legal issues that can have an impact on data sharing?', 'ethicalIssues');
+  addFieldText('If relevant, include references to ethics deliverables and ethics chapter in the Description of the Action (DoA).', 'ethicsReferences');
+  addFieldText('Is informed consent for data sharing and long term preservation included in questionnaires dealing with personal data?', 'informedConsent');
+
+  addSectionTitle('6. Other Issues');
+  addFieldText('Do you make use of other national/funder/sectorial/departmental procedures for data management?', 'otherDataManagementProcedures');
+
+  addSectionTitle('7. Further support in developing your DMP');
+  addText('The Research Data Alliance provides a Metadata Standards Directory that can be searched for discipline-specific standards and associated tools.');
+  addLink('Research Data Alliance ', 'http://rd-alliance.github.io/metadata-directory/');
+  addText('The EUDAT B2SHARE tool includes a built-in license wizard that facilitates the selection of an adequate license for research data.');
+  addLink('EUDAT B2SHARE tool ', 'https://b2share.eudat.eu/');
+  addText('Useful listings of repositories include:');
+  addLink('Registry of Research Data Repositories', 'http://www.re3data.org/');
+  addText('Some repositories like Zenodo, an OpenAIRE and CERN collaboration, allow researchers to deposit both publications and data, while providing tools to link them.');
+  addLink('Zenodo', 'https://zenodo.org/');
+  addText('Other useful tools include DMP online and platforms for making individual scientific observations available such as ScienceMatters.');
+  addLink('DMP Onlnie', 'https://dmponline.dcc.ac.uk/');
+  addLink('ScienceMatters', 'https://www.sciencematters.io/');
+
+  // ======== PAGE NUMBERING (Page i of n) ========
+  // After all text is added, we adjust page numbering
+  const totalPages = doc.internal.getNumberOfPages();
+
+  for (let i = 1; i <= totalPages; i++) {
+    doc.setPage(i);
+    doc.setFontSize(10);
+    doc.text(`Page ${i} of ${totalPages}`, pageWidth - 40, pageHeight - 10);
+  }
+
+  // Finally, save the PDF
+  doc.save('DMP.pdf');
+}
+  </script>
+
+</body>
+</html>
