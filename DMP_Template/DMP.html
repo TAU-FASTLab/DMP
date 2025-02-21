@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> Data Management Plan Template</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  .form-title {
+    background-color: #660099; 
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  .form-section {
+    border: 1px solid black; 
+    margin-top: 10px;
+    padding: 10px; 
+  }
+  .required {
+    color: red;
+}
+  .button {
+    display: block;
+    margin-top: 20px;
+  }
+  #dpiTemplateLink {
+    color: #0000EE; /* Blue color like standard link */
+    text-decoration: none; /* No underline by default */
+  }
+  #dpiTemplateLink:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  .article {
+    background-color: #f3d4f9;
+    border: 1px solid #5c0567;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .article h2 {
+    background-color: #e7e7e7;
+    padding: 10px;
+    margin-top: 0;
+  }
+  .article ol {
+    padding-left: 20px;
+  }
+  .article ol li {
+    margin-bottom: 10px;
+  }
+  #additionalFormLegitimateInterest {
+    display: none; /* Hide the form by default */
+  }
+  .data-container {
+            margin-bottom: 10px; /* Adds spacing between checkbox groups */
+        }
+ .section { margin-bottom: 20px; }
+  h1 { font-size: 24px; margin-bottom: 10px; }
+  h2 { font-size: 20px; margin-top: 20px; margin-bottom: 10px; }
+  label { display: block; margin-top: 5px; }
+  input[type="text"], textarea { width: 100%; padding: 8px; margin-top: 5px; }
+  input[type="checkbox"] { margin-right: 5px; }
+</style>
+</style>
+</head>
+<body>
+<div class="form-title"><h1>DATA MANAGEMENT PLAN (DMP)</h1></div>
+
+<h2>Introduction</h2>
+<p>This Horizon 2020 DMP template has been designed to be applicable to any Horizon 2020 project that produces, collects or processes research data. In order to address specific issues under the different thematic priorities of the programme, though, updated versions can be prepared based on identified needs. In this template you will find specific annotations for projects funded from Societal Challenge 1 (Health, demographic change and wellbeing).</p>
+<p>You should develop a single DMP for your project to cover its overall approach. However, where there are specific issues for individual datasets (e.g. regarding openness), you should clearly spell this out.</p>
+<p><a href="http://ec.europa.eu/research/participants/docs/h2020-funding-guide/cross-cutting-issues/open-access-data-management/data-management_en.htm">Guidelines on FAIR Data Management in Horizon 2020</a> are available in the Online Manual.</p>
+
+<h2>FAIR Data management</h2>
+<p>In general terms, your research data should be 'FAIR', that is findable, accessible, interoperable and re-usable. These principles precede implementation choices and do not necessarily suggest any specific technology, standard, or implementation-solution.</p>
+<p>This template is not intended as a strict technical implementation of the FAIR principles, it is rather inspired by FAIR as a general concept.</p>
+<ul>
+    <li><a href="http://ec.europa.eu/research/participants/docs/h2020-funding-guide/cross-cutting-issues/open-access-data-management/data-management_en.htm">More information about FAIR</a></li>
+    <li><a href="https://www.force11.org/group/fairgroup/fairprinciples">FAIR data principles (FORCE11 discussion forum)</a></li>
+    <li><a href="http://www.nature.com/articles/sdata201618">FAIR principles (article in Nature)</a></li>
+</ul>
+
+<h2>Structure of the template</h2>
+<p>The template is a set of questions that you should answer with a level of detail appropriate to the project. It is not required to provide detailed answers to all the questions in the first version of the DMP that needs to be submitted by month 6 of the project. Rather, the DMP is intended to be a living document in which information can be made available on a finer level of granularity through updates as the implementation of the project progresses and when significant changes occur. Therefore, DMPs should have a clear version number and include a timestamp for updates. As a minimum, the DMP should be updated in the context of the periodic evaluation/assessment of the project. If there are no other periodic reviews envisaged within the grant agreement, an update needs to be made in time for the final review at the latest.</p>
+<p>In the following the main sections to be covered by the DMP are outlined. At the end of the document, Table 1 contains a summary of these elements in bullet form.</p>
+<p>This template itself may be updated as the policy evolves.</p>
+
+<label id="projectNumber1">Project Number:</label>
+<input type="text" id="projectNumber">
+
+<label id="projectAcronym1">Project Acronym:</label>
+<input type="text" id="projectAcronym">
+
+<label id="projectTitle1">Project Title:</label>
+<input type="text" id="projectTitle">
+
+<h2>1. Data Summary</h2>
+<p>This section aims to address the following items: State the purpose of the data collection/generation; explain the relation to the objectives of the project;
+  epecify the types and formats of data generated/collected; specify if existing data is being re-used (if any); specify the origin of the data; 
+  state the expected size of the data (if known); outline the data utility: to whom will it be useful.</p>
+
+<p>What is the purpose of the data collection/generation and its relation to the objectives of the project?</p>
+<textarea id="dataPurpose"></textarea>
+
+<p>What types and formats of data will the project generate/collect?</p>
+<textarea id="dataTypesFormats"></textarea>
+
+<p>Will you re-use any existing data and how?</p>
+<textarea id="dataReuse"></textarea>
+
+<p>What is the origin of the data?</p>
+<textarea id="dataOrigin"></textarea>
+
+<p>What is the expected size of the data?</p>
+<textarea id="dataSize"></textarea>
+
+<p>To whom might it be useful ('data utility')?</p>
+<textarea id="dataUtility"></textarea>
+
+<h2>2. FAIR Data</h2>
+<h3>2.1. Making data findable, including provisions for metadata</h3>
+<p>
+  This section aims to address the following items: Outline the discoverability of data (metadata provision); outline the identifiability of data and refer to standard identification mechanism. Do you make use of 
+  persistent and unique identifiers such as Digital Object Identifiers?; outline naming conventions used; outline the approach towards search keyword;
+  outline the approach for clear versioning; specify standards for metadata creation (if any). If there are no standards in your discipline describe what 
+  type of metadata will be created and how.
+</p>
+<p>Are the data produced and/or used in the project discoverable with metadata, identifiable and locatable by means of a standard identification mechanism (e.g., persistent and unique identifiers such as Digital Object Identifiers)?</p>
+<textarea id="dataFindable"></textarea>
+<p> Metadata: the details about what, where, when, why, and how the data were collected, processed, and interpreted. Metadata 
+  include descriptions of how data and files are named, physically structured, and stored as well as details about the experiments, analytical methods, and research context. It is generally the case that the utility and longevity of data relate directly to 
+  how complete and comprehensive the metadata are. The amount of effort devoted to creating comprehensive metadata may 
+  vary substantially based on the complexity, types, and volume of data."
+  (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4619636/">Source:</a>) </p>
+
+<p>What naming conventions do you follow?</p>
+<textarea id="namingConventions"></textarea>
+
+<p>Will search keywords be provided that optimize possibilities for re-use?</p>
+<textarea id="searchKeywords"></textarea>
+
+<p>Do you provide clear version numbers?</p>
+<textarea id="versionNumbers"></textarea>
+
+<p>What metadata will be created? In case metadata standards do not exist in your discipline, please outline what type of metadata will be created and how.</p>
+<textarea id="metadataCreation"></textarea>
+
+<h3>2.2. Making data openly accessible</h3>
+
+<p>This section aims to address the following items: Specify which data will be made openly available? If some data is kept closed provide rationale for doing so; specify how the data will be made available;
+  specify what methods or software tools are needed to access the data? Is documentation about the software needed to access the data included? Is it possible to include the relevant software (e.g. in open source 
+  code)?; specify where the data and associated metadata, documentation and code are deposited; specify how access will be provided in case there are any restrictions.</p>
+
+<p>Which data produced and/or used in the project will be made openly available as the default? If certain datasets cannot be shared (or need to be shared under restrictions), explain why, clearly separating legal and contractual reasons from voluntary restrictions.</p>
+<textarea id="dataAccessibility"></textarea>
+
+<p>Note that in multi-beneficiary projects it is also possible for specific beneficiaries to keep their data closed if relevant provisions are made in the consortium agreement and are in line with the reasons for opting out.</p>
+<textarea id="dataRestrictions"></textarea>
+
+<p>How will the data be made accessible (e.g. by deposition in a repository)? </p>
+<textarea id="dataAccessibleHow"></textarea>
+
+<p>What methods or software tools are needed to access the data?</p>
+<textarea id="softwareTools"></textarea>
+
+<p> Is documentation about the software needed to access the data included?</p>
+<textarea id="documentation"></textarea>
+
+<p>Is it possible to include the relevant software (e.g. in open source code)?</p>
+<textarea id="relevantSw"></textarea>
+
+<p>Where will the data and associated metadata, documentation and code be deposited? Preference should be 
+  given to certified repositories which support open access where possible. </p>
+<textarea id="metadata"></textarea>
+
+<p>Have you explored appropriate arrangements with the identified repository?</p>
+<textarea id="arrangements"></textarea>
+
+<p>If there are restrictions on use, how will access be provided?</p>
+<textarea id="restriccions"></textarea>
+
+<p>Is there a need for a data access committee?</p>
+<textarea id="dataAccessComittee"></textarea>
+
+<p>Are there well described conditions for access (i.e. a machine readable license)?</p>
+<textarea id="conditionsForAccess"></textarea>
+
+<p>How will the identity of the person accessing the data be ascertained?</p> 
+<textarea id="identityOfPersonAccessingData"></textarea>
+
+<h3>2.3. Making Data Interoperable</h3>
+<p>This section aims to address the following items: Assess the interoperability of your data.; specify what data and metadata vocabularies, standards or 
+  methodologies you will follow to facilitate interoperability; specify whether you will be using standard vocabulary for all data types present in your data set, to allow 
+  inter-disciplinary interoperability? If not, will you provide mapping to more commonly used ontologies?</p>
+
+
+<p>Are the data produced in the project interoperable, that is allowing data exchange and re-use between researchers, institutions, organisations, countries, etc.?</p>
+<textarea id="dataInteroperableDescription"></textarea>
+
+<p>What data and metadata vocabularies, standards or methodologies will you follow to make your data interoperable?</p>
+<textarea id="dataInteroperableStandards"></textarea>
+
+<p>Will you be using standard vocabularies for all data types present in your data set, to allow inter-disciplinary interoperability?</p>
+<textarea id="standardVocabulariesUsage"></textarea>
+
+<p>In case it is unavoidable that you use uncommon or generate project specific ontologies or vocabularies, will you provide mappings to more commonly used ontologies?</p>
+<textarea id="uncommonOntologiesMapping"></textarea>
+
+<h3>2.4. Increase Data Re-use (Through Clarifying Licences)</h3>
+<p> Specify how the data will be licenced to permit the widest reuse possible: specify when the data will be made available for re-use. If applicable, specify why and for what period a data 
+  embargo is needed; specify whether the data produced and/or used in the project is useable by third parties, in particular after 
+  the end of the project? If the re-use of some data is restricted, explain why; describe data quality assurance processes; specify the length of time for which the data will remain re-usable</p>
+
+<p>How will the data be licensed to permit the widest re-use possible?</p>
+<textarea id="dataLicensing"></textarea>
+
+<p>When will the data be made available for re-use? If an embargo is sought to give time to publish or seek patents, specify why and how long this will apply.</p>
+<textarea id="dataAvailabilityTiming"></textarea>
+
+<p>Are the data produced and/or used in the project usable by third parties, in particular after the end of the project? If the re-use of some data is restricted, explain why.</p>
+<textarea id="dataUseByThirdParties"></textarea>
+
+<p>How long is it intended that the data remains re-usable?</p>
+<textarea id="dataReusabilityDuration"></textarea>
+
+<p>Are data quality assurance processes described?</p>
+<textarea id="dataQualityAssuranceProcesses"></textarea>
+
+<p>Further to the FAIR principles, DMPs should also address:</p>
+<textarea id="furtherFAIR"></textarea>
+
+<h2>3. Allocation of Resources</h2>
+<p>In here it is needed:  Estimate the costs for making your data FAIR. Describe how you intend to cover these costs; 
+  clearly identify responsibilities for data management in your project; describe costs and potential value of long term preservation</p>
+
+<p>What are the costs for making data FAIR in your project?</p>
+<textarea id="fairDataCosts"></textarea>
+
+<p>How will these be covered? Note that costs related to open access to research data are eligible as part of the Horizon 2020 grant.</p>
+<textarea id="costCoverage"></textarea>
+
+<p>Who will be responsible for data management in your project?</p>
+<textarea id="dataManagementResponsibility"></textarea>
+
+<p>Are the resources for long term preservation discussed (costs and potential value, who decides and how what data will be kept and for how long)?</p>
+<textarea id="longTermPreservationResources"></textarea>
+
+<h2>4. Data Security</h2>
+<p> This section aims to address data recovery as well as secure storage and transfer of sensitive data</p>
+
+<p>What provisions are in place for data security (including data recovery as well as secure storage and transfer of sensitive data)?</p>
+<textarea id="dataSecurityProvisions"></textarea>
+
+<p>Is the data safely stored in certified repositories for long term preservation and curation?</p>
+<textarea id="dataStorageCertification"></textarea>
+
+<h2>5. Ethical Aspects</h2>
+
+<p>To be covered in the context of the ethics review, ethics section of DoA and ethics deliverables. Include 
+  references and related technical aspects if not covered by the former</p>
+
+<p>Are there any ethical or legal issues that can have an impact on data sharing? These can also be discussed in the context of the ethics review.</p>
+<textarea id="ethicalIssues"></textarea>
+
+<p>If relevant, include references to ethics deliverables and ethics chapter in the Description of the Action (DoA).</p>
+<textarea id="ethicsReferences"></textarea>
+
+<p>Is informed consent for data sharing and long term preservation included in questionnaires dealing with personal data?</p>
+<textarea id="informedConsent"></textarea>
+
+<h2>6. Other Issues</h2>
+<p>Refer to other national/funder/sectorial/departmental procedures for data management that you are using (if 
+  any)</p>
+<p>Do you make use of other national/funder/sectorial/departmental procedures for data management? If yes, which ones?</p>
+<textarea id="otherDataManagementProcedures"></textarea>
+
+<h2>7. Further support in developing your DMP</h2>
+<p>
+The Research Data Alliance provides a <a href="http://rd-alliance.github.io/metadata-directory/"> Metadata Standards Directory </a> that can be searched for discipline-specific 
+standards and associated tools.
+</p>
+<p>
+The  <a href="https://b2share.eudat.eu/"> EUDAT B2SHARE</a> tool includes a built-in license wizard that facilitates the selection of an adequate license 
+for research data.
+</p>
+<p>
+Useful listings of repositories include: 
+</p>
+<p>
+  <a href="http://www.re3data.org/"> Registry of Research Data Repositories</a>
+</p>
+<p>
+Some repositories like  <a href="https://zenodo.org/">Zenodo</a>, an OpenAIRE and CERN collaboration), allow researchers to deposit both 
+publications and data, while providing tools to link them.
+</p>
+<p>
+Other useful tools include <a href="https://dmponline.dcc.ac.uk/"
+>  DMP online </a> and platforms for making individual scientific observations available such 
+as <a href="https://www.sciencematters.io/"> ScienceMatters</a>.
+</p>
+
+
+<script src="DMP.js"></script> 
+<input type="button" class="button" value="Generate PDF" onclick="generatePDF()">
+
+</body>
+
+</html>
